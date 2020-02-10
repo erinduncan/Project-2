@@ -49,7 +49,7 @@
 				none:				nothing... hibernate will not do anything to your schema
 		 -->
 		
-		<property name="hibernate.hbm2ddl.auto">create</property>
+		<property name="hibernate.hbm2ddl.auto">update</property>
 		<mapping class="com.revature.models.Post"/>
 		<mapping class="com.revature.models.User"/>
 		<mapping class="com.revature.models.Comments"/>

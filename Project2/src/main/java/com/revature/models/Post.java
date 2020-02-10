@@ -9,6 +9,8 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -20,18 +22,19 @@ public class Post {
 	@Column
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int postId;
-	@Column
+	@Column(name = "title")
 	private String title;
-	@Column
+	@Column(name = "body")
 	private String body;
-	@Column
+	@Column(name = "timestamp1")
 	private String timestamp;
-	@Column
+	@Column(name = "location")
 	private String location;
-	@Column
-	private boolean like;
-	@Column
-	private int userId;
+	@Column(name = "like1")
+	private String like;
+	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	@JoinColumn(name = "userId")
+	private User userId;
 	@OneToMany(mappedBy = "commentList", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	private Set<Comments> comments;
 
@@ -40,7 +43,7 @@ public class Post {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Post(String title, String body, String timestamp, String location, boolean like, int userId,
+	public Post(String title, String body, String timestamp, String location, String like, User userId,
 			Set<Comments> comments) {
 		super();
 		this.title = title;
@@ -52,7 +55,7 @@ public class Post {
 		this.comments = comments;
 	}
 
-	public Post(int postId, String title, String body, String timestamp, String location, boolean like, int userId,
+	public Post(int postId, String title, String body, String timestamp, String location, String like, User userId,
 			Set<Comments> comments) {
 		super();
 		this.postId = postId;
@@ -105,19 +108,19 @@ public class Post {
 		this.location = location;
 	}
 
-	public boolean isLike() {
+	public String getLike() {
 		return like;
 	}
 
-	public void setLike(boolean like) {
+	public void setLike(String like) {
 		this.like = like;
 	}
 
-	public int getUserId() {
+	public User getUserId() {
 		return userId;
 	}
 
-	public void setUserId(int userId) {
+	public void setUserId(User userId) {
 		this.userId = userId;
 	}
 
