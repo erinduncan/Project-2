@@ -6,21 +6,32 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 
+import com.revature.driver.Log;
 import com.revature.models.User;
 import com.revature.util.HibernateUtil;
 
 public class UserDao implements DaoContract<User> {
 
+	public UserDao() {
+		HibernateUtil.getSessionFactory().openSession();
+	}
+
 	@Override
 	public List<User> findAll() {
-		// TODO Auto-generated method stub
-		return null;
+		List<User> list = HibernateUtil.getSessionFactory().openSession()
+				.createNativeQuery("select * from users", User.class).list();
+		Log.log.info("All users found and returned.");
+		return list;
 	}
 
 	@Override
 	public User findById(int id) {
-		// TODO Auto-generated method stub
-		return null;
+		Session sess = HibernateUtil.getSessionFactory().getCurrentSession();
+		Transaction tx = sess.beginTransaction();
+		User user = sess.get(User.class, id);
+		tx.commit();
+		Log.log.info("User found by ID number.");
+		return user;
 	}
 
 	@Override
@@ -36,7 +47,7 @@ public class UserDao implements DaoContract<User> {
 		Transaction tx = sess.beginTransaction();
 		sess.save(t);
 		tx.commit();
-//		Log4j.log.info("New user has been created.");
+		Log.log.info("New user created.");
 		return t;
 	}
 

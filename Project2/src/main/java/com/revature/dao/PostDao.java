@@ -6,6 +6,7 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 
+import com.revature.driver.Log;
 import com.revature.models.Post;
 import com.revature.util.HibernateUtil;
 
@@ -13,14 +14,20 @@ public class PostDao implements DaoContract<Post> {
 
 	@Override
 	public List<Post> findAll() {
-		// TODO Auto-generated method stub
-		return null;
+		List<Post> list = HibernateUtil.getSessionFactory().openSession()
+				.createNativeQuery("select * from posts", Post.class).list();
+		Log.log.info("All posts found and returned.");
+		return list;
 	}
 
 	@Override
 	public Post findById(int id) {
-		// TODO Auto-generated method stub
-		return null;
+		Session sess = HibernateUtil.getSessionFactory().getCurrentSession();
+		Transaction tx = sess.beginTransaction();
+		Post post = sess.get(Post.class, id);
+		tx.commit();
+		Log.log.info("Post found by ID number.");
+		return post;
 	}
 
 	@Override
@@ -36,7 +43,7 @@ public class PostDao implements DaoContract<Post> {
 		Transaction tx = sess.beginTransaction();
 		sess.save(t);
 		tx.commit();
-//		Log4j.log.info("New user has been created.");
+		Log.log.info("New post created.");
 		return t;
 	}
 
