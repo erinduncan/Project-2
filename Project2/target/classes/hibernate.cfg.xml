@@ -28,7 +28,7 @@
 		<property name="hibernate.connection.username">master_id</property>
 		<property name="hibernate.connection.password">masterpassword</property>
 		<property name="hibernate.connection.url">
-			jdbc:postgresql:// raphael-db.cy5ktaby7cw2.us-east-2.rds.amazonaws.com:5432/postgres
+			jdbc:postgresql://raphael-db.cy5ktaby7cw2.us-east-2.rds.amazonaws.com:5432/postgres
 		</property>
 		<property name="hibernate.connection.driver.class">org.postgresql.Driver</property>
 		<property name="hibernate.default_schema">public</property>
