@@ -1,11 +1,23 @@
 package com.revature.dao;
 
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.List;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 
+import com.amazonaws.AmazonServiceException;
+import com.amazonaws.SdkClientException;
+import com.amazonaws.regions.Regions;
+import com.amazonaws.services.s3.AmazonS3;
+import com.amazonaws.services.s3.AmazonS3ClientBuilder;
+import com.amazonaws.services.s3.model.CannedAccessControlList;
+import com.amazonaws.services.s3.model.ObjectMetadata;
+import com.amazonaws.services.s3.model.PutObjectRequest;
+import com.amazonaws.util.IOUtils;
 import com.revature.driver.Log;
 import com.revature.models.Post;
 import com.revature.util.HibernateUtil;
@@ -57,6 +69,39 @@ public class PostDao implements DaoContract<Post> {
 	public Post findByName(String name) {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	public void uploadImage() {
+
+		// This inputStream is supposed to take in the image that is uploaded
+		// Probably some JS something IDK but it shouldn't be null
+		InputStream inputStream = null;
+		Regions clientRegion = Regions.DEFAULT_REGION;
+		// This is using my bucket, don't know if access needs to be granted or not
+		// May need to set up permissions in the bucket
+		String bucketName = "erin-revature";
+		// fileName is the path of the file to be uploaded
+		String fileName = "";
+
+		try {
+			byte[] contents = IOUtils.toByteArray(inputStream);
+			InputStream stream = new ByteArrayInputStream(contents);
+			AmazonS3 s3client = AmazonS3ClientBuilder.standard().withRegion(clientRegion).build();
+
+			ObjectMetadata meta = new ObjectMetadata();
+			meta.setContentLength(contents.length);
+			meta.setContentType("image/png");
+
+			s3client.putObject(new PutObjectRequest(bucketName, fileName, stream, meta)
+					.withCannedAcl(CannedAccessControlList.Private));
+		} catch (AmazonServiceException e) {
+			e.printStackTrace();
+		} catch (SdkClientException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
 	}
 
 }
