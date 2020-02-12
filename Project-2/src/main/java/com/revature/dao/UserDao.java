@@ -15,31 +15,35 @@ import com.revature.models.User;
 
 @Repository
 @Transactional
-public class UserDao implements DaoUserContract<User> {
+public class UserDao /* implements DaoUserContract<User> */{
 
-	private SessionFactory sesf;
+	private  SessionFactory sesf;
 	
 	@Autowired
 	public UserDao(SessionFactory sesf) {
 		super();
 		this.sesf = sesf;
 	}
+	
 
-	@Override
+//	@Override
 	public List<User> findAll() {
-		List<User> list;
-		try {
-			list = sesf.openSession().createQuery("From users", User.class).list();
-			Log.log.info("All users found and returned.");
-			return list;
-		} catch (HibernateException e) {
-			Log.log.error(e);
-			System.out.println("ERROR! Could not findAll");
-		}
-		return null;
+//		List<User> list;
+//		try {
+//			list = sesf.openSession().createQuery("from Users", User.class).list();
+//			Log.log.info("All users found and returned.");
+//			System.out.println("list: "+list);
+//			return list;
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//			Log.log.error(e);
+//			System.out.println("ERROR! Could not findAll");
+//		}
+//		return null;
+		return sesf.getCurrentSession().createQuery("from Users" , User.class).list();
 	}
 
-	@Override
+//	@Override
 	public User findById(int id) {
 		User user;
 		try {
@@ -53,8 +57,8 @@ public class UserDao implements DaoUserContract<User> {
 		return null;
 	}
 
-	@Override
-	public User update(User t) {
+//	@Override
+	public static User update(User t) {
 		try {
 			sesf.openSession().update(t);
 			return t;
@@ -65,7 +69,7 @@ public class UserDao implements DaoUserContract<User> {
 		return null;
 	}
 
-	@Override
+//	@Override
 	public User insert(User t) {
 		try {
 			sesf.openSession().save(t);
@@ -77,7 +81,7 @@ public class UserDao implements DaoUserContract<User> {
 		return t;
 	}
 
-	@Override
+//	@Override
 	public User delete(User t) {
 		try {
 			sesf.openSession().remove(t);
@@ -89,7 +93,7 @@ public class UserDao implements DaoUserContract<User> {
 		return null;
 	}
 
-	@Override
+//	@Override
 	public User findByEmail(String email) {
 		try {
 			@SuppressWarnings("deprecation")
