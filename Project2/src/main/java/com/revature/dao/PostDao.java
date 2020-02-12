@@ -95,11 +95,11 @@ public class PostDao implements DaoContract<Post> {
 			s3client.putObject(new PutObjectRequest(bucketName, fileName, stream, meta)
 					.withCannedAcl(CannedAccessControlList.Private));
 		} catch (AmazonServiceException e) {
-			e.printStackTrace();
+			Log.log.error(e.getMessage());
 		} catch (SdkClientException e) {
-			e.printStackTrace();
+			Log.log.error(e.getMessage());
 		} catch (IOException e) {
-			e.printStackTrace();
+			Log.log.error(e.getMessage());
 		}
 
 	}
