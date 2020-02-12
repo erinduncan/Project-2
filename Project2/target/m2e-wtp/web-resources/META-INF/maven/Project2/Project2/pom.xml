@@ -6,63 +6,30 @@
   <packaging>war</packaging>
   <description>Project2</description>
   
-  <properties>
+  
+	<properties>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
 	</properties>
-  <dependencies>
-  		<!-- provides the IOC container -->
-	  	<dependency>
-	    	<groupId>org.springframework</groupId>
-	    	<artifactId>spring-core</artifactId>
-	    	<version>5.2.2.RELEASE</version>
-		</dependency>
-		<!-- provides the Dependency Injection features -->
+	<dependencies>
 		<dependency>
-		    <groupId>org.springframework</groupId>
-		    <artifactId>spring-beans</artifactId>
-		    <version>5.2.2.RELEASE</version>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<version>42.2.9</version>
 		</dependency>
-		<!-- provides package scanning and annotations -->
+
+
 		<dependency>
-		    <groupId>org.springframework</groupId>
-		    <artifactId>spring-context</artifactId>
-		    <version>5.2.2.RELEASE</version>
+			<groupId>javax.xml.bind</groupId>
+			<artifactId>jaxb-api</artifactId>
+			<version>2.3.0</version>
 		</dependency>
+
+
 		<dependency>
-		    <groupId>org.springframework</groupId>
-		    <artifactId>spring-aspects</artifactId>
-		    <version>5.2.2.RELEASE</version>
-		</dependency>
-		<dependency>
-			    <groupId>org.postgresql</groupId>
-			    <artifactId>postgresql</artifactId>
-			    <version>42.2.8</version>
-		</dependency>
-		<dependency>
-		    <groupId>org.hibernate</groupId>
-		    <artifactId>hibernate-core</artifactId>
-		    <version>5.4.10.Final</version>
-		</dependency>
-		<dependency>
-		    <groupId>org.hibernate</groupId>
-		    <artifactId>hibernate-validator</artifactId>
-		    <version>6.0.17.Final</version>
-		</dependency>
-		<dependency>
-		    <groupId>org.springframework</groupId>
-		    <artifactId>spring-orm</artifactId>
-		    <version>5.2.2.RELEASE</version>
-		</dependency>
-		<dependency>
-	    	<groupId>org.springframework</groupId>
-	    	<artifactId>spring-webmvc</artifactId>
-	    	<version>5.2.2.RELEASE</version>
-		</dependency>
-		<dependency>
-				<groupId>com.fasterxml.jackson.core</groupId>
-				<artifactId>jackson-databind</artifactId>
-				<version>2.10.1</version>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>2.10.1</version>
 		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/log4j/log4j -->
@@ -77,6 +44,13 @@
 			<artifactId>junit</artifactId>
 			<version>4.12</version>
 		</dependency>
+
+		<dependency>
+    		<groupId>org.hibernate</groupId>
+    		<artifactId>hibernate-core</artifactId>
+    		<version>5.4.10.Final</version>
+		</dependency>
+
 
 	</dependencies>
 
