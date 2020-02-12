@@ -19,14 +19,14 @@ import javax.persistence.Table;
 public class Post {
 
 	@Id
-	@Column(name = "post_id")
+	@Column
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int postId;
 	@Column(name = "title")
 	private String title;
 	@Column(name = "body")
 	private String body;
-	@Column(name = "submitted")
+	@Column(name = "timestamp1")
 	private String timestamp;
 	@Column(name = "location")
 	private String location;
