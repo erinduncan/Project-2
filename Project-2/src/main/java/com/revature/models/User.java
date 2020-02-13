@@ -9,7 +9,7 @@ import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 
 @Entity
-@Table(name = "Users")
+@Table(name = "User")
 public class User {
 
 	@Id

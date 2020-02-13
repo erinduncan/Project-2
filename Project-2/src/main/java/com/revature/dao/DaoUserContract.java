@@ -12,7 +12,7 @@ public interface DaoUserContract<T> {
 	
 	T insert(T t);
 	
-	T delete(T t);
+	T deleteByEmail(String email);
 	
 	T findByEmail(String email);
 	

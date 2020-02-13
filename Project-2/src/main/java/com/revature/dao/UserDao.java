@@ -15,9 +15,10 @@ import com.revature.models.User;
 
 @Repository
 @Transactional
-public class UserDao /* implements DaoUserContract<User> */{
+public class UserDao {
 
-	private  SessionFactory sesf;
+	@Autowired
+	private SessionFactory sesf;
 	
 	@Autowired
 	public UserDao(SessionFactory sesf) {
@@ -28,19 +29,17 @@ public class UserDao /* implements DaoUserContract<User> */{
 
 //	@Override
 	public List<User> findAll() {
-//		List<User> list;
-//		try {
-//			list = sesf.openSession().createQuery("from Users", User.class).list();
-//			Log.log.info("All users found and returned.");
-//			System.out.println("list: "+list);
-//			return list;
-//		} catch (Exception e) {
-//			e.printStackTrace();
-//			Log.log.error(e);
-//			System.out.println("ERROR! Could not findAll");
-//		}
-//		return null;
-		return sesf.getCurrentSession().createQuery("from Users" , User.class).list();
+		List<User> list;
+		try {
+			list = sesf.getCurrentSession().createQuery("from User", User.class).list();
+			Log.log.info("All users found and returned.");
+			return list;
+		} catch (Exception e) {
+			e.printStackTrace();
+			Log.log.error(e);
+			System.out.println("ERROR! Could not findAll");
+		}
+		return null;
 	}
 
 //	@Override
@@ -58,9 +57,9 @@ public class UserDao /* implements DaoUserContract<User> */{
 	}
 
 //	@Override
-	public static User update(User t) {
+	public User update(User t) {
 		try {
-			sesf.openSession().update(t);
+			sesf.getCurrentSession().update(t);
 			return t;
 		} catch (HibernateException e) {
 			Log.log.error(e);
@@ -82,13 +81,14 @@ public class UserDao /* implements DaoUserContract<User> */{
 	}
 
 //	@Override
-	public User delete(User t) {
+	public User deleteByEmail(String email) {
 		try {
-			sesf.openSession().remove(t);
+			User t = findByEmail(email);
+			sesf.getCurrentSession().delete(t);
 			return t;
 		} catch (HibernateException e) {
 			Log.log.error(e);
-			System.out.println("ERROR! Could not Delete \n"+t.toString());
+			System.out.println("ERROR! Could not Deletebyemail "+email);
 		}
 		return null;
 	}
@@ -97,7 +97,7 @@ public class UserDao /* implements DaoUserContract<User> */{
 	public User findByEmail(String email) {
 		try {
 			@SuppressWarnings("deprecation")
-			Criteria criteria = sesf.openSession().createCriteria(User.class);
+			Criteria criteria = sesf.getCurrentSession().createCriteria(User.class);
 			criteria.add(Restrictions.like("email", email));
 			return (User) criteria.list().get(0);
 		} catch (HibernateException e) {
