@@ -1,6 +1,7 @@
 import React, { SyntheticEvent } from 'react';
 import { Form, Label, Col, Input, FormGroup, Button } from 'reactstrap';
 import { Link } from 'react-router-dom';
+import { updateCurrentUser } from '../../action-mappers/login-actions';
 
 interface ILoginState {
     username: string
@@ -47,7 +48,7 @@ export class LoginComponent extends React.Component<ILoginProps, ILoginState>{
 
     submitLogin = async (event: SyntheticEvent) => {
         event.preventDefault()
-        this.props.updateCurrentUser(this.state.username,this.state.password)
+        updateCurrentUser(this.state.username, this.state.password)           
     }
 
     render() {
@@ -55,16 +56,18 @@ export class LoginComponent extends React.Component<ILoginProps, ILoginState>{
             <div>
                 <Form onSubmit={this.submitLogin}>
                     <FormGroup row>
-                        <Label for="username" sm={2}>Username</Label>
+                        <Label for="email" sm={2}>Email</Label>
                         <Col sm={10}>
                             <Input required
-                                type="text"
-                                name="username"
-                                id="username"
-                                placeholder="put username here"
+                                type="email"
+                                name="email"
+                                id="email"
+                                placeholder="put email here"
                                 value={this.state.username}
                                 onChange={this.updateUsername} />
-                            {/* this is an example of data binding, we take data from the state and put it in our tsx */}
+                            {/* this is an example of data binding, 
+                            we take data from the state and put it 
+                            in our tsx */}
                         </Col>
                     </FormGroup>
                     <FormGroup row>
@@ -79,10 +82,10 @@ export class LoginComponent extends React.Component<ILoginProps, ILoginState>{
                                 onChange={this.updatePassword} />
                         </Col>
                     </FormGroup>
-                    <Button color="danger">Login</Button>
+                    <Button color="primary">Login</Button>
                 </Form>
                 <p>{this.props.loginMessage}</p>
-                <Link to='/pokemon'>No NavBar yet</Link>
+                {/* <Link to='/pokemon'>No NavBar yet</Link> */}
             </div>
         )
     }

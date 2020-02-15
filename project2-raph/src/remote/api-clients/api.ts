@@ -1,4 +1,5 @@
-
+import { axiosConfig } from "./axiosConfig";
+import IUser from "../../model/IUser";
 
 export const apiLogin = async (username: string, password: string): Promise<object> => {
     let credentials = {
@@ -6,8 +7,7 @@ export const apiLogin = async (username: string, password: string): Promise<obje
         password
     }
     try {
-        const response = await fetch('http://3.81.82.21:2020/login', {
-            method: 'POST',
+        const response = await axiosConfig.post('auth.app', {
             credentials: 'include',
             body: JSON.stringify(credentials),
             headers: {
@@ -15,7 +15,7 @@ export const apiLogin = async (username: string, password: string): Promise<obje
             }
         })
         if (response.status === 200) {
-            const body = await response.json()
+            const body = await response.data
             console.log(body)
             return {
                 body,
@@ -40,3 +40,17 @@ export const apiLogin = async (username: string, password: string): Promise<obje
         }
     }
 }
+
+// export const authenticateUser = (body: IUser) => {
+//     return axiosConfig.post('auth.app', body);
+// }
+
+export const getList = () =>{
+   return axiosConfig.get("list.app");
+}
+
+export const addUser = (body: IUser) => {
+    return axiosConfig.post('add.app', body);
+}
+
+

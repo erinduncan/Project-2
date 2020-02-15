@@ -1180,3 +1180,14 @@ line 1:8: unexpected token: *
 2020-02-13 00:45:27 INFO  Version:21 - HV000001: Hibernate Validator 6.0.17.Final
 2020-02-13 00:45:27 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
 2020-02-13 00:45:28 INFO  Log:35 - All users found and returned.
+2020-02-14 00:36:33 INFO  Version:46 - HHH000412: Hibernate Core {5.4.10.Final}
+2020-02-14 00:36:33 INFO  Version:49 - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-02-14 00:36:35 INFO  Dialect:172 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2020-02-14 00:36:41 INFO  Version:21 - HV000001: Hibernate Validator 6.0.17.Final
+2020-02-14 00:36:42 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-02-14 00:36:57 INFO  Version:46 - HHH000412: Hibernate Core {5.4.10.Final}
+2020-02-14 00:36:57 INFO  Version:49 - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-02-14 00:36:58 INFO  Dialect:172 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2020-02-14 00:37:05 INFO  Version:21 - HV000001: Hibernate Validator 6.0.17.Final
+2020-02-14 00:37:05 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-02-14 00:37:06 INFO  Log:35 - All users found and returned.
