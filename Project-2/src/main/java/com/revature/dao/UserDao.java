@@ -73,11 +73,12 @@ public class UserDao {
 		try {
 			sesf.openSession().save(t);
 			Log.log.info("New user created.");
+			return t;
 		} catch (HibernateException e) {
 			Log.log.error(e);
 			System.out.println("ERROR! Could not save \n"+t.toString());
 		}
-		return t;
+		return null;
 	}
 
 //	@Override

@@ -1,12 +1,17 @@
 package com.revature.models;
 
+import java.util.Set;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.persistence.UniqueConstraint;
+
 
 @Entity
 @Table(name = "User")
@@ -24,8 +29,10 @@ public class User {
 	private String firstName;
 	@Column
 	private String lastName;
-//	@OneToMany(mappedBy = "userId", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-//	private Set<Post> posts;
+	@OneToMany(mappedBy = "userId", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	private Set<Post> posts;
+	@OneToMany(mappedBy="userId", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	private Set<Comments> comments;
 
 	public User() {
 		super();
