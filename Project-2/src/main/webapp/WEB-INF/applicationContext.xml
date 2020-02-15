@@ -37,11 +37,21 @@
 	 				<prop key="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</prop>
 	 				<prop key="hibernate.show_sql">true</prop>
 	 				<prop key="hibernate.format_sql">true</prop>
-	 				<prop key="hibernate.hbm2ddl.auto">none</prop>
+	 				<prop key="hibernate.hbm2ddl.auto">create</prop>
 	 				<prop key="hibernate.default_schema">testSchema</prop>
 	 			</props>
 	 		</property>
 	 		</bean>
+	 				<!-- 
+			hibernate.hbm2ddl.auto =
+				automatic hibernate mapping to data definition language
+					create:			drops all o your existing tables and creates new ones
+					validate:		checks that your schema is as expected
+					update:			will not delete or drop anything, it will only add to the schema
+					create-drop:	same as create, but it will drop all the tables in the event 
+										of a session failure.
+					none:			nothing... hibernate will not do anything to your schema
+		 -->
 	 		
 	 		<!-- 
 	 			this will manage all of your transactions.
