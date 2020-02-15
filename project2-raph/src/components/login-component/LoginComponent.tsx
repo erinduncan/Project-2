@@ -4,13 +4,13 @@ import { Link } from 'react-router-dom';
 import { updateCurrentUser } from '../../action-mappers/login-actions';
 
 interface ILoginState {
-    username: string
+    email: string
     password: string
     
 }
 
 interface ILoginProps {
-    updateCurrentUser: (u:string, p:string) => void
+    updateCurrentUser: (e:string, p:string) => void
     loginMessage: string
 }
 
@@ -19,7 +19,7 @@ export class LoginComponent extends React.Component<ILoginProps, ILoginState>{
     constructor(props: any) {
         super(props)
         this.state = {
-            username: '',
+            email: '',
             password: '',
         }
         //by putting event binding and data binding together, we achieve something called two way data binding
@@ -28,10 +28,10 @@ export class LoginComponent extends React.Component<ILoginProps, ILoginState>{
     
     //this is an example of event binding
     //we take an event created by a user, and use it to update data in our state
-    updateUsername = (event: any) => {
+    updateemail = (event: any) => {
         this.setState({
             ...this.state,
-            username: event.target.value
+            email: event.target.value
         })
 
     }
@@ -48,12 +48,12 @@ export class LoginComponent extends React.Component<ILoginProps, ILoginState>{
 
     submitLogin = async (event: SyntheticEvent) => {
         event.preventDefault()
-        updateCurrentUser(this.state.username, this.state.password)           
+        updateCurrentUser(this.state.email, this.state.password)           
     }
 
     render() {
         return (
-            <div>
+            <div className='loginDiv'>
                 <Form onSubmit={this.submitLogin}>
                     <FormGroup row>
                         <Label for="email" sm={2}>Email</Label>
@@ -63,8 +63,8 @@ export class LoginComponent extends React.Component<ILoginProps, ILoginState>{
                                 name="email"
                                 id="email"
                                 placeholder="put email here"
-                                value={this.state.username}
-                                onChange={this.updateUsername} />
+                                value={this.state.email}
+                                onChange={this.updateemail} />
                             {/* this is an example of data binding, 
                             we take data from the state and put it 
                             in our tsx */}
@@ -84,8 +84,8 @@ export class LoginComponent extends React.Component<ILoginProps, ILoginState>{
                     </FormGroup>
                     <Button color="primary">Login</Button>
                 </Form>
-                <p>{this.props.loginMessage}</p>
-                {/* <Link to='/pokemon'>No NavBar yet</Link> */}
+                <p>{this.props.loginMessage}</p><br/><br/>
+                <Link to='/register'>New to Spot</Link>
             </div>
         )
     }

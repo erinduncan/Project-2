@@ -7,6 +7,8 @@ interface IPostDisplayProps {
     weight: number
     name: string
     types: string[]
+
+    
 }
 
 export class PostDisplayComponent extends React.PureComponent<IPostDisplayProps>{

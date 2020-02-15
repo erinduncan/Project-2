@@ -6,7 +6,7 @@ import './App.css';
 import { store } from './Store';
 import LoginComponent from './components/login-component/LoginContainer';
 import PostComponent from './components/post-component/PostContainer';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 //this is the root of all the components that we will make
 //two rules to being a component
@@ -21,7 +21,7 @@ const App: React.FC = () => {
 
         {/* to use react router, there is one base tag all routes must be contained in
       that tag is a component called Router */}
-        <BrowserRouter>
+        <Router>
           {/* <NavbarComponent /> */}
           {/* With router we will always pass in three objects as props
         history, match, location */}
@@ -39,7 +39,7 @@ const App: React.FC = () => {
             {/* <Route path='/props' render={() => <PropComponent name={'Alec'} color={'grey'} />} /> */}
             <Route path='/' component={LoginComponent} />
           </Switch>
-        </BrowserRouter>
+        </Router>
       </Provider>
 
     </div>
