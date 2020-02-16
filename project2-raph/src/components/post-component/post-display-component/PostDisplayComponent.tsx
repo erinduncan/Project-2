@@ -2,11 +2,19 @@ import React from 'react';
 import {  Card, CardBody, CardTitle, CardSubtitle, CardText } from 'reactstrap';
 
 interface IPostDisplayProps {
-    id: number
-    height: number
-    weight: number
-    name: string
-    types: string[]
+    id:number;
+    postText: string
+    fullName: string
+    likeCount: number
+    currentUserlike: boolean
+    isPostOwner: boolean
+    like: () => any
+    unlike: () => any
+    delete: (id: string) => any
+    setTitle: (title: string) => any
+    getPostComments: (ownerUserId: string, postId: string) => any
+    commentList: any
+
 
     
 }
@@ -14,8 +22,7 @@ interface IPostDisplayProps {
 export class PostDisplayComponent extends React.PureComponent<IPostDisplayProps>{
 
     cardTextBuilder(){
-        return `This Post: ${this.props.name} has an amusing weight of ${this.props.weight}
-        it is also ${this.props.height} tall and has the type/s of ${this.props.types[0]}` + (this.props.types[1] ?  ' and ' + this.props.types[1] : '' )
+        return (this.props.postText)
     }
 
     render() {
@@ -24,9 +31,10 @@ export class PostDisplayComponent extends React.PureComponent<IPostDisplayProps>
         return (
             <Card>
                 <CardBody>
-                    <CardTitle>{this.props.id}</CardTitle>
-                    <CardSubtitle>{this.props.name}</CardSubtitle>
+                    <CardTitle>{this.props.setTitle(``)}</CardTitle>
+                    {/* <CardSubtitle>{this.props.name}</CardSubtitle> */}
                     <CardText>{this.cardTextBuilder()}</CardText>
+                    {/* <C */}
                 </CardBody>
             </Card>
         )

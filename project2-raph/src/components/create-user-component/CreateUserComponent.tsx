@@ -1,19 +1,21 @@
 import React, { useState, SyntheticEvent } from 'react';
 import { Form, FormGroup, Label, Col, Input, Button } from 'reactstrap';
+import IUser from '../../model/IUser';
 
-export const CreateUser:React.FC<any> = (props:any) =>{
+export const CreateUserComponent:React.FC<any> = (props:any) =>{
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
+    const [handle, setHandle] = useState('');
 
-    let submitLogin = async (event: SyntheticEvent) => {
-        event.preventDefault()
+    const submitUser = async (event: SyntheticEvent) => {
+        event.preventDefault();
     }
 
     return(
-        <div>
-            <Form onSubmit={submitLogin}>
+        <React.Fragment>
+            <Form>
                 <FormGroup row>
                     <Label for="email" sm={2}>Email</Label>
                     <Col sm={10}>
@@ -62,8 +64,20 @@ export const CreateUser:React.FC<any> = (props:any) =>{
                             onChange={val=>setLastName(val.target.value)} />
                     </Col>
                 </FormGroup>
-                <Input type='submit'>Submit</Input>
+                <FormGroup row>
+                    <Label for="handle" sm={2}>Handle</Label>
+                    <Col sm={10}>
+                        <Input required
+                            type="text"
+                            name="handle"
+                            id="handle"
+                            placeholder="put handle here"
+                            value={handle}
+                            onChange={val=>setHandle(val.target.value)} />
+                    </Col>
+                </FormGroup>
+                <Button color='primary' onClick={submitUser}>Submit</Button>
             </Form>
-        </div>
+        </React.Fragment>
     )
 }

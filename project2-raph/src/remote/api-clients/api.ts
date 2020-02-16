@@ -1,18 +1,15 @@
 import { axiosConfig } from "./axiosConfig";
 import IUser from "../../model/IUser";
 
+
 export const apiLogin = async (username: string, password: string): Promise<object> => {
     let credentials = {
         username,
         password
     }
     try {
-        const response = await axiosConfig.post('auth.app', {
-            credentials: 'include',
-            body: JSON.stringify(credentials),
-            headers: {
-                'Content-Type': 'application/json'
-            }
+        const response = await axiosConfig.post('', {
+            ...credentials
         })
         if (response.status === 200) {
             const body = await response.data
@@ -23,7 +20,7 @@ export const apiLogin = async (username: string, password: string): Promise<obje
             }
         } else if (response.status === 401) {
             return {
-                loginMessage: "Incorrect Username or Password",
+                loginMessage: "Incorrect username or Password",
                 body: null
             }
         } else {

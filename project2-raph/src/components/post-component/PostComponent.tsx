@@ -92,13 +92,13 @@ export class PostComponent extends React.Component<IPostProps, IPostState> {
     render() {
 
         const displayList: PostDisplayComponent[] = this.props.allPost.map<any>((Post: any) => {
-            return <PostDisplayComponent id={Post.id}
-                name={Post.name}
-                height={Post.height}
-                weight={Post.weight}
-                types={[Post.types[0].type.name, Post.types[1] && Post.types[1].type.name]}
-                key={Post.id}//don't use the position in the list
-            />
+            return //<PostDisplayComponent id={Post.id}
+                // name={Post.name}
+                // height={Post.height}
+                // weight={Post.weight}
+                // types={[Post.types[0].type.name, Post.types[1] && Post.types[1].type.name]}
+                // key={Post.id}//don't use the position in the list
+            ///>
         })
 
         if (this.props.user) {

@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import { IState } from "../../reducers";
-import { LoginComponent } from "./LoginComponent";
+import { Login } from "./LoginComponent";
 import { updateCurrentUser } from '../../action-mappers/login-actions'
 
 
@@ -20,4 +20,4 @@ const mapDispatchToProps = {
 }
 
 // this connect statemengt is building a new component that passes the redux info into the login component
-export default connect(mapStateToProps,mapDispatchToProps)(LoginComponent)
+export default connect(mapStateToProps,mapDispatchToProps)(Login)
