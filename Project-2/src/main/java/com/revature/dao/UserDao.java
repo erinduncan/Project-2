@@ -17,7 +17,6 @@ import com.revature.models.User;
 @Transactional
 public class UserDao {
 
-	@Autowired
 	private SessionFactory sesf;
 	
 	@Autowired
@@ -26,8 +25,6 @@ public class UserDao {
 		this.sesf = sesf;
 	}
 	
-
-//	@Override
 	public List<User> findAll() {
 		List<User> list;
 		try {
@@ -42,7 +39,6 @@ public class UserDao {
 		return null;
 	}
 
-//	@Override
 	public User findById(int id) {
 		User user;
 		try {
@@ -56,7 +52,6 @@ public class UserDao {
 		return null;
 	}
 
-//	@Override
 	public User update(User t) {
 		try {
 			sesf.getCurrentSession().update(t);
@@ -68,7 +63,6 @@ public class UserDao {
 		return null;
 	}
 
-//	@Override
 	public User insert(User t) {
 		try {
 			sesf.openSession().save(t);
@@ -81,7 +75,6 @@ public class UserDao {
 		return null;
 	}
 
-//	@Override
 	public User deleteByEmail(String email) {
 		try {
 			User t = findByEmail(email);
@@ -94,7 +87,6 @@ public class UserDao {
 		return null;
 	}
 
-//	@Override
 	public User findByEmail(String email) {
 		try {
 			@SuppressWarnings("deprecation")

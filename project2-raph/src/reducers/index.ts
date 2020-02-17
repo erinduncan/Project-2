@@ -14,12 +14,17 @@ export interface IPostState {
     allpost:any[]
 }
 
+export interface ICreateUserState{
+    
+}
 
 // it will containe subinterfaces that represent different parts of state
 export interface IState {
     userState : IUserState
     postState: IPostState
 }
+
+
 
 
 // we will take the individual reduces for each part of state

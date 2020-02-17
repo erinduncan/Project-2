@@ -21,16 +21,22 @@ public class User {
 	@Column
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int userId;
-	@Column
+	
+	@Column(unique = true)
 	private String email;
+	
 	@Column
 	private String password;
+	
 	@Column
 	private String firstName;
+	
 	@Column
 	private String lastName;
+	
 	@OneToMany(mappedBy = "userId", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	private Set<Post> posts;
+	
 	@OneToMany(mappedBy="userId", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	private Set<Comments> comments;
 
@@ -54,6 +60,18 @@ public class User {
 		this.password = password;
 		this.firstName = firstName;
 		this.lastName = lastName;
+	}
+
+	public User(int userId, String email, String password, String firstName, String lastName, Set<Post> posts,
+			Set<Comments> comments) {
+		super();
+		this.userId = userId;
+		this.email = email;
+		this.password = password;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.posts = posts;
+		this.comments = comments;
 	}
 
 	public int getUserId() {

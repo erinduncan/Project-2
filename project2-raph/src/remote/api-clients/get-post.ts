@@ -1,5 +1,3 @@
-
-
 export const getMultiplePost = async (limit:number, offset:number):Promise<object> => {
     let response = await fetch(`https://pokeapi.co/api/v2/pokemon/?limit=${limit}&offset=${offset}`)
     let body = await response.json()

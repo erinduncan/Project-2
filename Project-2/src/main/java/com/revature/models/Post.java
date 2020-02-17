@@ -1,5 +1,6 @@
 package com.revature.models;
 
+import java.sql.Blob;
 import java.sql.Date;
 import java.util.Set;
 
@@ -15,8 +16,6 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-import org.hibernate.annotations.Type;
-
 @Entity
 @Table(name = "Post")
 public class Post {
@@ -25,17 +24,26 @@ public class Post {
 	@Column(name = "postId")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int postId;
+	
 	@Column(name = "title")
 	private String title;
+	
 	@Column(name = "body", length = 1000)
 	private String body;
+	
 	@Column(name = "submitted")
 	private Date submitted;
+	
+	@Column(name = "image")
+	private Blob image;
+	
 	@Column(name = "liked")
 	private Boolean liked;
+	
 	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	@JoinColumn(name = "userId")
 	private User userId;
+	
 	@OneToMany(mappedBy = "postId", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	private Set<Comments> commentId;
 
@@ -44,22 +52,24 @@ public class Post {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Post(int postId, String title, String body, Date submitted, Boolean liked, User userId,
+	public Post(int postId, String title, String body, Date submitted, Blob image, Boolean liked, User userId,
 			Set<Comments> comments) {
 		super();
 		this.postId = postId;
 		this.title = title;
 		this.body = body;
 		this.submitted = submitted;
+		this.image = image;
 		this.liked = liked;
 		this.userId = userId;
 		this.commentId = comments;
 	}
-	public Post(String title, String body, Date submitted, Boolean liked, User userId ) {
+	public Post(String title, String body, Date submitted, Blob image, Boolean liked, User userId ) {
 		super();
 		this.title = title;
 		this.body = body;
 		this.submitted = submitted;
+		this.image = image;
 		this.liked = liked;
 		this.userId = userId;
 	}
@@ -119,12 +129,20 @@ public class Post {
 		this.userId = userId;
 	}
 
-	public Set<Comments> getComments() {
+	public Blob getImage() {
+		return image;
+	}
+
+	public void setImage(Blob image) {
+		this.image = image;
+	}
+
+	public Set<Comments> getCommentId() {
 		return commentId;
 	}
 
-	public void setComments(Set<Comments> comments) {
-		this.commentId = comments;
+	public void setCommentId(Set<Comments> commentId) {
+		this.commentId = commentId;
 	}
 	
 	

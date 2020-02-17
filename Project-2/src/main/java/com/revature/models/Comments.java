@@ -51,6 +51,41 @@ public class Comments {
 		this.userId = userId;
 	}
 
-	
+	public int getCommentId() {
+		return commentId;
+	}
 
+	public void setCommentId(int commentId) {
+		this.commentId = commentId;
+	}
+
+	public String getText() {
+		return text;
+	}
+
+	public void setText(String text) {
+		this.text = text;
+	}
+
+	public Post getPostId() {
+		return postId;
+	}
+
+	public void setPostId(Post postId) {
+		this.postId = postId;
+	}
+
+	public User getUserId() {
+		return userId;
+	}
+
+	public void setUserId(User userId) {
+		this.userId = userId;
+	}
+
+	@Override
+	public String toString() {
+		return "Comments [commentId=" + commentId + ", text=" + text + ", postId=" + postId + ", userId=" + userId
+				+ "]";
+	}
 }

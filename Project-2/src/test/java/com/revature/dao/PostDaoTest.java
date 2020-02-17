@@ -57,7 +57,7 @@ public class PostDaoTest {
 						+ " I'm a person who wishes to live a very quiet life. I take care not to trouble myself with any enemies, "
 						+ "like winning and losing, that would cause me to lose sleep at night. That is how I deal with society, and I "
 						+ "know that is what brings me happiness. Although, if I were to fight I wouldn't lose to anyone."
-				, new Date(System.currentTimeMillis()), true, ud.findById(2),null));
+				, new Date(System.currentTimeMillis()), null, true, ud.findById(2),null));
 		System.out.println(retp);
 		assertTrue(retp != null);
 		
@@ -76,7 +76,7 @@ public class PostDaoTest {
 				+ " I'm a person who wishes to live a very quiet life. I take care not to trouble myself with any enemies, "
 				+ "like winning and losing, that would cause me to lose sleep at night. That is how I deal with society, and I "
 				+ "know that is what brings me happiness. Although, if I were to fight I wouldn't lose to anyone."
-				, new Date(System.currentTimeMillis()) , false, ud.findById(1));
+				, new Date(System.currentTimeMillis()) , null, false, ud.findById(1));
 		Post retP = pd.insert(post);
 		assertTrue(retP != null);
 	}
