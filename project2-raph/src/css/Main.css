@@ -10,34 +10,35 @@ body {
 }
 
 .loginForm {
-  background-color: white;
+  background-color: cornsilk;
   padding: 40px;
   margin-top: 20px;
 }
 
 .registerForm {
-  background-color: white;
+  background-color: cornsilk;
   padding: 40px;
   margin-top: 40px;
 }
 
 .headerImage {
-    width: 100%;
-    height: auto;
-    background: url("../assets/spot.png");
-    background-size: 300px;
-    background-repeat: no-repeat;
-  }
+  width: 100%;
+  height: auto;
+  background: url("../assets/spot.png");
+  background-size: 300px;
+  background-repeat: no-repeat;
+}
 
 .mainButtons li {
   display: inline-block;
   margin: 20px;
   margin-left: 50px;
-  margin-top: 100px;
+  margin-top: 45px;
+  padding-bottom: 35px;
 }
 
 .mainButtons {
-  background-color: white;
+  background-color: cornsilk;
   list-style: none;
   background-size: cover;
 }
@@ -46,23 +47,22 @@ body {
   margin-left: 65%;
 }
 
-.mainLink {
-  color: black;
-}
-
-
-
-
 section {
+  
   /* padding: 40px 120px; */
   position: fixed;
   bottom: 0px;
-right: 0px;
+  right: 0px;
   width: 50%;
+  color: cornsilk;
 }
 section#about .content {
   margin-left: 220px;
 }
 section p {
-    font-size: small;
+  font-size: small;
+}
+
+.btn.btn-dark {
+    color: cornsilk;
 }

@@ -12,7 +12,7 @@ export const MainPageComponent: React.FC<any> = (props: any) => {
             <ul className="linkElements">
               <li>
                 <NavLink
-                  className="mainLink"
+                  className="btn btn-dark"
                   to={{
                     pathname: "/login"
                   }}
@@ -23,7 +23,7 @@ export const MainPageComponent: React.FC<any> = (props: any) => {
 
               <li>
                 <NavLink
-                  className="mainLink"
+                  className="btn btn-dark"
                   to={{
                     pathname: "/register"
                   }}
@@ -35,9 +35,11 @@ export const MainPageComponent: React.FC<any> = (props: any) => {
           </nav>
           </div>
       </header>
+      
       <footer>
       <section id="about">
         <div className="content">
+            
           <h4>About us</h4>
           <p>
             We are a community of pet-lovers providing an environment for the
@@ -49,6 +51,7 @@ export const MainPageComponent: React.FC<any> = (props: any) => {
       </section>
       </footer>
     </div>
+    
   );
 };
 
