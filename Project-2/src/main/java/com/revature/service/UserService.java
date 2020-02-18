@@ -34,7 +34,7 @@ public class UserService {
 		
 	}
 	
-	public void validateUser() {
+	public void authenticate() {
 		
 	}
 	

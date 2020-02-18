@@ -28,12 +28,19 @@ public class PostDao {
 	}
 
 	public List<Post> findAll() {
-		List<Post> list = sesf.getCurrentSession().createQuery("from Post", Post.class).list();
-		Log.log.info("All posts found and returned.");
-		return list;
+		try {
+			List<Post> list = sesf.getCurrentSession().createQuery("from Post", Post.class).list();
+			Log.log.info("All posts found and returned.");
+			return list;
+		} catch (HibernateException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
 	}
 
 	public Post findById(int postId) {
+		
 		try {
 			Post post = sesf.getCurrentSession().get(Post.class, postId);
 			Log.log.info("Post found by ID number.");
@@ -51,6 +58,7 @@ public class PostDao {
 			sesf.getCurrentSession().update(t);
 			return t;
 		} catch (HibernateException e) {
+			e.printStackTrace();
 			Log.log.error(e);
 			System.out.println("ERROR! Could not update \n"+t.toString());
 		}
@@ -84,7 +92,14 @@ public class PostDao {
 
 
 	public List<Post> findByUserId(String userid) {
-		// TODO Auto-generated method stub
+		try {
+			List<Post> list = sesf.getCurrentSession().createQuery("from Post where email="+userid, Post.class).list();
+			Log.log.info("All posts found and returned.");
+			return list;
+		} catch (HibernateException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		return null;
 	}
 

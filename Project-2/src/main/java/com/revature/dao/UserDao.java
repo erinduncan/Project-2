@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
+import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -46,7 +47,8 @@ public class UserDao {
 	public User findById(int id) {
 		User user;
 		try {
-			user = sesf.getCurrentSession().get(User.class, id);
+			Session sess = sesf.getCurrentSession();
+			user = sess.get(User.class, id);
 			Log.log.info("User found by ID number.");
 			return user;
 		} catch (HibernateException e) {
