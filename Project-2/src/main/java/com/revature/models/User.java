@@ -1,5 +1,6 @@
 package com.revature.models;
 
+import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -21,24 +22,18 @@ public class User {
 	@Column
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int userId;
-	
 	@Column(unique = true)
 	private String email;
-	
 	@Column
 	private String password;
-	
 	@Column
 	private String firstName;
-	
 	@Column
 	private String lastName;
-	
-	@OneToMany(mappedBy = "userId", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-	private Set<Post> posts;
-	
-	@OneToMany(mappedBy="userId", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-	private Set<Comments> comments;
+	@OneToMany(mappedBy = "user",fetch = FetchType.EAGER, orphanRemoval = true)
+	private Set<Post> posts = new HashSet<>();
+	@OneToMany(mappedBy = "user", fetch = FetchType.EAGER, orphanRemoval = true)
+	private Set<Comment> comments = new HashSet<>();
 
 	public User() {
 		super();
@@ -60,18 +55,6 @@ public class User {
 		this.password = password;
 		this.firstName = firstName;
 		this.lastName = lastName;
-	}
-
-	public User(int userId, String email, String password, String firstName, String lastName, Set<Post> posts,
-			Set<Comments> comments) {
-		super();
-		this.userId = userId;
-		this.email = email;
-		this.password = password;
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.posts = posts;
-		this.comments = comments;
 	}
 
 	public int getUserId() {
@@ -112,6 +95,28 @@ public class User {
 
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
+	}
+	
+	
+
+	public void addPost(Post p) {
+		posts.add(p);
+		p.setUser(this);
+	}
+
+	public void removePost(Post p) {
+		posts.remove(p);
+		p.setUser(null);
+	}
+
+	public void addComment(Comment comment) {
+		comments.add(comment);
+		comment.setUser(this);
+	}
+
+	public void removeComment(Comment comment) {
+		comments.remove(comment);
+		comment.setUser(null);
 	}
 
 	@Override

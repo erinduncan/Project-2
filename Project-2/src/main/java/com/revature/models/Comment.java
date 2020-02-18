@@ -12,43 +12,51 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "Comments")
-public class Comments {
+@Table(name = "Comment")
+public class Comment {
 
 	@Id
 	@Column
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int commentId;
 	
-	@Column
+	@Column(nullable = false)
 	private String text;
 	
-	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-	@JoinColumn(name = "postId")
-	private Post postId;
+	@ManyToOne(fetch = FetchType.EAGER)
+	@JoinColumn
+	private Post post;
 
-	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-	@JoinColumn(name = "userId")
-	private User userId;
+	@ManyToOne(fetch = FetchType.EAGER)
+	@JoinColumn
+	private User user;
 
-	public Comments() {
+	public Comment() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Comments(int commentId, String text, Post postId, User userId) {
+	public Comment(int commentId, String text) {
 		super();
 		this.commentId = commentId;
 		this.text = text;
-		this.postId = postId;
-		this.userId = userId;
 	}
 	
-	public Comments(String text, Post postId, User userId) {
+	public Comment(String text, Post post, User user) {
 		super();
 		this.text = text;
-		this.postId = postId;
-		this.userId = userId;
+		this.post = post;
+		this.user = user;
+	}
+
+	public Comment(String text) {
+		super();
+		this.text = text;
+	}
+
+	@Override
+	public String toString() {
+		return "Comment [commentId=" + commentId + ", text=" + text + ", post=" + post + ", user=" + user + "]";
 	}
 
 	public int getCommentId() {
@@ -67,25 +75,21 @@ public class Comments {
 		this.text = text;
 	}
 
-	public Post getPostId() {
-		return postId;
+	public Post getPost() {
+		return post;
 	}
 
-	public void setPostId(Post postId) {
-		this.postId = postId;
+	public void setPost(Post post) {
+		this.post = post;
 	}
 
-	public User getUserId() {
-		return userId;
+	public User getUser() {
+		return user;
 	}
 
-	public void setUserId(User userId) {
-		this.userId = userId;
+	public void setUser(User user) {
+		this.user = user;
 	}
+	
 
-	@Override
-	public String toString() {
-		return "Comments [commentId=" + commentId + ", text=" + text + ", postId=" + postId + ", userId=" + userId
-				+ "]";
-	}
 }

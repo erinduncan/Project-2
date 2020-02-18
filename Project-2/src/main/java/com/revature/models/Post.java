@@ -1,7 +1,7 @@
 package com.revature.models;
 
-import java.sql.Blob;
 import java.sql.Date;
+import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -16,69 +16,72 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.validator.constraints.br.TituloEleitoral;
+
 @Entity
 @Table(name = "Post")
 public class Post {
 
 	@Id
-	@Column(name = "postId")
+	@Column
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int postId;
-	
-	@Column(name = "title")
+	@Column
 	private String title;
-	
-	@Column(name = "body", length = 1000)
+	@Column(length = 1000)
 	private String body;
-	
-	@Column(name = "submitted")
+	@Column
+	@CreationTimestamp
 	private Date submitted;
-	
-	@Column(name = "image")
-	private Blob image;
-	
-	@Column(name = "liked")
+	@Column
 	private Boolean liked;
-	
-	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-	@JoinColumn(name = "userId")
-	private User userId;
-	
-	@OneToMany(mappedBy = "postId", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-	private Set<Comments> commentId;
+	@ManyToOne(fetch = FetchType.EAGER)
+	@JoinColumn(nullable = false )
+	private User user;
+	@OneToMany(mappedBy = "post", fetch = FetchType.EAGER, orphanRemoval = true)
+	private Set<Comment> comments = new HashSet<>();
 
 	public Post() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+	
+	
 
-	public Post(int postId, String title, String body, Date submitted, Blob image, Boolean liked, User userId,
-			Set<Comments> comments) {
+	public Post(int postId, String title, String body, Date submitted, Boolean liked ) {
 		super();
 		this.postId = postId;
 		this.title = title;
 		this.body = body;
 		this.submitted = submitted;
-		this.image = image;
 		this.liked = liked;
-		this.userId = userId;
-		this.commentId = comments;
 	}
-	public Post(String title, String body, Date submitted, Blob image, Boolean liked, User userId ) {
+
+	public Post(String title, String body, Boolean liked) {
 		super();
 		this.title = title;
 		this.body = body;
-		this.submitted = submitted;
-		this.image = image;
 		this.liked = liked;
-		this.userId = userId;
 	}
 
 	
+	
+
+	public Post(int postId, String title, String body, Boolean liked) {
+		super();
+		this.postId = postId;
+		this.title = title;
+		this.body = body;
+		this.liked = liked;
+	}
+
+
+
 	@Override
 	public String toString() {
-		return "Post [postId=" + postId + ", title=" + title + ", body=" + body + ", timestamp=" + submitted + ", like="
-				+ liked + ", userId=" + userId + ", comments=" + commentId + "]";
+		return "Post [postId=" + postId + ", title=" + title + ", body=" + body + ", submitted=" + submitted
+				+ ", liked=" + liked + ", user=" + user + "]";
 	}
 
 	public int getPostId() {
@@ -121,28 +124,22 @@ public class Post {
 		this.liked = liked;
 	}
 
-	public User getUserId() {
-		return userId;
+	public User getUser() {
+		return user;
 	}
 
-	public void setUserId(User userId) {
-		this.userId = userId;
+	public void setUser(User user) {
+		this.user = user;
 	}
 
-	public Blob getImage() {
-		return image;
+	public void addComment(Comment comm) {
+		comments.add(comm);
+		comm.setPost(this);
 	}
 
-	public void setImage(Blob image) {
-		this.image = image;
-	}
-
-	public Set<Comments> getCommentId() {
-		return commentId;
-	}
-
-	public void setCommentId(Set<Comments> commentId) {
-		this.commentId = commentId;
+	public void removeComment(Comment comm) {
+		comments.remove(comm);
+		comm.setPost(null);
 	}
 	
 	
