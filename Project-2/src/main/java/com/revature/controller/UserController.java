@@ -29,14 +29,14 @@ public class UserController {
 	public ResponseEntity<User> findUserById(@PathVariable("id") int id) {
 		return new ResponseEntity<>(us.getById(id), HttpStatus.ACCEPTED);
 	}
-//	@RequestMapping(method = RequestMethod.PUT, value = "/updateuser.app", produces = "application/json")
-//	public ResponseEntity<User> updateUser(@RequestBody User user) {
-//		return new ResponseEntity<>(us.updateUser(user), HttpStatus.ACCEPTED);
-//	}
-//	@RequestMapping(method = RequestMethod.POST, value = "/newuser.app", produces = "application/json")
-//	public ResponseEntity<User> insertNewUser(@RequestBody User user) {
-//		return new ResponseEntity<>(us.insertUser(user), HttpStatus.ACCEPTED);
-//	}
+	@RequestMapping(method = RequestMethod.PUT, value = "/updateuser.app", produces = "application/json")
+	public ResponseEntity<User> updateUser(@RequestBody User user) {
+		return new ResponseEntity<>(us.updateUser(user), HttpStatus.ACCEPTED);
+	}
+	@RequestMapping(method = RequestMethod.POST, value = "/newuser.app", produces = "application/json")
+	public ResponseEntity<User> insertNewUser(@RequestBody User user) {
+		return new ResponseEntity<>(us.insertUser(user), HttpStatus.ACCEPTED);
+	}
 	@RequestMapping(method = RequestMethod.DELETE, value = "/deleteuser.app", produces = "application/json")
 	public ResponseEntity<User> deleteUser(@RequestBody User user) {
 //		us.delete(user);

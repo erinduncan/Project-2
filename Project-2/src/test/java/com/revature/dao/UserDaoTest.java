@@ -59,7 +59,7 @@ public class UserDaoTest {
 
 	@Test
 	public void testDeleteByEmail() {
-		User delU = ud.deleteByEmail("test1@gmail.test");
+		User delU = ud.deleteByEmail("testupdated@email.test");
 		System.out.println(delU);
 		assertTrue(delU != null);
 	}

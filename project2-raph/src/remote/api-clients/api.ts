@@ -11,7 +11,7 @@ export const apiLogin = async (username: string, password: string): Promise<obje
         const response = await axiosConfig.post('', {
             ...credentials
         })
-        if (response.status === 200) {
+        if (response.status === 202) {
             const body = await response.data
             console.log(body)
             return {

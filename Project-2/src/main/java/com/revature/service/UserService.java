@@ -31,21 +31,21 @@ public class UserService {
 		return ud.findById(id);
 	}
 	
-	public void insertUser(User u) {
-		ud.insert(u);
+	public User insertUser(User u) {
+		return ud.insert(u);
 		
 	}
 	
-	public void updateUser(User u) {
-		ud.update(u);
+	public User updateUser(User u) {
+		return ud.update(u);
 	}
 	
 	public boolean validateUser(String email, String password, User u) {
 		return true;
 	}
 	
-	public void deleteUser() {
-		
+	public User deleteUserByEmail(String email) {
+		return ud.deleteByEmail(email);
 	}
 	
 
