@@ -17,20 +17,29 @@ public class UserService {
 		this.ud = ud;
 	}
 	
-	public List<User> getAll(){
+	public List<User> getByAll(){
 		return ud.findAll();
 	}
 	
-	public User getEmail(String email) {
+	public User getByEmail(String email) {
 		return ud.findByEmail(email);
 	}
 	
-	public User getId(int id) {
+	public User getById(int id) {
 		return ud.findById(id);
 	}
 	
-	public void addUser(User u) {
+	public void User(User u) {
 		ud.insert(u);
+		
+	}
+	
+	public void validateUser() {
+		
+	}
+	
+	public void deleteUser() {
+		
 	}
 	
 
