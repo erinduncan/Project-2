@@ -1,4 +1,4 @@
-import { apiLogin } from "../remote/garden-book/garden-book-clients"
+import { apiLogin } from "../remote/api-clients/api"
 
 
 export const loginTypes = {
