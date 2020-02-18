@@ -3,10 +3,12 @@ package com.revature.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.revature.dao.UserDao;
 import com.revature.models.User;
 
+@Service
 public class UserService {
 	
 	
@@ -29,13 +31,17 @@ public class UserService {
 		return ud.findById(id);
 	}
 	
-	public void User(User u) {
+	public void insertUser(User u) {
 		ud.insert(u);
 		
 	}
 	
-	public void validateUser() {
-		
+	public void updateUser(User u) {
+		ud.update(u);
+	}
+	
+	public boolean validateUser(String email, String password, User u) {
+		return true;
 	}
 	
 	public void deleteUser() {
