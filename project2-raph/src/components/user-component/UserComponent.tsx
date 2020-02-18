@@ -1,6 +1,6 @@
 import React from 'react';
 import {UserDisplayComponent} from './UserDisplayComponent'
-import IUser from '../../model/IUser';
+// import IUser from '../../model/IUser';
 
 
 export const UserComponent:React.FC<any> = (props:any) =>{

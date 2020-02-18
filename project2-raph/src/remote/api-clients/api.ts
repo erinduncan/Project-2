@@ -11,7 +11,7 @@ export const apiLogin = async (username: string, password: string): Promise<obje
         const response = await axiosConfig.post('', {
             ...credentials
         })
-        if (response.status === 202) {
+        if (response.status === 200) {
             const body = await response.data
             console.log(body)
             return {
@@ -49,5 +49,3 @@ export const getList = () =>{
 export const addUser = (body: IUser) => {
     return axiosConfig.post('add.app', body);
 }
-
-

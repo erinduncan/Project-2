@@ -1,6 +1,6 @@
 import React, { useState, SyntheticEvent } from 'react';
-import { Form, FormGroup, Label, Col, Input, Button } from 'reactstrap';
-import IUser from '../../model/IUser';
+import { Form, FormGroup, Label, Col, Input, Button, Container } from 'reactstrap';
+// import IUser from '../../model/IUser';
 
 export const CreateUserComponent:React.FC<any> = (props:any) =>{
     const [email, setEmail] = useState('');
@@ -15,6 +15,8 @@ export const CreateUserComponent:React.FC<any> = (props:any) =>{
 
     return(
         <React.Fragment>
+            <Container className="registerForm">
+            <h2>Create an Account</h2>
             <Form>
                 <FormGroup row>
                     <Label for="email" sm={2}>Email</Label>
@@ -71,13 +73,14 @@ export const CreateUserComponent:React.FC<any> = (props:any) =>{
                             type="text"
                             name="handle"
                             id="handle"
-                            placeholder="put handle here"
+                            placeholder="This will be your display name on the site."
                             value={handle}
                             onChange={val=>setHandle(val.target.value)} />
                     </Col>
                 </FormGroup>
                 <Button color='primary' onClick={submitUser}>Submit</Button>
             </Form>
+            </Container>
         </React.Fragment>
     )
 }

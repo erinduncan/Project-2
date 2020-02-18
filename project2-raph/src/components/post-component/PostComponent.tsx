@@ -1,38 +1,3 @@
-// import React from 'react';
-// import { Card, CardHeader } from 'reactstrap';
-
-// interface IPostState{
-//     text: string
-//     openCopyLink: boolean
-//     openPostWrite: boolean 
-//     openCommentGroup?: () => void
-// }
-
-// interface IPostProps{    
-//   post: any
-//   fullName: string
-//   likeCount: number
-//   currentUserlike: boolean
-//   isPostOwner: boolean
-//   like: () => any
-//   unlike: () => any
-//   delete: (id: string) => any
-//   setTitle: (title: string) => any
-//   getPostComments: (ownerUserId: string, postId: string) => any
-//   commentList: any
-// }
-
-// export class PostComponent extends React.Component<IPostState,IPostProps>{
-//     // constructor(props:any){
-//     //     super(props)
-
-//     //     }
-//     // }
-
-//     render(){
-//         const displayList: PostDisplayComponent[] = this.props.
-//     }
-// }
 import React from 'react';
 import { PostDisplayComponent } from './post-display-component/PostDisplayComponent';
 import { CardColumns, Pagination, PaginationItem, PaginationLink } from 'reactstrap';
