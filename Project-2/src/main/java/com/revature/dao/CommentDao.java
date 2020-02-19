@@ -33,7 +33,8 @@ public class CommentDao {
 	public List<Comment> findAll() {
 		List<Comment> list;
 		try {
-			list = sesf.getCurrentSession().createQuery("from Comment", Comment.class).list();
+			list = sesf.getCurrentSession().createQuery("from Comment where post_postid=" 
+													+p.getPost().getPostId(), Comment.class).list();
 			Log.log.info("All Comments found and returned.");
 			return list;
 		} catch (Exception e) {
@@ -101,19 +102,6 @@ public class CommentDao {
 		return null;
 	}
 	
-//No! - for now
-//	public ArrayList findByEmail(String email) {
-//		try {
-//			@SuppressWarnings("deprecation")
-//			Criteria criteria = sesf.getCurrentSession().createCriteria(Comment.class);
-//			criteria.add(Restrictions.like("email", email));
-//			return (ArrayList) criteria.list();
-//		} catch (HibernateException e) {
-//			Log.log.error(e);
-//			e.printStackTrace();
-//			System.out.println("ERROR! Could not findbyemail "+email);
-//		}
-//		return null;
-//	}
+
 	
 }

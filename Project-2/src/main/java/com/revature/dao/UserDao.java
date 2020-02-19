@@ -2,6 +2,9 @@ package com.revature.dao;
 
 import java.util.List;
 
+import com.revature.driver.Log;
+import com.revature.models.User;
+
 import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
@@ -10,9 +13,6 @@ import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
-
-import com.revature.driver.Log;
-import com.revature.models.User;
 
 @Repository
 @Transactional
@@ -99,6 +99,17 @@ public class UserDao {
 		} catch (HibernateException e) {
 			Log.log.error(e);
 			System.out.println("ERROR! Could not findbyemail "+email);
+		}
+		return null;
+	}
+	
+	public User delete(User p) {
+		try {
+			sesf.getCurrentSession().delete(p);
+			return p;
+		} catch (HibernateException e) {
+			Log.log.error(e);
+			System.out.println("ERROR! Could not Delete, id: "+p.getUserId()+" not found.");
 		}
 		return null;
 	}

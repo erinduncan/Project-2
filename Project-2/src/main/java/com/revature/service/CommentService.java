@@ -8,8 +8,21 @@ import com.revature.models.Comment;
 import org.springframework.beans.factory.annotation.Autowired;
 
 public class CommentService {
-
-    private CommentDao cd;
+	
+	@Autowired
+	private CommentDao cd;
+	
+	public List<Comment> getAll(Comment p) {
+		return cd.findAll();
+	}
+	
+	public Comment update(Comment p) {
+		return cd.update(p);
+	}
+	
+	public Comment insert(Comment p) {
+		return cd.insert(p);
+	}
 
 	@Autowired
 	public void setCd(CommentDao cd) {

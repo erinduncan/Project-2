@@ -86,6 +86,7 @@ public class PostDaoTest {
 		
 	}
 
+<<<<<<< HEAD
 	@Test
 	@Transactional
 	@Rollback(value = true)
@@ -94,6 +95,14 @@ public class PostDaoTest {
 		System.out.println(p);
 		assertTrue(p != null);
 	}
+=======
+//	@Test
+//	public void testDeleteById() {
+//		Post p = pd.deleteById(1);
+//		System.out.println(p);
+//		assertTrue(p != null);
+//	}
+>>>>>>> 5d984c68eac9d5d0e9a07dca4c3fb7038d016c20
 
 	
 

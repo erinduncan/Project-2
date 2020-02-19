@@ -35,6 +35,7 @@ public class CommentDaoTest {
 		assertTrue(cd != null);
 	}
 
+<<<<<<< HEAD
 	@Test
 	@Transactional
 	@Rollback(value = true)
@@ -45,6 +46,16 @@ public class CommentDaoTest {
 		});
 		assertTrue(list != null);
 	}
+=======
+//	@Test
+//	public void testFindAll() {
+//		ArrayList<Comment> list = (ArrayList<Comment>) cd.findAll();
+//		list.forEach((comment) -> {
+//			System.out.println(comment);
+//		});
+//		assertTrue(list != null);
+//	}
+>>>>>>> 5d984c68eac9d5d0e9a07dca4c3fb7038d016c20
 
 	@Test
 	@Transactional
