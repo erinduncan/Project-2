@@ -21,7 +21,7 @@ export const Login:React.FC<any> = (props:ILoginProps) => {
 
     return (
         <>
-        <Container className="loginForm">
+        <div className="loginDiv">
         <h2>Login</h2>
                 <Form className="loginForm">
                     <FormGroup row>
@@ -54,8 +54,9 @@ export const Login:React.FC<any> = (props:ILoginProps) => {
                     <Button id="submitButton" color='primary' onClick={submitLogin}>Login</Button>
                 </Form>
                 <p>{props.loginMessage}</p><br></br>
-                <Link to='/register'>No Account?</Link>
-                </Container>
+                <ul className="mainPageButtons">
+              <li><Link to='/register'>No Account?</Link></li><li><Link to='/email'>Forgot Password</Link></li></ul>
+                </div>
             </>
     )
     

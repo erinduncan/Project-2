@@ -15,6 +15,7 @@ export const CreateUserComponent:React.FC<any> = (props:any) =>{
 
     return(
         <React.Fragment>
+            <div className = "registerDiv">
             <Container className="registerForm">
             <h2>Create an Account</h2>
             <Form>
@@ -81,6 +82,7 @@ export const CreateUserComponent:React.FC<any> = (props:any) =>{
                 <Button color='primary' onClick={submitUser}>Submit</Button>
             </Form>
             </Container>
+            </div>
         </React.Fragment>
     )
 }
