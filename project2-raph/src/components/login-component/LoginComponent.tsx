@@ -1,6 +1,6 @@
 import React, { SyntheticEvent, useState } from 'react';
 import '../../css/Main.css';
-import { Form, Label, Col, Input, FormGroup, Button, Container } from 'reactstrap';
+import { Form, Label, Col, Input, FormGroup, Button } from 'reactstrap';
 import { Link } from 'react-router-dom';
 // import { updateCurrentUser } from '../../action-mappers/login-actions';
 
@@ -51,10 +51,10 @@ export const Login:React.FC<any> = (props:ILoginProps) => {
                                 onChange={val=>setpassword(val.target.value)}/>
                         </Col>
                     </FormGroup>
-                    <Button id="submitButton" color='primary' onClick={submitLogin}>Login</Button>
+                    <Button outline id="submitButton" color='secondary' onClick={submitLogin}>Login</Button>
                 </Form>
                 <p>{props.loginMessage}</p><br></br>
-                <ul className="mainPageButtons">
+                <ul className="loginLinks">
               <li><Link to='/register'>No Account?</Link></li><li><Link to='/email'>Forgot Password</Link></li></ul>
                 </div>
             </>

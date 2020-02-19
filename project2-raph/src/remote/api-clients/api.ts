@@ -1,6 +1,6 @@
 import { axiosConfig } from "./axiosConfig";
 import IUser from "../../model/IUser";
-
+import { history } from '../../utility/history';
 
 export const apiLogin = async (username: string, password: string): Promise<object> => {
     let credentials = {
@@ -14,9 +14,10 @@ export const apiLogin = async (username: string, password: string): Promise<obje
         if (response.status === 200) {
             const body = await response.data
             console.log(body)
+            history.push('/login')
             return {
                 body,
-                loginMessage: 'successful login'
+                loginMessage: 'Successful login',
             }
         } else if (response.status === 401) {
             return {
