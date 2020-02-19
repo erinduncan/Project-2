@@ -75,12 +75,12 @@ public class PostDaoTest {
 		
 	}
 
-	@Test
-	public void testDeleteById() {
-		Post p = pd.deleteById(1);
-		System.out.println(p);
-		assertTrue(p != null);
-	}
+//	@Test
+//	public void testDeleteById() {
+//		Post p = pd.deleteById(1);
+//		System.out.println(p);
+//		assertTrue(p != null);
+//	}
 
 	@Test
 	public void testFindByName() {

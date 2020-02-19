@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.revature.models.User;
 import com.revature.service.UserService;
+
 @Controller
 @CrossOrigin(origins = "http://localhost:3000")
 public class UserController {
@@ -39,7 +40,7 @@ public class UserController {
 	}
 	@RequestMapping(method = RequestMethod.DELETE, value = "/deleteuser.app", produces = "application/json")
 	public ResponseEntity<User> deleteUser(@RequestBody User user) {
-//		us.delete(user);
+		us.delete(user);
 		return new ResponseEntity<>(HttpStatus.ACCEPTED);
 	}
 	@RequestMapping(method = RequestMethod.GET, value = "/{email}.app", produces = "application/json")

@@ -30,10 +30,11 @@ public class CommentDao {
 	
 
 //	@Override
-	public List<Comment> findAll() {
+	public List<Comment> findAll(Comment p) {
 		List<Comment> list;
 		try {
-			list = sesf.getCurrentSession().createQuery("from Comment", Comment.class).list();
+			list = sesf.getCurrentSession().createQuery("from Comment where post_postid=" 
+													+p.getPost().getPostId(), Comment.class).list();
 			Log.log.info("All Comments found and returned.");
 			return list;
 		} catch (Exception e) {

@@ -30,8 +30,8 @@ public class PostService {
 		return pd.insert(p);
 	}
 	
-	public Post deleteById(int postId) {
-		return pd.deleteById(postId);
+	public Post delete(Post p) {
+		return pd.delete(p);
 	}
 
 

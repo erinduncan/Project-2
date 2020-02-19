@@ -47,6 +47,10 @@ public class UserService {
 	public User deleteUserByEmail(String email) {
 		return ud.deleteByEmail(email);
 	}
+
+	public User delete(User user) {
+		return ud.delete(user);
+	}
 	
 
 }

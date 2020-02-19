@@ -33,14 +33,14 @@ public class CommentDaoTest {
 		assertTrue(cd != null);
 	}
 
-	@Test
-	public void testFindAll() {
-		ArrayList<Comment> list = (ArrayList<Comment>) cd.findAll();
-		list.forEach((comment) -> {
-			System.out.println(comment);
-		});
-		assertTrue(list != null);
-	}
+//	@Test
+//	public void testFindAll() {
+//		ArrayList<Comment> list = (ArrayList<Comment>) cd.findAll();
+//		list.forEach((comment) -> {
+//			System.out.println(comment);
+//		});
+//		assertTrue(list != null);
+//	}
 
 	@Test
 	public void testFindById() {

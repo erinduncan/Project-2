@@ -37,7 +37,7 @@ public class PostController {
 	}
 	@RequestMapping(method = RequestMethod.DELETE, value = "/deletepost.app", produces = "application/json")
 	public ResponseEntity<Post> deletePost(@RequestBody Post p) {
-//		us.delete(user);
+		us.delete(p);
 		return new ResponseEntity<>(HttpStatus.ACCEPTED);
 	}
 	

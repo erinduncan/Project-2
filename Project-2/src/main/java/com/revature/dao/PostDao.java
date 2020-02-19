@@ -78,14 +78,13 @@ public class PostDao {
 	}
 
 
-	public Post deleteById(int id) {
+	public Post delete(Post p) {
 		try {
-			Post p = sesf.getCurrentSession().get(Post.class, id);
 			sesf.getCurrentSession().delete(p);
 			return p;
 		} catch (HibernateException e) {
 			Log.log.error(e);
-			System.out.println("ERROR! Could not Delete, id: "+id+" not found.");
+			System.out.println("ERROR! Could not Delete, id: "+p.getPostId()+" not found.");
 		}
 		return null;
 	}
