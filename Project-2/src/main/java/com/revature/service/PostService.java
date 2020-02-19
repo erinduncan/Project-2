@@ -26,11 +26,11 @@ public class PostService {
 		return pd.update(p);
 	}
 	
-	public Post insert(Post p) {
+	public Post addPost(Post p) {
 		return pd.insert(p);
 	}
 	
-	public Post deleteById(int postId) {
+	public Post deletePost(int postId) {
 		return pd.deleteById(postId);
 	}
 

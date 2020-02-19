@@ -33,7 +33,7 @@ public class PostController {
 	}
 	@RequestMapping(method = RequestMethod.POST, value = "/newpost.app", produces = "application/json")
 	public ResponseEntity<Post> insertNewPost(@RequestBody Post p) {
-		return new ResponseEntity<>(us.insert(p), HttpStatus.ACCEPTED);
+		return new ResponseEntity<>(us.addPost(p), HttpStatus.ACCEPTED);
 	}
 	@RequestMapping(method = RequestMethod.DELETE, value = "/deletepost.app", produces = "application/json")
 	public ResponseEntity<Post> deletePost(@RequestBody Post p) {
