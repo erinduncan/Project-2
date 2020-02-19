@@ -8437,3 +8437,207 @@ Caused by: org.postgresql.util.PSQLException: ERROR: relation "testschema.post" 
 2020-02-18 00:56:04 INFO  Version:21 - HV000001: Hibernate Validator 6.0.17.Final
 2020-02-18 00:56:04 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
 2020-02-18 00:56:05 INFO  Log:34 - All users found and returned.
+2020-02-19 15:35:13 INFO  Version:46 - HHH000412: Hibernate Core {5.4.10.Final}
+2020-02-19 15:35:13 INFO  Version:49 - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-02-19 15:35:15 INFO  Dialect:172 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2020-02-19 15:35:21 INFO  Version:21 - HV000001: Hibernate Validator 6.0.17.Final
+2020-02-19 15:35:22 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-02-19 15:38:17 INFO  Version:46 - HHH000412: Hibernate Core {5.4.10.Final}
+2020-02-19 15:38:18 INFO  Version:49 - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-02-19 15:38:20 INFO  Dialect:172 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2020-02-19 15:38:26 INFO  Version:21 - HV000001: Hibernate Validator 6.0.17.Final
+2020-02-19 15:38:27 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-02-19 15:43:08 INFO  Version:46 - HHH000412: Hibernate Core {5.4.10.Final}
+2020-02-19 15:43:08 INFO  Version:49 - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-02-19 15:43:10 INFO  Dialect:172 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2020-02-19 15:43:17 INFO  Version:21 - HV000001: Hibernate Validator 6.0.17.Final
+2020-02-19 15:43:18 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-02-19 15:43:19 INFO  Log:34 - All users found and returned.
+2020-02-19 15:43:20 INFO  Log:49 - User found by ID number.
+2020-02-19 15:43:20 WARN  deprecation:1774 - HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2020-02-19 15:43:21 INFO  Log:72 - New user created.
+2020-02-19 15:43:22 WARN  deprecation:1774 - HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2020-02-19 15:45:12 INFO  Version:46 - HHH000412: Hibernate Core {5.4.10.Final}
+2020-02-19 15:45:13 INFO  Version:49 - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-02-19 15:45:15 INFO  Dialect:172 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2020-02-19 15:45:21 INFO  Version:21 - HV000001: Hibernate Validator 6.0.17.Final
+2020-02-19 15:45:22 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-02-19 15:45:23 INFO  Log:34 - All users found and returned.
+2020-02-19 15:45:23 INFO  Log:49 - User found by ID number.
+2020-02-19 15:45:24 WARN  deprecation:1774 - HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2020-02-19 15:45:25 WARN  SqlExceptionHelper:137 - SQL Error: 0, SQLState: 23505
+2020-02-19 15:45:25 ERROR SqlExceptionHelper:142 - ERROR: duplicate key value violates unique constraint "uk_e6gkqunxajvyxl5uctpl2vl2p"
+  Detail: Key (email)=(test1@gmail.test) already exists.
+2020-02-19 15:45:25 ERROR Log:75 - org.hibernate.exception.ConstraintViolationException: could not execute statement
+2020-02-19 15:45:26 WARN  deprecation:1774 - HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2020-02-19 15:46:42 INFO  Version:46 - HHH000412: Hibernate Core {5.4.10.Final}
+2020-02-19 15:46:42 INFO  Version:49 - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-02-19 15:46:45 INFO  Dialect:172 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2020-02-19 15:46:51 INFO  Version:21 - HV000001: Hibernate Validator 6.0.17.Final
+2020-02-19 15:46:53 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-02-19 15:46:54 INFO  Log:34 - All users found and returned.
+2020-02-19 15:46:55 INFO  Log:49 - User found by ID number.
+2020-02-19 15:46:55 WARN  deprecation:1774 - HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2020-02-19 15:46:56 INFO  Log:72 - New user created.
+2020-02-19 15:46:57 WARN  deprecation:1774 - HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2020-02-19 15:49:47 INFO  Version:46 - HHH000412: Hibernate Core {5.4.10.Final}
+2020-02-19 15:49:47 INFO  Version:49 - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-02-19 15:49:49 INFO  Dialect:172 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2020-02-19 15:49:56 INFO  Version:21 - HV000001: Hibernate Validator 6.0.17.Final
+2020-02-19 15:49:57 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-02-19 15:49:58 INFO  Log:34 - All users found and returned.
+2020-02-19 15:49:59 INFO  Log:49 - User found by ID number.
+2020-02-19 15:49:59 WARN  deprecation:1774 - HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2020-02-19 15:50:00 WARN  SqlExceptionHelper:137 - SQL Error: 0, SQLState: 23505
+2020-02-19 15:50:00 ERROR SqlExceptionHelper:142 - ERROR: duplicate key value violates unique constraint "uk_e6gkqunxajvyxl5uctpl2vl2p"
+  Detail: Key (email)=(test2@gmail.test) already exists.
+2020-02-19 15:50:00 ERROR Log:75 - org.hibernate.exception.ConstraintViolationException: could not execute statement
+2020-02-19 15:50:01 WARN  deprecation:1774 - HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2020-02-19 15:50:29 INFO  Version:46 - HHH000412: Hibernate Core {5.4.10.Final}
+2020-02-19 15:50:30 INFO  Version:49 - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-02-19 15:50:32 INFO  Dialect:172 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2020-02-19 15:50:38 INFO  Version:21 - HV000001: Hibernate Validator 6.0.17.Final
+2020-02-19 15:50:39 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-02-19 15:50:41 INFO  Log:72 - New user created.
+2020-02-19 15:51:16 INFO  Version:46 - HHH000412: Hibernate Core {5.4.10.Final}
+2020-02-19 15:51:16 INFO  Version:49 - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-02-19 15:51:18 INFO  Dialect:172 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2020-02-19 15:51:24 INFO  Version:21 - HV000001: Hibernate Validator 6.0.17.Final
+2020-02-19 15:51:25 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-02-19 15:51:27 INFO  Log:34 - All users found and returned.
+2020-02-19 15:51:27 INFO  Log:49 - User found by ID number.
+2020-02-19 15:51:28 WARN  deprecation:1774 - HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2020-02-19 15:51:29 WARN  SqlExceptionHelper:137 - SQL Error: 0, SQLState: 23505
+2020-02-19 15:51:29 ERROR SqlExceptionHelper:142 - ERROR: duplicate key value violates unique constraint "uk_e6gkqunxajvyxl5uctpl2vl2p"
+  Detail: Key (email)=(test2@gmail.test) already exists.
+2020-02-19 15:51:29 ERROR Log:75 - org.hibernate.exception.ConstraintViolationException: could not execute statement
+2020-02-19 15:51:30 WARN  deprecation:1774 - HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2020-02-19 15:53:32 INFO  Version:46 - HHH000412: Hibernate Core {5.4.10.Final}
+2020-02-19 15:53:33 INFO  Version:49 - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-02-19 15:53:35 INFO  Dialect:172 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2020-02-19 15:53:41 INFO  Version:21 - HV000001: Hibernate Validator 6.0.17.Final
+2020-02-19 15:53:42 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-02-19 15:53:44 WARN  SqlExceptionHelper:137 - SQL Error: 0, SQLState: 23505
+2020-02-19 15:53:44 ERROR SqlExceptionHelper:142 - ERROR: duplicate key value violates unique constraint "uk_e6gkqunxajvyxl5uctpl2vl2p"
+  Detail: Key (email)=(test2@gmail.test) already exists.
+2020-02-19 15:53:44 ERROR Log:75 - org.hibernate.exception.ConstraintViolationException: could not execute statement
+2020-02-19 15:54:18 INFO  Version:46 - HHH000412: Hibernate Core {5.4.10.Final}
+2020-02-19 15:54:18 INFO  Version:49 - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-02-19 15:54:21 INFO  Dialect:172 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2020-02-19 15:54:27 INFO  Version:21 - HV000001: Hibernate Validator 6.0.17.Final
+2020-02-19 15:54:28 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-02-19 15:54:30 INFO  Log:72 - New user created.
+2020-02-19 15:55:00 INFO  Version:46 - HHH000412: Hibernate Core {5.4.10.Final}
+2020-02-19 15:55:00 INFO  Version:49 - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-02-19 15:55:02 INFO  Dialect:172 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2020-02-19 15:55:09 INFO  Version:21 - HV000001: Hibernate Validator 6.0.17.Final
+2020-02-19 15:55:10 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-02-19 15:55:11 WARN  SqlExceptionHelper:137 - SQL Error: 0, SQLState: 23505
+2020-02-19 15:55:11 ERROR SqlExceptionHelper:142 - ERROR: duplicate key value violates unique constraint "uk_e6gkqunxajvyxl5uctpl2vl2p"
+  Detail: Key (email)=(test34@gmail.test) already exists.
+2020-02-19 15:55:11 ERROR Log:75 - org.hibernate.exception.ConstraintViolationException: could not execute statement
+2020-02-19 15:59:26 INFO  Version:46 - HHH000412: Hibernate Core {5.4.10.Final}
+2020-02-19 15:59:26 INFO  Version:49 - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-02-19 15:59:28 INFO  Dialect:172 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2020-02-19 15:59:34 INFO  Version:21 - HV000001: Hibernate Validator 6.0.17.Final
+2020-02-19 15:59:35 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-02-19 15:59:36 INFO  Log:34 - All users found and returned.
+2020-02-19 15:59:37 INFO  Log:49 - User found by ID number.
+2020-02-19 15:59:38 WARN  deprecation:1774 - HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2020-02-19 15:59:39 WARN  SqlExceptionHelper:137 - SQL Error: 0, SQLState: 23505
+2020-02-19 15:59:39 ERROR SqlExceptionHelper:142 - ERROR: duplicate key value violates unique constraint "uk_e6gkqunxajvyxl5uctpl2vl2p"
+  Detail: Key (email)=(test34@gmail.test) already exists.
+2020-02-19 15:59:39 ERROR Log:75 - org.hibernate.exception.ConstraintViolationException: could not execute statement
+2020-02-19 15:59:40 WARN  deprecation:1774 - HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2020-02-19 16:00:15 INFO  Version:46 - HHH000412: Hibernate Core {5.4.10.Final}
+2020-02-19 16:00:15 INFO  Version:49 - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-02-19 16:00:17 INFO  Dialect:172 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2020-02-19 16:00:23 INFO  Version:21 - HV000001: Hibernate Validator 6.0.17.Final
+2020-02-19 16:00:24 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-02-19 16:00:25 WARN  deprecation:1774 - HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2020-02-19 16:00:40 INFO  Version:46 - HHH000412: Hibernate Core {5.4.10.Final}
+2020-02-19 16:00:40 INFO  Version:49 - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-02-19 16:00:43 INFO  Dialect:172 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2020-02-19 16:00:49 INFO  Version:21 - HV000001: Hibernate Validator 6.0.17.Final
+2020-02-19 16:00:51 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-02-19 16:00:52 INFO  Log:34 - All users found and returned.
+2020-02-19 16:00:53 INFO  Log:49 - User found by ID number.
+2020-02-19 16:00:53 WARN  deprecation:1774 - HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2020-02-19 16:00:54 WARN  SqlExceptionHelper:137 - SQL Error: 0, SQLState: 23505
+2020-02-19 16:00:54 ERROR SqlExceptionHelper:142 - ERROR: duplicate key value violates unique constraint "uk_e6gkqunxajvyxl5uctpl2vl2p"
+  Detail: Key (email)=(test34@gmail.test) already exists.
+2020-02-19 16:00:54 ERROR Log:75 - org.hibernate.exception.ConstraintViolationException: could not execute statement
+2020-02-19 16:00:55 WARN  deprecation:1774 - HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2020-02-19 16:01:13 INFO  Version:46 - HHH000412: Hibernate Core {5.4.10.Final}
+2020-02-19 16:01:13 INFO  Version:49 - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-02-19 16:01:15 INFO  Dialect:172 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2020-02-19 16:01:21 INFO  Version:21 - HV000001: Hibernate Validator 6.0.17.Final
+2020-02-19 16:01:22 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-02-19 16:01:24 INFO  Log:33 - All posts found and returned.
+2020-02-19 16:01:25 INFO  Log:46 - Post found by ID number.
+2020-02-19 16:01:26 INFO  Log:49 - User found by ID number.
+2020-02-19 16:01:26 INFO  Log:72 - New post created.
+2020-02-19 16:01:26 INFO  Log:46 - Post found by ID number.
+2020-02-19 16:02:16 INFO  Version:46 - HHH000412: Hibernate Core {5.4.10.Final}
+2020-02-19 16:02:16 INFO  Version:49 - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-02-19 16:02:18 INFO  Dialect:172 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2020-02-19 16:02:25 INFO  Version:21 - HV000001: Hibernate Validator 6.0.17.Final
+2020-02-19 16:02:26 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-02-19 16:02:27 INFO  Log:49 - User found by ID number.
+2020-02-19 16:02:27 INFO  Log:72 - New post created.
+2020-02-19 16:05:29 INFO  Version:46 - HHH000412: Hibernate Core {5.4.10.Final}
+2020-02-19 16:05:30 INFO  Version:49 - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-02-19 16:05:32 INFO  Dialect:172 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2020-02-19 16:05:39 INFO  Version:21 - HV000001: Hibernate Validator 6.0.17.Final
+2020-02-19 16:05:40 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-02-19 16:05:41 INFO  Log:46 - Post found by ID number.
+2020-02-19 16:06:32 INFO  Version:46 - HHH000412: Hibernate Core {5.4.10.Final}
+2020-02-19 16:06:32 INFO  Version:49 - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-02-19 16:06:34 INFO  Dialect:172 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2020-02-19 16:06:41 INFO  Version:21 - HV000001: Hibernate Validator 6.0.17.Final
+2020-02-19 16:06:42 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-02-19 16:06:43 INFO  Log:46 - Post found by ID number.
+2020-02-19 16:06:43 INFO  Log:81 - New Comment created.
+2020-02-19 16:07:29 INFO  Version:46 - HHH000412: Hibernate Core {5.4.10.Final}
+2020-02-19 16:07:29 INFO  Version:49 - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-02-19 16:07:31 INFO  Dialect:172 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2020-02-19 16:07:38 INFO  Version:21 - HV000001: Hibernate Validator 6.0.17.Final
+2020-02-19 16:07:39 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-02-19 16:07:41 INFO  Log:33 - All posts found and returned.
+2020-02-19 16:07:42 INFO  Log:46 - Post found by ID number.
+2020-02-19 16:07:43 INFO  Log:49 - User found by ID number.
+2020-02-19 16:07:43 INFO  Log:72 - New post created.
+2020-02-19 16:07:43 INFO  Log:46 - Post found by ID number.
+2020-02-19 16:08:46 INFO  Version:46 - HHH000412: Hibernate Core {5.4.10.Final}
+2020-02-19 16:08:46 INFO  Version:49 - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-02-19 16:08:48 INFO  Dialect:172 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2020-02-19 16:08:54 INFO  Version:21 - HV000001: Hibernate Validator 6.0.17.Final
+2020-02-19 16:08:55 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-02-19 16:08:57 INFO  Log:37 - All Comments found and returned.
+2020-02-19 16:08:57 INFO  Log:53 - Comment found by ID number.
+2020-02-19 16:08:59 INFO  Log:46 - Post found by ID number.
+2020-02-19 16:08:59 INFO  Log:81 - New Comment created.
+2020-02-19 16:08:59 INFO  Log:53 - Comment found by ID number.
+2020-02-19 16:09:24 INFO  Version:46 - HHH000412: Hibernate Core {5.4.10.Final}
+2020-02-19 16:09:24 INFO  Version:49 - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-02-19 16:09:26 INFO  Dialect:172 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2020-02-19 16:09:32 INFO  Version:21 - HV000001: Hibernate Validator 6.0.17.Final
+2020-02-19 16:09:33 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-02-19 16:09:34 INFO  Log:37 - All Comments found and returned.
+2020-02-19 16:09:35 INFO  Log:53 - Comment found by ID number.
+2020-02-19 16:09:36 INFO  Log:46 - Post found by ID number.
+2020-02-19 16:09:36 INFO  Log:81 - New Comment created.
+2020-02-19 16:09:37 INFO  Log:53 - Comment found by ID number.
+2020-02-19 16:09:38 INFO  Log:33 - All posts found and returned.
+2020-02-19 16:09:39 INFO  Log:46 - Post found by ID number.
+2020-02-19 16:09:40 INFO  Log:49 - User found by ID number.
+2020-02-19 16:09:40 INFO  Log:72 - New post created.
+2020-02-19 16:09:40 INFO  Log:46 - Post found by ID number.
+2020-02-19 16:09:41 INFO  Log:34 - All users found and returned.
+2020-02-19 16:09:42 INFO  Log:49 - User found by ID number.
+2020-02-19 16:09:42 WARN  deprecation:1774 - HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2020-02-19 16:09:43 WARN  SqlExceptionHelper:137 - SQL Error: 0, SQLState: 23505
+2020-02-19 16:09:43 ERROR SqlExceptionHelper:142 - ERROR: duplicate key value violates unique constraint "uk_e6gkqunxajvyxl5uctpl2vl2p"
+  Detail: Key (email)=(test34@gmail.test) already exists.
+2020-02-19 16:09:43 ERROR Log:75 - org.hibernate.exception.ConstraintViolationException: could not execute statement
+2020-02-19 16:09:44 WARN  deprecation:1774 - HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
