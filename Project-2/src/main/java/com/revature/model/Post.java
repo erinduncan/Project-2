@@ -1,4 +1,4 @@
-package com.revature.models;
+package com.revature.model;
 
 import java.sql.Blob;
 import java.sql.Date;
@@ -19,27 +19,35 @@ import javax.persistence.Table;
 import org.hibernate.annotations.CreationTimestamp;
 
 @Entity
-@Table(name = "Post")
+@Table(name = "posts")
 public class Post {
 
 	@Id
-	@Column
+	@Column(name = "post_id")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int postId;
-	@Column
+	
+	@Column(name = "title")
 	private String title;
-	@Column(length = 1000)
+	
+	@Column(length = 1000, name = "body")
 	private String body;
-	@Column
+	
+	@Column(name = "submitted")
 	@CreationTimestamp
 	private Date submitted;
-	@Column
+	
+	@Column(name = "image")
 	private Blob image;
+	
+	
 	@Column
 	private Boolean liked;
+	
 	@ManyToOne(fetch = FetchType.EAGER)
-	@JoinColumn(nullable = false )
+	@JoinColumn(nullable = false)
 	private User user;
+	
 	@OneToMany(mappedBy = "post", fetch = FetchType.EAGER, orphanRemoval = true)
 	private Set<Comment> comments = new HashSet<>();
 

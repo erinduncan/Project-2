@@ -10,8 +10,8 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.revature.driver.Log;
-import com.revature.models.Post;
-import com.revature.models.User;
+import com.revature.model.Post;
+import com.revature.model.User;
 
 @Repository
 @Transactional

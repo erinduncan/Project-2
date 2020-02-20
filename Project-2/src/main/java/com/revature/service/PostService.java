@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.revature.dao.PostDao;
-import com.revature.models.Post;
+import com.revature.model.Post;
 
 @Service
 public class PostService {

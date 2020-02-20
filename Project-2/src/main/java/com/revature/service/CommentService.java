@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.revature.dao.CommentDao;
-import com.revature.models.Comment;
+import com.revature.model.Comment;
 
 @Service
 public class CommentService {

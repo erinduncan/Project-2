@@ -13,9 +13,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import com.revature.models.Comment;
-import com.revature.models.Post;
-import com.revature.models.User;
+import com.revature.model.Comment;
+import com.revature.model.Post;
+import com.revature.model.User;
 
 @ContextConfiguration(locations = "classpath:applicationContext-test.xml")
 @RunWith(SpringJUnit4ClassRunner.class)

@@ -8504,3 +8504,6 @@ Caused by: org.postgresql.util.PSQLException: ERROR: relation "testschema.post" 
 2020-02-19 16:45:06 ERROR SqlExceptionHelper:142 - ERROR: column this_.handle does not exist
   Position: 101
 2020-02-19 16:45:06 ERROR Log:101 - org.hibernate.exception.SQLGrammarException: could not extract ResultSet
+2020-02-20 13:29:38 INFO  Version:46 - HHH000412: Hibernate Core {5.4.10.Final}
+2020-02-20 13:29:38 INFO  Version:49 - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-02-20 13:29:39 INFO  Dialect:172 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect

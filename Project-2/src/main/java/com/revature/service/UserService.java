@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.revature.dao.UserDao;
-import com.revature.models.User;
+import com.revature.model.User;
 
 @Service
 public class UserService {

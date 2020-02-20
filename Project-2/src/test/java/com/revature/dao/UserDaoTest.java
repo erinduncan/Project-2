@@ -11,7 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import com.revature.models.User;
+import com.revature.model.User;
 
 @ContextConfiguration(locations = "classpath:applicationContext-test.xml")
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -51,7 +51,7 @@ public class UserDaoTest {
 
 	@Test
 	public void testInsert() {
-		User u = new User("test1@gmail.test", "password", "testFist", "testLast", "cutie");
+		User u = new User(0, "test1@gmail.test", "password", "testFist", "testLast", "cutie");
 		User retU  = ud.insert(u);
 		System.out.println(retU);
 		assertEquals(retU,u);

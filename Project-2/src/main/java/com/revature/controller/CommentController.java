@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.revature.models.Comment;
-import com.revature.models.Post;
+import com.revature.model.Comment;
+import com.revature.model.Post;
 import com.revature.service.CommentService;
 
 @Controller

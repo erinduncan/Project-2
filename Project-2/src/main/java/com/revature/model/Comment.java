@@ -1,6 +1,5 @@
-package com.revature.models;
+package com.revature.model;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -12,23 +11,23 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "Comment")
+@Table(name = "comments")
 public class Comment {
 
 	@Id
-	@Column
+	@Column(name = "comment_id")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int commentId;
 	
-	@Column(nullable = false)
+	@Column(nullable = false, name = "text")
 	private String text;
 	
 	@ManyToOne(fetch = FetchType.EAGER)
-	@JoinColumn
+	@JoinColumn(name = "comment_post_id")
 	private Post post;
 
 	@ManyToOne(fetch = FetchType.EAGER)
-	@JoinColumn
+	@JoinColumn(name = "comment_user_id")
 	private User user;
 
 	public Comment() {
