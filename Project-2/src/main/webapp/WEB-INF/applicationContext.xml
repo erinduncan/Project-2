@@ -7,22 +7,26 @@
 	xmlns:mvc="http://www.springframework.org/schema/mvc"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
 	 https://www.springframework.org/schema/beans/spring-beans.xsd
+	 
 	 http://www.springframework.org/schema/context 
 	 http://www.springframework.org/schema/context/spring-context.xsd
+	 
 	 http://www.springframework.org/schema/aop
 	 http://www.springframework.org/schema/aop/spring-aop.xsd
+	 
 	 http://www.springframework.org/schema/tx
 	 http://www.springframework.org/schema/tx/spring-tx.xsd
+	 
 	 http://www.springframework.org/schema/mvc
 	 http://www.springframework.org/schema/mvc/spring-mvc.xsd
 	 ">
 	 
-
 	 <context:annotation-config/>
-	 <context:component-scan base-package="com.revature"/>
 	 <aspect:aspectj-autoproxy/>
 	 <tx:annotation-driven/>
-	 <mvc:annotation-driven/>
+	 <mvc:annotation-driven />
+	 <context:component-scan base-package="com.revature"/>
+	 
 	 
 	  <bean id="datasource" 
 	 	class="org.springframework.jdbc.datasource.DriverManagerDataSource">
@@ -35,14 +39,14 @@
 	 	<bean id="sessionFactory" 
 	 		class ="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
 	 		<property name="dataSource" ref="datasource"/>
-	 		<property name="packagesToScan" value="com.revature.models"/>
+	 		<property name="packagesToScan" value="com.revature.model"/>
 	 		<property name="hibernateProperties">
 	 			<props>
 	 				<prop key="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</prop>
 	 				<prop key="hibernate.show_sql">true</prop>
 	 				<prop key="hibernate.format_sql">true</prop>
-	 				<prop key="hibernate.hbm2ddl.auto">none</prop>
-	 				<prop key="hibernate.default_schema">public</prop>
+	 				<prop key="hibernate.hbm2ddl.auto">create</prop>
+	 				<!-- <prop key="hibernate.default_schema">testSchema</prop> -->
 	 			</props>
 	 		</property>
 	 		</bean>

@@ -1,10 +1,7 @@
-package com.revature.models;
+package com.revature.model;
 
-import java.sql.Blob;
-import java.util.HashSet;
 import java.util.Set;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -14,54 +11,49 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-
 @Entity
-@Table(name = "User")
+@Table(name = "users")
 public class User {
 
 	@Id
-	@Column
+	@Column(name = "user_id")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int userId;
-	@Column(unique = true)
+
+	@Column(unique = true, name = "email")
 	private String email;
-	@Column
+
+	@Column(name = "password")
 	private String password;
-	@Column
+
+	@Column(name = "first_name")
 	private String firstName;
-	@Column
+
+	@Column(name = "last_name")
 	private String lastName;
-	@Column
-	private String image;
-	@OneToMany(mappedBy = "user",fetch = FetchType.EAGER, orphanRemoval = true)
-	private Set<Post> posts = new HashSet<>();
-	@OneToMany(mappedBy = "user", fetch = FetchType.EAGER, orphanRemoval = true)
-	private Set<Comment> comments = new HashSet<>();
-	@Column(unique = true)
+
+	@Column(unique = true, name = "handle")
 	private String handle;
+
+	@OneToMany(mappedBy = "user", fetch = FetchType.EAGER, orphanRemoval = true)
+	private Set<Post> posts; // new HashSet<>();
+
+	@OneToMany(mappedBy = "user", fetch = FetchType.EAGER, orphanRemoval = true)
+	private Set<Comment> comments; // = new HashSet<>();
+
 	public User() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public User(String email, String password, String firstName, String lastName, String handle) {
-		super();
-		this.email = email;
-		this.password = password;
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.handle = handle;
-	}
-
-	public User(int userId, String email, String password, String firstName, String lastName, String handle) {
-		super();
-		this.userId = userId;
-		this.email = email;
-		this.password = password;
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.handle = handle;
-	}
+//	public User(String email, String password, String firstName, String lastName, String handle) {
+//		super();
+//		this.email = email;
+//		this.password = password;
+//		this.firstName = firstName;
+//		this.lastName = lastName;
+//		this.handle = handle;
+//	}
 
 	public int getUserId() {
 		return userId;
@@ -70,9 +62,25 @@ public class User {
 	public void setUserId(int userId) {
 		this.userId = userId;
 	}
-	
-	public int getHandle() {
-		return userId;
+
+	public Set<Post> getPosts() {
+		return posts;
+	}
+
+	public void setPosts(Set<Post> posts) {
+		this.posts = posts;
+	}
+
+	public Set<Comment> getComments() {
+		return comments;
+	}
+
+	public void setComments(Set<Comment> comments) {
+		this.comments = comments;
+	}
+
+	public String getHandle() {
+		return handle;
 	}
 
 	public void setHandle(String handle) {
@@ -110,8 +118,16 @@ public class User {
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
-	
 
+	public User(int userId, String email, String password, String firstName, String lastName, String handle) {
+		super();
+		this.userId = userId;
+		this.email = email;
+		this.password = password;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.handle = handle;
+	}
 
 	@Override
 	public String toString() {
@@ -119,17 +135,4 @@ public class User {
 				+ ", lastName=" + lastName + "]";
 	}
 
-	public String getImage() {
-		return image;
-	}
-
-	public void setImage(String image) {
-		this.image = image;
-	}
-
-
-
-
-
-	
 }

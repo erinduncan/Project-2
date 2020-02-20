@@ -12,8 +12,8 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.revature.driver.Log;
-import com.revature.models.Comment;
-import com.revature.models.Post;
+import com.revature.model.Comment;
+import com.revature.model.Post;
 
 @Repository
 @Transactional

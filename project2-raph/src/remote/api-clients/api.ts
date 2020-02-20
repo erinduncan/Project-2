@@ -56,4 +56,4 @@ export const addUser = (body: IUser) => {
 
 export const publishPost = (body: ICreatePost) => {
     return axiosConfig.post('add.app', body);
-}
+} 

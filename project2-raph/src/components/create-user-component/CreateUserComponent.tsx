@@ -29,7 +29,7 @@ export const CreateUserComponent: React.FC<any> = (props:any) => {
         <Container className="registerForm">
           <h2>Create an Account</h2>
           <Form onSubmit={()=>addUser({
-            id:0,
+            userId:0,
             email: email,
             password: password,
             firstName: firstName,

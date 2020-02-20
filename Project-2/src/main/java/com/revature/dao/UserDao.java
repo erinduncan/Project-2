@@ -12,8 +12,8 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.revature.driver.Log;
-import com.revature.models.Comment;
-import com.revature.models.User;
+import com.revature.model.Comment;
+import com.revature.model.User;
 
 @Repository
 @Transactional
@@ -31,7 +31,7 @@ public class UserDao {
 	public List<User> findAll() {
 		List<User> list;
 		try {
-			list = sesf.getCurrentSession().createQuery("from User", User.class).list();
+			list = sesf.getCurrentSession().createQuery("from user", User.class).list();
 			Log.log.info("All users found and returned.");
 			return list;
 		} catch (Exception e) {
@@ -69,8 +69,8 @@ public class UserDao {
 
 	public User insert(User t) {
 //		try {
-			sesf.openSession().save(t);
-			Log.log.info("New user created.");
+			sesf.getCurrentSession().save(t);
+//			Log.log.info("New user created.");
 			return t;
 //		} catch (HibernateException e) {
 //			Log.log.error(e);
