@@ -1,17 +1,41 @@
 import React, { useState, SyntheticEvent } from 'react';
 import { Form, FormGroup, Label, Col, Input, Button, Container } from 'reactstrap';
-// import IUser from '../../model/IUser';
+import IUser from '../../model/IUser';
+import { Link } from 'react-router-dom';
 
-export const CreateUserComponent:React.FC<any> = (props:any) =>{
+export interface ICreateUserProps{
+    newUser: (newUser: any) => void;
+    loginMessage: string;
+}
+
+export const CreateUserComponent:React.FC<any> = (props:ICreateUserProps) =>{
+    /**
+     * React Hooks; great to use with functional components
+     * @author Maresh E
+     */
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
     const [handle, setHandle] = useState('');
 
+    /**
+     * Holds the variables to pass to db
+     * @author Maresh E
+     */
+    let temp:IUser = {
+            id:0,
+            email,
+            password,
+            firstName,
+            lastName,
+            handle
+    };
+
     const submitUser = async (event: SyntheticEvent) => {
         event.preventDefault();
-    }
+        props.newUser(temp);
+    };
 
     return(
         <React.Fragment>
@@ -81,6 +105,8 @@ export const CreateUserComponent:React.FC<any> = (props:any) =>{
                 </FormGroup>
                 <Button color='primary' onClick={submitUser}>Submit</Button>
             </Form>
+            <p>{props.loginMessage}</p><br></br>
+            <Link to='/'>Home</Link>
             </Container>
             </div>
         </React.Fragment>

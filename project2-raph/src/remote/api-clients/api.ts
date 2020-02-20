@@ -1,6 +1,7 @@
 import { axiosConfig } from "./axiosConfig";
 import IUser from "../../model/IUser";
 import { history } from '../../utility/history';
+import { Http2ServerResponse } from "http2";
 
 export const apiLogin = async (username: string, password: string): Promise<object> => {
     let credentials = {
@@ -33,7 +34,7 @@ export const apiLogin = async (username: string, password: string): Promise<obje
     } catch (e) {
         console.log(e);
         return {
-            loginMessage: "Something Went Wrong",
+            loginMessage: 'Caught Something'
 
         }
     }
@@ -47,6 +48,33 @@ export const getList = () =>{
    return axiosConfig.get("list.app");
 }
 
-export const addUser = (body: IUser) => {
-    return axiosConfig.post('add.app', body);
+export const apiCreateUser = async (newUser: IUser) => {
+    try {
+        const response = await axiosConfig.post('newuser.app', {newUser});
+        if (response.status === 200) {
+            const body = await response.data
+            console.log(body)
+            history.push('/login')
+            return {
+                body,
+                loginMessage: 'Successfully Added',
+            }
+        }else if (response.status === 401) {
+            return {
+                loginMessage: "Incorrect Input",
+                body: null
+            }
+        } else {
+            return {
+                loginMessage: "Something Went Wrong",
+                body: null
+            }
+        }        
+    } catch (error) {
+        console.log(error);
+        return {
+            loginMessage: 'Caught Something'
+
+        }
+    }
 }

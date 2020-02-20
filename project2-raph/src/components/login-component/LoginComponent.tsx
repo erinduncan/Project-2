@@ -2,7 +2,6 @@ import React, { SyntheticEvent, useState } from 'react';
 import '../../css/Main.css';
 import { Form, Label, Col, Input, FormGroup, Button } from 'reactstrap';
 import { Link } from 'react-router-dom';
-// import { updateCurrentUser } from '../../action-mappers/login-actions';
 
 interface ILoginProps {
     updateCurrentUser: (e:string, p:string) => void
@@ -13,7 +12,7 @@ export const Login:React.FC<any> = (props:ILoginProps) => {
     const [username, setusername] = useState('');
     const [password, setpassword] = useState('');
 
-    const submitLogin  = async (event: SyntheticEvent) => {
+    const submitLogin  = async (event: any) => {
         event.preventDefault()
         props.updateCurrentUser(username, password)           
     }
