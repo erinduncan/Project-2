@@ -1,26 +1,19 @@
 import React from 'react';
-import {  Card, CardBody, CardTitle, CardSubtitle, CardText, Input } from 'reactstrap';
-import IUser from '../../../model/IUser';
+import {  Card, CardBody, CardTitle, CardSubtitle, CardText } from 'reactstrap';
 
 interface IPostDisplayProps {
-    id:number;
-    title: string;
-    body: string;
-    like: () => boolean;
-    user:IUser;
-    // delete: (id: string) => any
-    // getPostComments: (ownerUserId: string, postId: string) => any
-
-
-    
+    id: number
+    height: number
+    weight: number
+    name: string
+    types: string[]
 }
 
 export class PostDisplayComponent extends React.PureComponent<IPostDisplayProps>{
 
-    like(){
-        let radio:any = document.getElementById('like');
-        return (radio===onchange)?true:false;
-
+    cardTextBuilder(){
+        return `This Post: ${this.props.name} has an amusing weight of ${this.props.weight}
+        it is also ${this.props.height} tall and has the type/s of ${this.props.types[0]}` + (this.props.types[1] ?  ' and ' + this.props.types[1] : '' )
     }
 
     render() {
@@ -29,11 +22,9 @@ export class PostDisplayComponent extends React.PureComponent<IPostDisplayProps>
         return (
             <Card>
                 <CardBody>
-                    <CardTitle>{this.props.title}</CardTitle>
-                    {/* handle should be unique */}
-                    <CardSubtitle>{this.props.user.handle}</CardSubtitle>
-                    <CardText>{this.props.body}</CardText>
-                    <Input id='like' type="radio" aria-label="Like?" onChange={this.like}>Like</Input>
+                    <CardTitle>{this.props.id}</CardTitle>
+                    <CardSubtitle>{this.props.name}</CardSubtitle>
+                    <CardText>{this.cardTextBuilder()}</CardText>
                 </CardBody>
             </Card>
         )

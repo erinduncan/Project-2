@@ -1,11 +1,5 @@
 .App {
   text-align: center;
-  background-color: #fff8dc;
-  max-width: 75%;
-  margin-top: 0%;
-  margin-left: 12.5%;
-  border: none;
-  border-radius: 20px;
 }
 
 .App-logo {
@@ -41,9 +35,4 @@
   to {
     transform: rotate(360deg);
   }
-}
-
-.App-section {
-  align-items: center;
-  position: 
 }

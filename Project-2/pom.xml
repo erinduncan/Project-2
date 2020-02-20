@@ -21,12 +21,7 @@
 		</dependency>
 
 
-		<!--Amazon-->
-		<dependency>
-			<groupId>com.amazonaws</groupId>
-			<artifactId>aws-java-sdk</artifactId>
-			<version>1.11.133</version>
-		</dependency>
+
 
 		<!-- https://mvnrepository.com/artifact/junit/junit -->
 		<dependency>
@@ -97,19 +92,6 @@
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-databind</artifactId>
 			<version>2.10.1</version>
-		</dependency>
-		<!-- https://mvnrepository.com/artifact/javax.xml/jaxp-api -->
-		<dependency>
-			<groupId>javax.xml</groupId>
-			<artifactId>jaxp-api</artifactId>
-			<version>1.4.2</version>
-		</dependency>
-		
-		<!-- https://mvnrepository.com/artifact/org.springframework/spring-aspects -->
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-aspects</artifactId>
-			<version>5.2.2.RELEASE</version>
 		</dependency>
 	</dependencies>
 
