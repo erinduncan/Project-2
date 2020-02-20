@@ -1,4 +1,5 @@
-import { axiosConfig } from "./axiosConfig";
+import axiosConfig from "./axiosConfig";
+import axios from 'axios';
 import IUser from "../../model/IUser";
 import { history } from '../../utility/history';
 import IPost from "../../model/IPost";
@@ -35,7 +36,7 @@ export const apiLogin = async (username: string, password: string): Promise<obje
     } catch (e) {
         console.log(e);
         return {
-            loginMessage: 'Caught Something'
+            loginMessage: "Something Went Wrong",
 
         }
     }
@@ -49,35 +50,8 @@ export const getList = () =>{
    return axiosConfig.get("list.app");
 }
 
-export const apiCreateUser = async (newUser: IUser) => {
-    try {
-        const response = await axiosConfig.post('newuser.app', {newUser});
-        if (response.status === 200) {
-            const body = await response.data
-            console.log(body)
-            history.push('/login')
-            return {
-                body,
-                loginMessage: 'Successfully Added',
-            }
-        }else if (response.status === 401) {
-            return {
-                loginMessage: "Incorrect Input",
-                body: null
-            }
-        } else {
-            return {
-                loginMessage: "Something Went Wrong",
-                body: null
-            }
-        }        
-    } catch (error) {
-        console.log(error);
-        return {
-            loginMessage: 'Caught Something'
-
-        }
-    }
+export const addUser = (body: IUser) => {
+    return axiosConfig.post('/newuser.app', body);
 }
 
 export const publishPost = (body: ICreatePost) => {

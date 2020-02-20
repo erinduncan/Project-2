@@ -25,7 +25,7 @@ export const createReducer = (state = initialState, action:any) => {
                 ...state,
                 createMessage:action.payload.createMessage
             }
-        } 
+        }
     
         default:
             return state;

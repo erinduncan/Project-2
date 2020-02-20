@@ -20,12 +20,13 @@ import com.revature.models.User;
 public class UserDao {
 
 	private SessionFactory sesf;
-
+	
 	@Autowired
 	public UserDao(SessionFactory sesf) {
 		super();
 		this.sesf = sesf;
 	}
+	
 
 	public List<User> findAll() {
 		List<User> list;
@@ -50,7 +51,7 @@ public class UserDao {
 			return user;
 		} catch (HibernateException e) {
 			Log.log.error(e);
-			System.out.println("ERROR! Could not findbyid " + id);
+			System.out.println("ERROR! Could not findbyid "+id);
 		}
 		return null;
 	}
@@ -61,21 +62,21 @@ public class UserDao {
 			return t;
 		} catch (HibernateException e) {
 			Log.log.error(e);
-			System.out.println("ERROR! Could not update \n" + t.toString());
+			System.out.println("ERROR! Could not update \n"+t.toString());
 		}
 		return null;
 	}
 
 	public User insert(User t) {
-		try {
+//		try {
 			sesf.openSession().save(t);
 			Log.log.info("New user created.");
 			return t;
-		} catch (HibernateException e) {
-			Log.log.error(e);
-			System.out.println("ERROR! Could not save \n" + t.toString());
-		}
-		return null;
+//		} catch (HibernateException e) {
+//			Log.log.error(e);
+//			System.out.println("ERROR! Could not save \n"+t.toString());
+//		}
+//		return null;
 	}
 
 	public User deleteByEmail(String email) {
@@ -85,7 +86,7 @@ public class UserDao {
 			return t;
 		} catch (HibernateException e) {
 			Log.log.error(e);
-			System.out.println("ERROR! Could not Deletebyemail " + email);
+			System.out.println("ERROR! Could not Deletebyemail "+email);
 		}
 		return null;
 	}
@@ -98,7 +99,7 @@ public class UserDao {
 			return (User) criteria.list().get(0);
 		} catch (HibernateException e) {
 			Log.log.error(e);
-			System.out.println("ERROR! Could not findbyemail " + email);
+			System.out.println("ERROR! Could not findbyemail "+email);
 		}
 		return null;
 	}
@@ -113,8 +114,5 @@ public class UserDao {
 		}
 		return null;
 	}
-
-	
-
 
 }
