@@ -1,4 +1,5 @@
-import { axiosConfig } from "./axiosConfig";
+import axiosConfig from "./axiosConfig";
+import axios from 'axios';
 import IUser from "../../model/IUser";
 import { history } from '../../utility/history';
 import IPost from "../../model/IPost";
@@ -50,7 +51,7 @@ export const getList = () =>{
 }
 
 export const addUser = (body: IUser) => {
-    return axiosConfig.post('add.app', body);
+    return axiosConfig.post('/newuser.app', body);
 }
 
 export const publishPost = (body: ICreatePost) => {

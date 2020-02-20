@@ -68,15 +68,15 @@ public class UserDao {
 	}
 
 	public User insert(User t) {
-		try {
+//		try {
 			sesf.openSession().save(t);
 			Log.log.info("New user created.");
 			return t;
-		} catch (HibernateException e) {
-			Log.log.error(e);
-			System.out.println("ERROR! Could not save \n"+t.toString());
-		}
-		return null;
+//		} catch (HibernateException e) {
+//			Log.log.error(e);
+//			System.out.println("ERROR! Could not save \n"+t.toString());
+//		}
+//		return null;
 	}
 
 	public User deleteByEmail(String email) {

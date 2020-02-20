@@ -16,21 +16,28 @@ import com.revature.service.PostService;
 @Controller
 @CrossOrigin(origins = "http://localhost:3000")
 public class PostController {
+	
+	
 	@Autowired
 	private PostService us;
+	
+	
 	
 	@RequestMapping(method = RequestMethod.GET, value = "/postlist.app", produces = "application/json")
 	public ResponseEntity<List<Post>> getAllPostAsList() {
 		return new ResponseEntity<>(us.getAll(), HttpStatus.ACCEPTED);
 	}
+	
 	@RequestMapping(method = RequestMethod.GET, value = "/post{id}.app", produces = "application/json")
 	public ResponseEntity<Post> findPostById(@PathVariable("id") int id) {
 		return new ResponseEntity<>(us.getById(id), HttpStatus.ACCEPTED);
 	}
+	
 	@RequestMapping(method = RequestMethod.PUT, value = "/updatepost.app", produces = "application/json")
 	public ResponseEntity<Post> updatePost(@RequestBody Post p) {
 		return new ResponseEntity<>(us.update(p), HttpStatus.ACCEPTED);
 	}
+	
 	@RequestMapping(method = RequestMethod.POST, value = "/newpost.app", produces = "application/json")
 	public ResponseEntity<Post> insertNewPost(@RequestBody Post p) {
 		return new ResponseEntity<>(us.insert(p), HttpStatus.ACCEPTED);

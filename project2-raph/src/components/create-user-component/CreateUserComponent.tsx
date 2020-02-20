@@ -8,8 +8,11 @@ import {
   Button,
   Container
 } from "reactstrap";
+// import IUser from '../../model/IUser';
+import { addUser } from "../../remote/api-clients/api";
 
-export const CreateUserComponent: React.FC<any> = (props: any) => {
+
+export const CreateUserComponent: React.FC<any> = (props:any) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [firstName, setFirstName] = useState("");
@@ -25,7 +28,14 @@ export const CreateUserComponent: React.FC<any> = (props: any) => {
       <div className="registerDiv">
         <Container className="registerForm">
           <h2>Create an Account</h2>
-          <Form>
+          <Form onSubmit={()=>addUser({
+            id:0,
+            email: email,
+            password: password,
+            firstName: firstName,
+            lastName: lastName,
+            handle: handle
+          }).then(r=>console.log(r.data))}>
             <FormGroup row>
               <Label for="email" sm={2}>
                 Email
@@ -37,7 +47,6 @@ export const CreateUserComponent: React.FC<any> = (props: any) => {
                   name="email"
                   id="email"
                   placeholder="Put email here"
-                  value={email}
                   onChange={val => setEmail(val.target.value)}
                 />
               </Col>
@@ -53,7 +62,6 @@ export const CreateUserComponent: React.FC<any> = (props: any) => {
                   name="password"
                   id="password"
                   placeholder="Put password here"
-                  value={password}
                   onChange={val => setPassword(val.target.value)}
                 />
               </Col>
@@ -69,7 +77,6 @@ export const CreateUserComponent: React.FC<any> = (props: any) => {
                   name="firstName"
                   id="firstName"
                   placeholder="First Name"
-                  value={firstName}
                   onChange={val => setFirstName(val.target.value)}
                 />
               </Col>
@@ -85,7 +92,6 @@ export const CreateUserComponent: React.FC<any> = (props: any) => {
                   name="lastName"
                   id="lastName"
                   placeholder="Last Name"
-                  value={lastName}
                   onChange={val => setLastName(val.target.value)}
                 />
               </Col>
@@ -101,12 +107,11 @@ export const CreateUserComponent: React.FC<any> = (props: any) => {
                   name="handle"
                   id="handle"
                   placeholder="This will be your display name on the site."
-                  value={handle}
                   onChange={val => setHandle(val.target.value)}
                 />
               </Col>
             </FormGroup>
-            <Button color="primary" onClick={submitUser}>
+            <Button color="btn btn-outline-secondary" type="submit">
               Submit
             </Button>
           </Form>
