@@ -1,0 +1,56 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Debug (Launch) - Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-MavenWrapperDownloader",
+            "request": "launch",
+            "mainClass": "MavenWrapperDownloader"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-DemoApplication",
+            "request": "launch",
+            "mainClass": "com.example.DemoApplication"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-MoviesActionApplication",
+            "request": "launch",
+            "mainClass": "com.example.MoviesActionApplication"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-MoviesGatewayApplication",
+            "request": "launch",
+            "mainClass": "com.example.MoviesGatewayApplication"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-MoviesHorrorApplication",
+            "request": "launch",
+            "mainClass": "com.example.MoviesHorrorApplication"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-RestApiApplication",
+            "request": "launch",
+            "mainClass": "com.example.RestApiApplication"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-SpringBootAndDataApplication",
+            "request": "launch",
+            "mainClass": "com.example.SpringBootAndDataApplication"
+        }
+    ]
+}

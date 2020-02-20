@@ -9087,3 +9087,122 @@ Caused by: org.postgresql.util.PSQLException: ERROR: relation "onlyfortesting.po
   Detail: Key (email)=(test2@gmail.test) already exists.
 2020-02-19 19:36:11 ERROR Log:74 - org.hibernate.exception.ConstraintViolationException: could not execute statement
 2020-02-19 19:36:12 WARN  deprecation:1774 - HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2020-02-20 08:01:07 INFO  Version:46 - HHH000412: Hibernate Core {5.4.10.Final}
+2020-02-20 08:01:07 INFO  Version:49 - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-02-20 08:01:09 INFO  Dialect:172 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2020-02-20 08:01:16 INFO  Version:21 - HV000001: Hibernate Validator 6.0.17.Final
+2020-02-20 08:01:17 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-02-20 08:01:18 INFO  Log:37 - All Comments found and returned.
+2020-02-20 08:01:19 INFO  Log:53 - Comment found by ID number.
+2020-02-20 08:01:21 INFO  Log:46 - Post found by ID number.
+2020-02-20 08:01:21 INFO  Log:81 - New Comment created.
+2020-02-20 08:01:21 INFO  Log:53 - Comment found by ID number.
+2020-02-20 08:01:22 INFO  Log:33 - All posts found and returned.
+2020-02-20 08:01:23 INFO  Log:46 - Post found by ID number.
+2020-02-20 08:01:24 INFO  Log:48 - User found by ID number.
+2020-02-20 08:01:24 INFO  Log:72 - New post created.
+2020-02-20 08:01:25 INFO  Log:46 - Post found by ID number.
+2020-02-20 08:01:25 INFO  Log:33 - All users found and returned.
+2020-02-20 08:01:27 INFO  Log:48 - User found by ID number.
+2020-02-20 08:01:27 WARN  deprecation:1774 - HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2020-02-20 08:01:28 WARN  SqlExceptionHelper:137 - SQL Error: 0, SQLState: 23505
+2020-02-20 08:01:28 ERROR SqlExceptionHelper:142 - ERROR: duplicate key value violates unique constraint "uk_e6gkqunxajvyxl5uctpl2vl2p"
+  Detail: Key (email)=(test2@gmail.test) already exists.
+2020-02-20 08:01:28 ERROR Log:74 - org.hibernate.exception.ConstraintViolationException: could not execute statement
+2020-02-20 08:01:29 WARN  deprecation:1774 - HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2020-02-20 09:18:49 INFO  Version:46 - HHH000412: Hibernate Core {5.4.10.Final}
+2020-02-20 09:18:49 INFO  Version:49 - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-02-20 09:18:52 INFO  Dialect:172 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2020-02-20 09:18:59 INFO  Version:21 - HV000001: Hibernate Validator 6.0.17.Final
+2020-02-20 09:19:02 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-02-20 09:19:03 INFO  Log:37 - All Comments found and returned.
+2020-02-20 09:19:04 INFO  Log:53 - Comment found by ID number.
+2020-02-20 09:19:06 INFO  Log:46 - Post found by ID number.
+2020-02-20 09:19:06 INFO  Log:81 - New Comment created.
+2020-02-20 09:19:06 INFO  Log:53 - Comment found by ID number.
+2020-02-20 09:19:07 INFO  Log:33 - All posts found and returned.
+2020-02-20 09:19:08 INFO  Log:46 - Post found by ID number.
+2020-02-20 09:19:09 INFO  Log:48 - User found by ID number.
+2020-02-20 09:19:09 INFO  Log:72 - New post created.
+2020-02-20 09:19:10 INFO  Log:46 - Post found by ID number.
+2020-02-20 09:19:10 INFO  Log:33 - All users found and returned.
+2020-02-20 09:19:11 INFO  Log:48 - User found by ID number.
+2020-02-20 09:19:12 WARN  deprecation:1774 - HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2020-02-20 09:19:13 WARN  SqlExceptionHelper:137 - SQL Error: 0, SQLState: 42804
+2020-02-20 09:19:13 ERROR SqlExceptionHelper:142 - ERROR: column "image" is of type oid but expression is of type character varying
+  Hint: You will need to rewrite or cast the expression.
+  Position: 95
+2020-02-20 09:19:13 ERROR Log:74 - org.hibernate.exception.SQLGrammarException: could not execute statement
+2020-02-20 09:19:13 WARN  deprecation:1774 - HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2020-02-20 09:19:44 INFO  Version:46 - HHH000412: Hibernate Core {5.4.10.Final}
+2020-02-20 09:19:44 INFO  Version:49 - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-02-20 09:19:46 INFO  Dialect:172 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2020-02-20 09:19:52 INFO  Version:21 - HV000001: Hibernate Validator 6.0.17.Final
+2020-02-20 09:19:54 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-02-20 09:19:56 INFO  Log:37 - All Comments found and returned.
+2020-02-20 09:19:57 INFO  Log:53 - Comment found by ID number.
+2020-02-20 09:19:58 INFO  Log:46 - Post found by ID number.
+2020-02-20 09:19:58 INFO  Log:81 - New Comment created.
+2020-02-20 09:19:59 INFO  Log:53 - Comment found by ID number.
+2020-02-20 09:20:00 INFO  Log:33 - All users found and returned.
+2020-02-20 09:20:00 INFO  Log:48 - User found by ID number.
+2020-02-20 09:20:01 WARN  deprecation:1774 - HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2020-02-20 09:20:02 WARN  SqlExceptionHelper:137 - SQL Error: 0, SQLState: 42804
+2020-02-20 09:20:02 ERROR SqlExceptionHelper:142 - ERROR: column "image" is of type oid but expression is of type character varying
+  Hint: You will need to rewrite or cast the expression.
+  Position: 95
+2020-02-20 09:20:02 ERROR Log:74 - org.hibernate.exception.SQLGrammarException: could not execute statement
+2020-02-20 09:20:03 WARN  deprecation:1774 - HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2020-02-20 09:20:03 INFO  Log:33 - All posts found and returned.
+2020-02-20 09:20:04 INFO  Log:46 - Post found by ID number.
+2020-02-20 09:20:06 INFO  Log:48 - User found by ID number.
+2020-02-20 09:20:06 INFO  Log:72 - New post created.
+2020-02-20 09:20:07 INFO  Log:46 - Post found by ID number.
+2020-02-20 09:29:14 INFO  Version:46 - HHH000412: Hibernate Core {5.4.10.Final}
+2020-02-20 09:29:15 INFO  Version:49 - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-02-20 09:29:16 INFO  Dialect:172 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2020-02-20 09:29:22 INFO  Version:21 - HV000001: Hibernate Validator 6.0.17.Final
+2020-02-20 09:29:24 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-02-20 09:29:25 INFO  Log:37 - All Comments found and returned.
+2020-02-20 09:29:25 INFO  Log:53 - Comment found by ID number.
+2020-02-20 09:29:27 INFO  Log:46 - Post found by ID number.
+2020-02-20 09:29:27 INFO  Log:81 - New Comment created.
+2020-02-20 09:29:27 INFO  Log:53 - Comment found by ID number.
+2020-02-20 09:29:28 INFO  Log:33 - All posts found and returned.
+2020-02-20 09:29:30 INFO  Log:46 - Post found by ID number.
+2020-02-20 09:29:31 INFO  Log:48 - User found by ID number.
+2020-02-20 09:29:32 INFO  Log:72 - New post created.
+2020-02-20 09:29:34 INFO  Log:46 - Post found by ID number.
+2020-02-20 09:29:37 INFO  Log:33 - All users found and returned.
+2020-02-20 09:29:37 INFO  Log:48 - User found by ID number.
+2020-02-20 09:29:38 WARN  deprecation:1774 - HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2020-02-20 09:29:39 WARN  SqlExceptionHelper:137 - SQL Error: 0, SQLState: 42804
+2020-02-20 09:29:39 ERROR SqlExceptionHelper:142 - ERROR: column "image" is of type oid but expression is of type character varying
+  Hint: You will need to rewrite or cast the expression.
+  Position: 95
+2020-02-20 09:29:39 ERROR Log:74 - org.hibernate.exception.SQLGrammarException: could not execute statement
+2020-02-20 09:29:41 WARN  deprecation:1774 - HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2020-02-20 09:33:20 INFO  Version:46 - HHH000412: Hibernate Core {5.4.10.Final}
+2020-02-20 09:33:21 INFO  Version:49 - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-02-20 09:33:22 INFO  Dialect:172 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2020-02-20 09:33:28 INFO  Version:21 - HV000001: Hibernate Validator 6.0.17.Final
+2020-02-20 09:33:30 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-02-20 09:33:31 INFO  Log:37 - All Comments found and returned.
+2020-02-20 09:33:31 INFO  Log:53 - Comment found by ID number.
+2020-02-20 09:33:33 INFO  Log:46 - Post found by ID number.
+2020-02-20 09:33:33 INFO  Log:81 - New Comment created.
+2020-02-20 09:33:34 INFO  Log:53 - Comment found by ID number.
+2020-02-20 09:33:35 INFO  Log:33 - All posts found and returned.
+2020-02-20 09:33:35 INFO  Log:46 - Post found by ID number.
+2020-02-20 09:33:37 INFO  Log:48 - User found by ID number.
+2020-02-20 09:33:37 INFO  Log:72 - New post created.
+2020-02-20 09:33:37 INFO  Log:46 - Post found by ID number.
+2020-02-20 09:33:38 INFO  Log:33 - All users found and returned.
+2020-02-20 09:33:39 INFO  Log:48 - User found by ID number.
+2020-02-20 09:33:39 WARN  deprecation:1774 - HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2020-02-20 09:33:41 WARN  SqlExceptionHelper:137 - SQL Error: 0, SQLState: 42804
+2020-02-20 09:33:41 ERROR SqlExceptionHelper:142 - ERROR: column "image" is of type oid but expression is of type character varying
+  Hint: You will need to rewrite or cast the expression.
+  Position: 95
+2020-02-20 09:33:41 ERROR Log:74 - org.hibernate.exception.SQLGrammarException: could not execute statement
+2020-02-20 09:33:42 WARN  deprecation:1774 - HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead

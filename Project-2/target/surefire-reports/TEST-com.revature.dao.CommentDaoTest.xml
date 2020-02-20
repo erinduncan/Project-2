@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="6" failures="0" name="com.revature.dao.CommentDaoTest" time="3.869" errors="0" skipped="0">
+<testsuite tests="6" failures="0" name="com.revature.dao.CommentDaoTest" time="4.142" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_231\jre\bin"/>
@@ -65,10 +65,10 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="com.revature.dao.CommentDaoTest" name="testFindAll" time="0.955"/>
-  <testcase classname="com.revature.dao.CommentDaoTest" name="testFindById" time="0.62"/>
-  <testcase classname="com.revature.dao.CommentDaoTest" name="testCommentDao" time="0.423"/>
-  <testcase classname="com.revature.dao.CommentDaoTest" name="testDeleteById" time="0.624"/>
-  <testcase classname="com.revature.dao.CommentDaoTest" name="testInsert" time="0.621"/>
-  <testcase classname="com.revature.dao.CommentDaoTest" name="testUpdate" time="0.626"/>
+  <testcase classname="com.revature.dao.CommentDaoTest" name="testFindAll" time="0.838"/>
+  <testcase classname="com.revature.dao.CommentDaoTest" name="testFindById" time="0.526"/>
+  <testcase classname="com.revature.dao.CommentDaoTest" name="testCommentDao" time="0.401"/>
+  <testcase classname="com.revature.dao.CommentDaoTest" name="testDeleteById" time="0.751"/>
+  <testcase classname="com.revature.dao.CommentDaoTest" name="testInsert" time="1.105"/>
+  <testcase classname="com.revature.dao.CommentDaoTest" name="testUpdate" time="0.521"/>
 </testsuite>

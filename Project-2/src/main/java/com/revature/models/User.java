@@ -32,7 +32,7 @@ public class User {
 	@Column
 	private String lastName;
 	@Column
-	private Blob image;
+	private String image;
 	@OneToMany(mappedBy = "user",fetch = FetchType.EAGER, orphanRemoval = true)
 	private Set<Post> posts = new HashSet<>();
 	@OneToMany(mappedBy = "user", fetch = FetchType.EAGER, orphanRemoval = true)
@@ -123,11 +123,24 @@ public class User {
 		comment.setUser(null);
 	}
 
+
 	@Override
 	public String toString() {
 		return "User [userId=" + userId + ", email=" + email + ", password=" + password + ", firstName=" + firstName
 				+ ", lastName=" + lastName + "]";
 	}
+
+	public String getImage() {
+		return image;
+	}
+
+	public void setImage(String image) {
+		this.image = image;
+	}
+
+
+
+
 
 	
 }
