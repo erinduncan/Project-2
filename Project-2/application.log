@@ -8437,3 +8437,70 @@ Caused by: org.postgresql.util.PSQLException: ERROR: relation "testschema.post" 
 2020-02-18 00:56:04 INFO  Version:21 - HV000001: Hibernate Validator 6.0.17.Final
 2020-02-18 00:56:04 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
 2020-02-18 00:56:05 INFO  Log:34 - All users found and returned.
+2020-02-19 16:44:49 INFO  Version:46 - HHH000412: Hibernate Core {5.4.10.Final}
+2020-02-19 16:44:49 INFO  Version:49 - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-02-19 16:44:50 INFO  Dialect:172 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2020-02-19 16:44:57 INFO  Version:21 - HV000001: Hibernate Validator 6.0.17.Final
+2020-02-19 16:44:58 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-02-19 16:44:58 WARN  SqlExceptionHelper:137 - SQL Error: 0, SQLState: 42703
+2020-02-19 16:44:58 ERROR SqlExceptionHelper:142 - ERROR: column post1_.image does not exist
+  Position: 217
+2020-02-19 16:44:58 INFO  DefaultLoadEventListener:116 - HHH000327: Error performing load command : org.hibernate.exception.SQLGrammarException: could not extract ResultSet
+2020-02-19 16:44:58 ERROR Log:57 - org.hibernate.exception.SQLGrammarException: could not extract ResultSet
+2020-02-19 16:44:59 WARN  SqlExceptionHelper:137 - SQL Error: 0, SQLState: 42703
+2020-02-19 16:44:59 ERROR SqlExceptionHelper:142 - ERROR: column post1_.image does not exist
+  Position: 217
+2020-02-19 16:44:59 INFO  DefaultLoadEventListener:116 - HHH000327: Error performing load command : org.hibernate.exception.SQLGrammarException: could not extract ResultSet
+2020-02-19 16:44:59 ERROR Log:99 - org.hibernate.exception.SQLGrammarException: could not extract ResultSet
+2020-02-19 16:44:59 WARN  SqlExceptionHelper:137 - SQL Error: 0, SQLState: 42703
+2020-02-19 16:44:59 ERROR SqlExceptionHelper:142 - ERROR: column post0_.image does not exist
+  Position: 66
+2020-02-19 16:44:59 INFO  DefaultLoadEventListener:116 - HHH000327: Error performing load command : org.hibernate.exception.SQLGrammarException: could not extract ResultSet
+2020-02-19 16:45:00 WARN  SqlExceptionHelper:137 - SQL Error: 0, SQLState: 42703
+2020-02-19 16:45:00 ERROR SqlExceptionHelper:142 - ERROR: column post1_.image does not exist
+  Position: 217
+2020-02-19 16:45:00 INFO  DefaultLoadEventListener:116 - HHH000327: Error performing load command : org.hibernate.exception.SQLGrammarException: could not extract ResultSet
+2020-02-19 16:45:00 ERROR Log:57 - org.hibernate.exception.SQLGrammarException: could not extract ResultSet
+2020-02-19 16:45:00 WARN  SqlExceptionHelper:137 - SQL Error: 0, SQLState: 42703
+2020-02-19 16:45:00 ERROR SqlExceptionHelper:142 - ERROR: column post0_.image does not exist
+  Position: 62
+2020-02-19 16:45:01 WARN  SqlExceptionHelper:137 - SQL Error: 0, SQLState: 42703
+2020-02-19 16:45:01 ERROR SqlExceptionHelper:142 - ERROR: column post0_.image does not exist
+  Position: 66
+2020-02-19 16:45:01 INFO  DefaultLoadEventListener:116 - HHH000327: Error performing load command : org.hibernate.exception.SQLGrammarException: could not extract ResultSet
+2020-02-19 16:45:01 WARN  SqlExceptionHelper:137 - SQL Error: 0, SQLState: 42703
+2020-02-19 16:45:01 ERROR SqlExceptionHelper:142 - ERROR: column user0_.handle does not exist
+  Position: 104
+2020-02-19 16:45:01 INFO  DefaultLoadEventListener:116 - HHH000327: Error performing load command : org.hibernate.exception.SQLGrammarException: could not extract ResultSet
+2020-02-19 16:45:01 ERROR Log:53 - org.hibernate.exception.SQLGrammarException: could not extract ResultSet
+2020-02-19 16:45:02 ERROR AssertionFailure:31 - HHH000099: an assertion failure occurred (this may indicate a bug in Hibernate, but is more likely due to unsafe use of the session): org.hibernate.AssertionFailure: null id in com.revature.models.Post entry (don't flush the Session after an exception occurs)
+2020-02-19 16:45:03 WARN  SqlExceptionHelper:137 - SQL Error: 0, SQLState: 42703
+2020-02-19 16:45:03 ERROR SqlExceptionHelper:142 - ERROR: column post0_.image does not exist
+  Position: 66
+2020-02-19 16:45:03 INFO  DefaultLoadEventListener:116 - HHH000327: Error performing load command : org.hibernate.exception.SQLGrammarException: could not extract ResultSet
+2020-02-19 16:45:03 WARN  SqlExceptionHelper:137 - SQL Error: 0, SQLState: 42703
+2020-02-19 16:45:03 ERROR SqlExceptionHelper:142 - ERROR: column user0_.handle does not exist
+  Position: 98
+2020-02-19 16:45:03 ERROR Log:39 - javax.persistence.PersistenceException: org.hibernate.exception.SQLGrammarException: could not extract ResultSet
+2020-02-19 16:45:04 WARN  SqlExceptionHelper:137 - SQL Error: 0, SQLState: 42703
+2020-02-19 16:45:04 ERROR SqlExceptionHelper:142 - ERROR: column user0_.handle does not exist
+  Position: 104
+2020-02-19 16:45:04 INFO  DefaultLoadEventListener:116 - HHH000327: Error performing load command : org.hibernate.exception.SQLGrammarException: could not extract ResultSet
+2020-02-19 16:45:04 ERROR Log:53 - org.hibernate.exception.SQLGrammarException: could not extract ResultSet
+2020-02-19 16:45:04 WARN  deprecation:1774 - HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2020-02-19 16:45:04 WARN  SqlExceptionHelper:137 - SQL Error: 0, SQLState: 42703
+2020-02-19 16:45:04 ERROR SqlExceptionHelper:142 - ERROR: column this_.handle does not exist
+  Position: 101
+2020-02-19 16:45:04 ERROR Log:101 - org.hibernate.exception.SQLGrammarException: could not extract ResultSet
+2020-02-19 16:45:05 WARN  SqlExceptionHelper:137 - SQL Error: 0, SQLState: 42703
+2020-02-19 16:45:05 ERROR SqlExceptionHelper:142 - ERROR: column "handle" of relation "user" does not exist
+  Position: 48
+2020-02-19 16:45:05 ERROR Log:76 - org.hibernate.exception.SQLGrammarException: could not execute statement
+2020-02-19 16:45:05 WARN  SqlExceptionHelper:137 - SQL Error: 0, SQLState: 42703
+2020-02-19 16:45:05 ERROR SqlExceptionHelper:142 - ERROR: column "handle" of relation "user" does not exist
+  Position: 52
+2020-02-19 16:45:06 WARN  deprecation:1774 - HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2020-02-19 16:45:06 WARN  SqlExceptionHelper:137 - SQL Error: 0, SQLState: 42703
+2020-02-19 16:45:06 ERROR SqlExceptionHelper:142 - ERROR: column this_.handle does not exist
+  Position: 101
+2020-02-19 16:45:06 ERROR Log:101 - org.hibernate.exception.SQLGrammarException: could not extract ResultSet

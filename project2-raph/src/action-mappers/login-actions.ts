@@ -1,4 +1,5 @@
 import { apiLogin } from "../remote/api-clients/api"
+import { history } from "../utility/history"
 
 
 export const loginTypes = {
@@ -16,6 +17,7 @@ export const updateCurrentUser = (username:string, password:string) => async (di
                 currentUser:response.body
             }
         })
+        history.push('/postlist');
     }else {
         dispatch({
             type:loginTypes.UNSUCCESSFUL_LOGIN,

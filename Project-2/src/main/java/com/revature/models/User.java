@@ -30,6 +30,8 @@ public class User {
 	private String firstName;
 	@Column
 	private String lastName;
+	@Column(unique = true)
+	private String handle;
 	@OneToMany(mappedBy = "user",fetch = FetchType.EAGER, orphanRemoval = true)
 	private Set<Post> posts = new HashSet<>();
 	@OneToMany(mappedBy = "user", fetch = FetchType.EAGER, orphanRemoval = true)
@@ -40,21 +42,23 @@ public class User {
 		// TODO Auto-generated constructor stub
 	}
 
-	public User(String email, String password, String firstName, String lastName) {
+	public User(String email, String password, String firstName, String lastName, String handle) {
 		super();
 		this.email = email;
 		this.password = password;
 		this.firstName = firstName;
 		this.lastName = lastName;
+		this.handle = handle;
 	}
 
-	public User(int userId, String email, String password, String firstName, String lastName) {
+	public User(int userId, String email, String password, String firstName, String lastName, String handle) {
 		super();
 		this.userId = userId;
 		this.email = email;
 		this.password = password;
 		this.firstName = firstName;
 		this.lastName = lastName;
+		this.handle = handle;
 	}
 
 	public int getUserId() {
@@ -63,6 +67,14 @@ public class User {
 
 	public void setUserId(int userId) {
 		this.userId = userId;
+	}
+	
+	public int getHandle() {
+		return userId;
+	}
+
+	public void setHandle(String handle) {
+		this.handle = handle;
 	}
 
 	public String getEmail() {
@@ -97,27 +109,6 @@ public class User {
 		this.lastName = lastName;
 	}
 	
-	
-
-	public void addPost(Post p) {
-		posts.add(p);
-		p.setUser(this);
-	}
-
-	public void removePost(Post p) {
-		posts.remove(p);
-		p.setUser(null);
-	}
-
-	public void addComment(Comment comment) {
-		comments.add(comment);
-		comment.setUser(this);
-	}
-
-	public void removeComment(Comment comment) {
-		comments.remove(comment);
-		comment.setUser(null);
-	}
 
 	@Override
 	public String toString() {

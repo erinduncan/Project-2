@@ -43,7 +43,7 @@ public class UserDaoTest {
 
 	@Test
 	public void testUpdate() {
-		User u = new User(1, "testupdated@email.test", "passwordupd", "firstUpd", "lastUpd");
+		User u = new User(1, "testupdated@email.test", "passwordupd", "firstUpd", "lastUpd", "whatever");
 		User updated = ud.update(u);
 		System.out.println(updated);
 		assertTrue(updated.getEmail().equals(u.getEmail()));
@@ -51,7 +51,7 @@ public class UserDaoTest {
 
 	@Test
 	public void testInsert() {
-		User u = new User("test1@gmail.test", "password", "testFist", "testLast");
+		User u = new User("test1@gmail.test", "password", "testFist", "testLast", "cutie");
 		User retU  = ud.insert(u);
 		System.out.println(retU);
 		assertEquals(retU,u);
