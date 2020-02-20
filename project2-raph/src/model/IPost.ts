@@ -1,14 +1,10 @@
+import IUser from "./IUser";
+
 export default interface IPost {
     id:number;
-    post: []
-    fullName: string
-    likeCount: number
-    currentUserlike: boolean
-    isPostOwner: boolean
-    like: () => any
-    unlike: () => any
-    delete: (id: string) => any
-    setTitle: (title: string) => any
-    getPostComments: (ownerUserId: string, postId: string) => any
-    commentList: any
+    title: string
+    body: string
+    like: () => boolean //Alec's clicker component
+    user: IUser
+    // getPostComments: (ownerUserId: number, postId: number) => any
 }

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 C:\Users\marcu\Desktop\git repos\Project2\Project-2\Project-2\src\main\java\com\revature\models\Comment.java
 C:\Users\marcu\Desktop\git repos\Project2\Project-2\Project-2\src\main\java\com\revature\dao\UserDao.java
 C:\Users\marcu\Desktop\git repos\Project2\Project-2\Project-2\src\main\java\com\revature\controller\PostController.java
@@ -13,3 +14,18 @@ C:\Users\marcu\Desktop\git repos\Project2\Project-2\Project-2\src\main\java\com\
 C:\Users\marcu\Desktop\git repos\Project2\Project-2\Project-2\src\main\java\com\revature\dao\CommentDao.java
 C:\Users\marcu\Desktop\git repos\Project2\Project-2\Project-2\src\main\java\com\revature\models\User.java
 C:\Users\marcu\Desktop\git repos\Project2\Project-2\Project-2\src\main\java\com\revature\service\PostService.java
+=======
+D:\Project2\Project-2\Project-2\src\main\java\com\revature\dao\PostDao.java
+D:\Project2\Project-2\Project-2\src\main\java\com\revature\service\UserService.java
+D:\Project2\Project-2\Project-2\src\main\java\com\revature\controller\UserController.java
+D:\Project2\Project-2\Project-2\src\main\java\com\revature\models\Comment.java
+D:\Project2\Project-2\Project-2\src\main\java\com\revature\controller\CommentController.java
+D:\Project2\Project-2\Project-2\src\main\java\com\revature\models\Post.java
+D:\Project2\Project-2\Project-2\src\main\java\com\revature\dao\CommentDao.java
+D:\Project2\Project-2\Project-2\src\main\java\com\revature\controller\PostController.java
+D:\Project2\Project-2\Project-2\src\main\java\com\revature\dao\UserDao.java
+D:\Project2\Project-2\Project-2\src\main\java\com\revature\service\CommentService.java
+D:\Project2\Project-2\Project-2\src\main\java\com\revature\service\PostService.java
+D:\Project2\Project-2\Project-2\src\main\java\com\revature\models\User.java
+D:\Project2\Project-2\Project-2\src\main\java\com\revature\driver\Log.java
+>>>>>>> e9ce2b1942e8282cc194b26decd630b60867b584

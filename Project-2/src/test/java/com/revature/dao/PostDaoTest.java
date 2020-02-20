@@ -3,17 +3,17 @@ package com.revature.dao;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
+import java.sql.Date;
+import java.util.HashSet;
 import java.util.List;
-
-import com.revature.models.Post;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import org.springframework.transaction.annotation.Transactional;
+
+import com.revature.model.Post;
 
 @ContextConfiguration(locations = "classpath:applicationContext-test.xml")
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -26,15 +26,10 @@ public class PostDaoTest {
 	private UserDao ud;
 
 	@Test
-	@Transactional
-	@Rollback(value = true)
 	public void testPostDao() {
 		assertTrue(pd != null);
 	}
-	
 	@Test
-	@Transactional
-	@Rollback(value = true)
 	public void testFindAll() {
 		List<Post> list = pd.findAll();
 		System.out.println(list);
@@ -42,8 +37,6 @@ public class PostDaoTest {
 	}
 
 	@Test
-	@Transactional
-	@Rollback(value = true)
 	public void testFindById() {
 		int postid = 1;
 		Post post = pd.findById(postid);
@@ -53,10 +46,8 @@ public class PostDaoTest {
 
 
 	@Test
-	@Transactional
-	@Rollback(value = true)
 	public void testInsert() {
-		Post post = new Post(0,"testTitle",
+		Post post = new Post(0,"testTitle", null,
 				"My name is Yoshikage Kira. I'm 33 years old. "
 				+ "My house is in the northeast section of Morioh, where all the villas are, and I am not married."
 				+ " I work as an employee for the Kame Yu department stores, and I get home every day by 8 PM at the latest."
@@ -74,8 +65,6 @@ public class PostDaoTest {
 	}
 	
 	@Test
-	@Transactional
-	@Rollback(value = true)
 	public void testUpdate() {
 		int id = 1;
 		Post p = pd.findById(id);
@@ -86,15 +75,16 @@ public class PostDaoTest {
 		
 	}
 
-	@Test
-	@Transactional
-	@Rollback(value = true)
-	public void testDeleteById() {
-		Post p = pd.deleteById(1);
-		System.out.println(p);
-		assertTrue(p != null);
-	}
+//	@Test
+//	public void testDeleteById() {
+//		Post p = pd.deleteById(1);
+//		System.out.println(p);
+//		assertTrue(p != null);
+//	}
 
-	
+	@Test
+	public void testFindByName() {
+		fail("Not yet implemented");
+	}
 
 }

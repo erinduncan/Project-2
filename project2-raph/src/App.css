@@ -4,6 +4,8 @@
   max-width: 75%;
   margin-top: 0%;
   margin-left: 12.5%;
+  border: none;
+  border-radius: 20px;
 }
 
 .App-logo {

@@ -56,14 +56,13 @@ export class PostComponent extends React.Component<IPostProps, IPostState> {
 
     render() {
 
-        const displayList: PostDisplayComponent[] = this.props.allPost.map<any>((Post: any) => {
-            return //<PostDisplayComponent id={Post.id}
-                // name={Post.name}
-                // height={Post.height}
-                // weight={Post.weight}
-                // types={[Post.types[0].type.name, Post.types[1] && Post.types[1].type.name]}
-                // key={Post.id}//don't use the position in the list
-            ///>
+        const displayList: PostDisplayComponent[] = this.props.allPost.map<any>((post: any) => {
+            return <PostDisplayComponent id={post.id}
+                title={post.name}
+                body={post.body}
+                like={post.like}
+                user={this.props.user}
+                />
         })
 
         if (this.props.user) {
@@ -74,17 +73,11 @@ export class PostComponent extends React.Component<IPostProps, IPostState> {
                         {displayList}
                     </CardColumns>
                     <Pagination aria-label="Page navigation example">
-                        <PaginationItem disabled>
-                            <PaginationLink first />
-                        </PaginationItem>
                         <PaginationItem disabled={!this.state.offset} onClick={this.pageTurnBackwards}>
                             <PaginationLink previous />
                         </PaginationItem>
                         <PaginationItem onClick={this.pageTurnForward}>
                             <PaginationLink next />
-                        </PaginationItem>
-                        <PaginationItem>
-                            <PaginationLink last />
                         </PaginationItem>
                     </Pagination>
                 </>

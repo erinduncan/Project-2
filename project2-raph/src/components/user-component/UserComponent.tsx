@@ -6,7 +6,7 @@ import {UserDisplayComponent} from './UserDisplayComponent'
 export const UserComponent:React.FC<any> = (props:any) =>{
     return(
         <React.Fragment>
-            <UserDisplayComponent id={props.id}
+            <UserDisplayComponent userId={props.userId}
                 email={props.email}
                 password={props.password}
                 firstName={props.firstName}

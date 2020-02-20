@@ -12,8 +12,8 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.revature.driver.Log;
-import com.revature.models.Comment;
-import com.revature.models.Post;
+import com.revature.model.Comment;
+import com.revature.model.Post;
 
 @Repository
 @Transactional
@@ -30,10 +30,11 @@ public class CommentDao {
 	
 
 //	@Override
-	public List<Comment> findAll() {
+	public List<Comment> findAll(Comment p) {
 		List<Comment> list;
 		try {
-			list = sesf.getCurrentSession().createQuery("from Comment", Comment.class).list();
+			list = sesf.getCurrentSession().createQuery("from Comment where post_postid=" 
+													+p.getPost().getPostId(), Comment.class).list();
 			Log.log.info("All Comments found and returned.");
 			return list;
 		} catch (Exception e) {

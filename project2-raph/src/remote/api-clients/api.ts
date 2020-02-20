@@ -1,6 +1,9 @@
-import { axiosConfig } from "./axiosConfig";
+import axiosConfig from "./axiosConfig";
+import axios from 'axios';
 import IUser from "../../model/IUser";
-
+import { history } from '../../utility/history';
+import IPost from "../../model/IPost";
+import ICreatePost from "../../model/ICreatePost";
 
 export const apiLogin = async (username: string, password: string): Promise<object> => {
     let credentials = {
@@ -14,9 +17,10 @@ export const apiLogin = async (username: string, password: string): Promise<obje
         if (response.status === 200) {
             const body = await response.data
             console.log(body)
+            history.push('/login')
             return {
                 body,
-                loginMessage: 'successful login'
+                loginMessage: 'Successful login',
             }
         } else if (response.status === 401) {
             return {
@@ -47,5 +51,9 @@ export const getList = () =>{
 }
 
 export const addUser = (body: IUser) => {
-    return axiosConfig.post('add.app', body);
+    return axiosConfig.post('/newuser.app', body);
 }
+
+export const publishPost = (body: ICreatePost) => {
+    return axiosConfig.post('add.app', body);
+} 
