@@ -1,5 +1,6 @@
 package com.revature.models;
 
+import java.sql.Blob;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -30,6 +31,8 @@ public class User {
 	private String firstName;
 	@Column
 	private String lastName;
+	@Column
+	private String image;
 	@OneToMany(mappedBy = "user",fetch = FetchType.EAGER, orphanRemoval = true)
 	private Set<Post> posts = new HashSet<>();
 	@OneToMany(mappedBy = "user", fetch = FetchType.EAGER, orphanRemoval = true)
@@ -46,6 +49,7 @@ public class User {
 		this.password = password;
 		this.firstName = firstName;
 		this.lastName = lastName;
+		
 	}
 
 	public User(int userId, String email, String password, String firstName, String lastName) {
@@ -119,10 +123,24 @@ public class User {
 		comment.setUser(null);
 	}
 
+
 	@Override
 	public String toString() {
 		return "User [userId=" + userId + ", email=" + email + ", password=" + password + ", firstName=" + firstName
 				+ ", lastName=" + lastName + "]";
 	}
 
+	public String getImage() {
+		return image;
+	}
+
+	public void setImage(String image) {
+		this.image = image;
+	}
+
+
+
+
+
+	
 }

@@ -32,17 +32,18 @@ export const CreateUserComponent:React.FC<any> = (props:ICreateUserProps) =>{
             handle
     };
 
-    const submitUser = async (event: SyntheticEvent) => {
-        event.preventDefault();
-        props.newUser(temp);
-    };
-
+    // const submitUser = async (event: SyntheticEvent) => {
+        
+    // };
+    
     return(
         <React.Fragment>
             <div className = "registerDiv">
             <Container className="registerForm">
             <h2>Create an Account</h2>
-            <Form>
+            <Form onSubmit={(e)=>{
+                e.preventDefault();
+                props.newUser(temp)}}>
                 <FormGroup row>
                     <Label for="email" sm={2}>Email</Label>
                     <Col sm={10}>
@@ -103,7 +104,7 @@ export const CreateUserComponent:React.FC<any> = (props:ICreateUserProps) =>{
                             onChange={val=>setHandle(val.target.value)} />
                     </Col>
                 </FormGroup>
-                <Button color='primary' onClick={submitUser}>Submit</Button>
+                <Button color='primary' type='submit'>Submit</Button>
             </Form>
             <p>{props.loginMessage}</p><br></br>
             <Link to='/'>Home</Link>

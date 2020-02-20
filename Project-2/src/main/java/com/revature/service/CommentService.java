@@ -2,29 +2,41 @@ package com.revature.service;
 
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
 import com.revature.dao.CommentDao;
 import com.revature.models.Comment;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 @Service
 public class CommentService {
-	
+
+    private CommentDao cd;
+
 	@Autowired
-	private CommentDao cd;
-	
-	public List<Comment> getAll(Comment p) {
-		return cd.findAll(p);
+	public void setDao(CommentDao cd) {
+		this.cd = cd;
 	}
-	
-	public Comment update(Comment p) {
-		return cd.update(p);
+
+	public List<Comment> getByAll() {
+		return cd.findAll();
 	}
-	
-	public Comment insert(Comment p) {
-		return cd.insert(p);
+
+	public Comment getById(int id) {
+		return cd.findById(id);
+	}
+
+	public Comment addComment(Comment u) {
+		return cd.insert(u);
+
+	}
+
+	public Comment updateComment(Comment u) {
+		return cd.update(u);
 	}
 
 
+	public Comment deleteComment(int id) {
+		return cd.deleteById(id);
+	}
 }

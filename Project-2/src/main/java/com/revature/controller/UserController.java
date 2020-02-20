@@ -1,6 +1,9 @@
 package com.revature.controller;
 import java.util.List;
 
+import com.revature.models.User;
+import com.revature.service.UserService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -11,17 +14,19 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.revature.models.User;
-import com.revature.service.UserService;
 
 @Controller
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = {"http://localhost:8080"})
 public class UserController {
+	
 	private UserService us;
+
 	@Autowired
-	public void setUs(UserService us) {
+    public void setService(UserService us) {
 		this.us = us;
 	}
+
+	
 	@RequestMapping(method = RequestMethod.GET, value = "/userlist.app", produces = "application/json")
 	public ResponseEntity<List<User>> getAllUsersAsList() {
 		return new ResponseEntity<>(us.getByAll(), HttpStatus.ACCEPTED);
@@ -36,11 +41,11 @@ public class UserController {
 	}
 	@RequestMapping(method = RequestMethod.POST, value = "/newuser.app", produces = "application/json")
 	public ResponseEntity<User> insertNewUser(@RequestBody User user) {
-		return new ResponseEntity<>(us.insertUser(user), HttpStatus.ACCEPTED);
+		return new ResponseEntity<>(us.addUser(user), HttpStatus.ACCEPTED);
 	}
 	@RequestMapping(method = RequestMethod.DELETE, value = "/deleteuser.app", produces = "application/json")
 	public ResponseEntity<User> deleteUser(@RequestBody User user) {
-		us.delete(user);
+//		us.delete(user);
 		return new ResponseEntity<>(HttpStatus.ACCEPTED);
 	}
 	@RequestMapping(method = RequestMethod.GET, value = "/{email}.app", produces = "application/json")
@@ -53,7 +58,7 @@ public class UserController {
 		String password = reqbod.getPassword();
 		User u = us.getByEmail(email);
 		if (u != null) {
-			if (us.validateUser(email, password, u)) {
+			if (us.authenticateUser(email, password)) {
 				return new ResponseEntity<>(u, HttpStatus.ACCEPTED);
 			} else {
 				return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);

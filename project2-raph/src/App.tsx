@@ -2,7 +2,8 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Provider } from 'react-redux';
 import { Switch, Route, Router } from 'react-router';
-import './App.css';
+// import './App.css';
+import './css/Main.css'
 import { store } from './Store';
 import LoginComponent from './components/login-component/LoginContainer';
 import PostComponent from './components/post-component/PostContainer';
