@@ -14,7 +14,7 @@ public class UserService {
 	private UserDao ud;
 
 	@Autowired
-	public void setUd(UserDao ud) {
+	public void setDao(UserDao ud) {
 		this.ud = ud;
 	}
 

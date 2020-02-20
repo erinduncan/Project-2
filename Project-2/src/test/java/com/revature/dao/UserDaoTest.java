@@ -63,7 +63,7 @@ public class UserDaoTest {
 	@Transactional
 	@Rollback(value = true)
 	public void testInsert() {
-		User u = new User("test34@gmail.test", "password", "testFist", "testLast");
+		User u = new User("test2@gmail.test", "password", "testFist", "testLast");
 		User retU  = ud.insert(u);
 		System.out.println(retU);
 		assertTrue(true);
@@ -82,7 +82,7 @@ public class UserDaoTest {
 	@Transactional
 	@Rollback(value = true)
 	public void testFindByEmail() {
-		User u = ud.findByEmail("test2@gmail.test");
+		User u = ud.findByEmail("test1@gmail.test");
 		System.out.println(u);
 		assertTrue(u != null);
 	}

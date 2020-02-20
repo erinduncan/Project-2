@@ -13,6 +13,11 @@ public class PostService {
 
 	@Autowired
 	private PostDao pd;
+
+	@Autowired
+	public void setDao(PostDao pd) {
+		this.pd = pd;
+	}
 	
 	public List<Post> getAll() {
 		return pd.findAll();
@@ -30,8 +35,8 @@ public class PostService {
 		return pd.insert(p);
 	}
 	
-	public Post deletePost(Post p) {
-		return pd.delete(p);
+	public Post deletePost(int postId) {
+		return pd.deleteById(postId);
 	}
 
 

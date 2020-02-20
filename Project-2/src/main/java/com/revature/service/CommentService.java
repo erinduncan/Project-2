@@ -6,26 +6,15 @@ import com.revature.dao.CommentDao;
 import com.revature.models.Comment;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class CommentService {
-	
-	@Autowired
-	private CommentDao cd;
-	
-	public List<Comment> getAll(Comment p) {
-		return cd.findAll();
-	}
-	
-	public Comment update(Comment p) {
-		return cd.update(p);
-	}
-	
-	public Comment insert(Comment p) {
-		return cd.insert(p);
-	}
+
+    private CommentDao cd;
 
 	@Autowired
-	public void setCd(CommentDao cd) {
+	public void setDao(CommentDao cd) {
 		this.cd = cd;
 	}
 

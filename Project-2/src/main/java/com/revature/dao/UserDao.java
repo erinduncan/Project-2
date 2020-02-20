@@ -2,9 +2,6 @@ package com.revature.dao;
 
 import java.util.List;
 
-import com.revature.driver.Log;
-import com.revature.models.User;
-
 import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
@@ -14,18 +11,20 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.revature.driver.Log;
+import com.revature.models.User;
+
 @Repository
 @Transactional
 public class UserDao {
 
 	private SessionFactory sesf;
-	
+
 	@Autowired
 	public UserDao(SessionFactory sesf) {
 		super();
 		this.sesf = sesf;
 	}
-	
 
 	public List<User> findAll() {
 		List<User> list;
@@ -50,7 +49,7 @@ public class UserDao {
 			return user;
 		} catch (HibernateException e) {
 			Log.log.error(e);
-			System.out.println("ERROR! Could not findbyid "+id);
+			System.out.println("ERROR! Could not findbyid " + id);
 		}
 		return null;
 	}
@@ -61,7 +60,7 @@ public class UserDao {
 			return t;
 		} catch (HibernateException e) {
 			Log.log.error(e);
-			System.out.println("ERROR! Could not update \n"+t.toString());
+			System.out.println("ERROR! Could not update \n" + t.toString());
 		}
 		return null;
 	}
@@ -73,7 +72,7 @@ public class UserDao {
 			return t;
 		} catch (HibernateException e) {
 			Log.log.error(e);
-			System.out.println("ERROR! Could not save \n"+t.toString());
+			System.out.println("ERROR! Could not save \n" + t.toString());
 		}
 		return null;
 	}
@@ -85,7 +84,7 @@ public class UserDao {
 			return t;
 		} catch (HibernateException e) {
 			Log.log.error(e);
-			System.out.println("ERROR! Could not Deletebyemail "+email);
+			System.out.println("ERROR! Could not Deletebyemail " + email);
 		}
 		return null;
 	}
@@ -98,20 +97,12 @@ public class UserDao {
 			return (User) criteria.list().get(0);
 		} catch (HibernateException e) {
 			Log.log.error(e);
-			System.out.println("ERROR! Could not findbyemail "+email);
+			System.out.println("ERROR! Could not findbyemail " + email);
 		}
 		return null;
 	}
+
 	
-	public User delete(User p) {
-		try {
-			sesf.getCurrentSession().delete(p);
-			return p;
-		} catch (HibernateException e) {
-			Log.log.error(e);
-			System.out.println("ERROR! Could not Delete, id: "+p.getUserId()+" not found.");
-		}
-		return null;
-	}
+
 
 }

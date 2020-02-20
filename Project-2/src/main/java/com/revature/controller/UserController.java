@@ -4,18 +4,27 @@ import java.util.List;
 import com.revature.models.User;
 import com.revature.service.UserService;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+
 @Controller
+@CrossOrigin(origins = {"http://localhost:8080"})
 public class UserController {
 	
-	private UserService us = new UserService();
+	private UserService us;
+
+	@Autowired
+    public void setService(UserService us) {
+		this.us = us;
+	}
 
 	
 	@RequestMapping(method = RequestMethod.GET, value = "/userlist.app", produces = "application/json")
@@ -35,8 +44,8 @@ public class UserController {
 		return new ResponseEntity<>(us.addUser(user), HttpStatus.ACCEPTED);
 	}
 	@RequestMapping(method = RequestMethod.DELETE, value = "/deleteuser.app", produces = "application/json")
-	public ResponseEntity<User> deleteUser(@RequestBody String email) {
-		us.deleteUserByEmail(email);
+	public ResponseEntity<User> deleteUser(@RequestBody User user) {
+//		us.delete(user);
 		return new ResponseEntity<>(HttpStatus.ACCEPTED);
 	}
 	@RequestMapping(method = RequestMethod.GET, value = "/{email}.app", produces = "application/json")

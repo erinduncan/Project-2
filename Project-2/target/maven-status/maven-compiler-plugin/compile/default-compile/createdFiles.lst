@@ -10,3 +10,4 @@ com\revature\models\User.class
 com\revature\service\CommentService.class
 com\revature\service\PostService.class
 com\revature\models\Comment.class
+com\revature\controller\UserController.class

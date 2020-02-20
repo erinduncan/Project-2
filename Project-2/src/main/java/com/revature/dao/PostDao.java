@@ -2,14 +2,16 @@ package com.revature.dao;
 
 import java.util.List;
 
-import com.revature.driver.Log;
-import com.revature.models.Post;
-
 import org.hibernate.HibernateException;
+import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
+
+import com.revature.driver.Log;
+import com.revature.models.Post;
+import com.revature.models.User;
 
 @Repository
 @Transactional
@@ -76,13 +78,14 @@ public class PostDao {
 	}
 
 
-	public Post delete(Post p) {
+	public Post deleteById(int id) {
 		try {
+			Post p = sesf.getCurrentSession().get(Post.class, id);
 			sesf.getCurrentSession().delete(p);
 			return p;
 		} catch (HibernateException e) {
 			Log.log.error(e);
-			System.out.println("ERROR! Could not Delete, id: "+p.getPostId()+" not found.");
+			System.out.println("ERROR! Could not Delete, id: "+id+" not found.");
 		}
 		return null;
 	}

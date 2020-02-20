@@ -45,7 +45,7 @@ public class PostDaoTest {
 	@Transactional
 	@Rollback(value = true)
 	public void testFindById() {
-		int postid = 2;
+		int postid = 1;
 		Post post = pd.findById(postid);
 		System.out.println("Post: "+post);
 		assertTrue(post != null);
@@ -77,7 +77,7 @@ public class PostDaoTest {
 	@Transactional
 	@Rollback(value = true)
 	public void testUpdate() {
-		int id = 2;
+		int id = 1;
 		Post p = pd.findById(id);
 		p.setLiked(true);
 		Post retp = pd.update(p);
@@ -86,23 +86,14 @@ public class PostDaoTest {
 		
 	}
 
-<<<<<<< HEAD
 	@Test
 	@Transactional
 	@Rollback(value = true)
 	public void testDeleteById() {
-		Post p = pd.deleteById(2);
+		Post p = pd.deleteById(1);
 		System.out.println(p);
 		assertTrue(p != null);
 	}
-=======
-//	@Test
-//	public void testDeleteById() {
-//		Post p = pd.deleteById(1);
-//		System.out.println(p);
-//		assertTrue(p != null);
-//	}
->>>>>>> 5d984c68eac9d5d0e9a07dca4c3fb7038d016c20
 
 	
 
