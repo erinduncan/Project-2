@@ -9,8 +9,8 @@ interface ILoginProps {
 }
 
 export const Login:React.FC<any> = (props:ILoginProps) => {
-    const [username, setusername] = useState('');
-    const [password, setpassword] = useState('');
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
 
     const submitLogin  = async (event: any) => {
         event.preventDefault()
@@ -30,9 +30,9 @@ export const Login:React.FC<any> = (props:ILoginProps) => {
                                 type="text"
                                 name="username"
                                 id="username"
-                                placeholder="put username here"
+                                placeholder="Username"
                                 value={username}
-                                onChange={val=>setusername(val.target.value)} />
+                                onChange={val=>setUsername(val.target.value)} />
                             {/* this is an example of data binding, 
                             we take data from the state and put it 
                             in our tsx */}
@@ -45,9 +45,9 @@ export const Login:React.FC<any> = (props:ILoginProps) => {
                                 type="password"
                                 name="password"
                                 id="password"
-                                placeholder="put password here"
+                                placeholder="Password"
                                 value={password}
-                                onChange={val=>setpassword(val.target.value)}/>
+                                onChange={val=>setPassword(val.target.value)}/>
                         </Col>
                     </FormGroup>
                     <Button outline id="submitButton" color='secondary' onClick={submitLogin}>Login</Button>

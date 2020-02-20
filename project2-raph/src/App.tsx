@@ -6,8 +6,7 @@ import { Switch, Route, Router } from 'react-router';
 import './css/Main.css'
 import { store } from './Store';
 import LoginComponent from './components/login-component/LoginContainer';
-import PostComponent from './components/post-component/PostContainer';
-// import { BrowserRouter as Router } from 'react-router-dom';
+import CreatePostComponent from './components/create-post-component/CreatePostComponent';
 import CreateUserComponent from './components/create-user-component/CreateUserContainer';
 import { MainPageComponent } from "./components/main-page-component/MainPageComponent";
 import { history } from './utility/history'; 
@@ -18,7 +17,7 @@ const App: React.FC = () => {
       <Provider store={store}>
         <Router history = { history }>
           <Switch>
-            <Route path='/post' component={PostComponent}/>
+            <Route path='/post' component={CreatePostComponent}/>
             <Route path='/login' component={LoginComponent} />
             <Route path='/register' component={CreateUserComponent}/>
             <Route path='/' component={MainPageComponent} />

@@ -1,10 +1,10 @@
 package com.revature.models;
 
+import java.sql.Blob;
 import java.sql.Date;
 import java.util.HashSet;
 import java.util.Set;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -17,7 +17,6 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.CreationTimestamp;
-import org.hibernate.validator.constraints.br.TituloEleitoral;
 
 @Entity
 @Table(name = "Post")
@@ -35,6 +34,8 @@ public class Post {
 	@CreationTimestamp
 	private Date submitted;
 	@Column
+	private Blob image;
+	@Column
 	private Boolean liked;
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(nullable = false )
@@ -49,10 +50,11 @@ public class Post {
 	
 	
 
-	public Post(int postId, String title, String body, Date submitted, Boolean liked ) {
+	public Post(int postId, String title, Blob image, String body, Date submitted, Boolean liked ) {
 		super();
 		this.postId = postId;
 		this.title = title;
+		this.image = image;
 		this.body = body;
 		this.submitted = submitted;
 		this.liked = liked;
@@ -64,18 +66,15 @@ public class Post {
 		this.body = body;
 		this.liked = liked;
 	}
-
 	
-	
-
-	public Post(int postId, String title, String body, Boolean liked) {
+	public Post(int postId, String title, Blob image, String body, Boolean liked ) {
 		super();
 		this.postId = postId;
 		this.title = title;
+		this.image = image;
 		this.body = body;
 		this.liked = liked;
 	}
-
 
 
 	@Override
@@ -83,6 +82,15 @@ public class Post {
 		return "Post [postId=" + postId + ", title=" + title + ", body=" + body + ", submitted=" + submitted
 				+ ", liked=" + liked + ", user=" + user + "]";
 	}
+	
+	public Blob getImage() {
+		return image;
+	}
+
+	public void setImage(Blob image) {
+		this.image = image;
+	}
+
 
 	public int getPostId() {
 		return postId;

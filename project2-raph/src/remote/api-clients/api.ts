@@ -1,7 +1,8 @@
 import { axiosConfig } from "./axiosConfig";
 import IUser from "../../model/IUser";
 import { history } from '../../utility/history';
-import { Http2ServerResponse } from "http2";
+import IPost from "../../model/IPost";
+import ICreatePost from "../../model/ICreatePost";
 
 export const apiLogin = async (username: string, password: string): Promise<object> => {
     let credentials = {
@@ -77,4 +78,8 @@ export const apiCreateUser = async (newUser: IUser) => {
 
         }
     }
+}
+
+export const publishPost = (body: ICreatePost) => {
+    return axiosConfig.post('add.app', body);
 }
