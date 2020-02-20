@@ -19,14 +19,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @CrossOrigin(origins = {"http://localhost:8080"})
 public class PostController {
 	
-
 	private PostService ps;
 
 	@Autowired
     public void setService(PostService ps) {
 		this.ps = ps;
 	}
-
 	
 	@RequestMapping(method = RequestMethod.GET, value = "/postlist.app", produces = "application/json")
 	public ResponseEntity<List<Post>> getAllPostAsList() {

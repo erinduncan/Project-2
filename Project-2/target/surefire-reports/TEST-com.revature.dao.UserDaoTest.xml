@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="7" failures="0" name="com.revature.dao.UserDaoTest" time="4.72" errors="0" skipped="0">
+<testsuite tests="7" failures="0" name="com.revature.dao.UserDaoTest" time="4.289" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_231\jre\bin"/>
@@ -65,11 +65,11 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="com.revature.dao.UserDaoTest" name="testFindAll" time="0.617"/>
-  <testcase classname="com.revature.dao.UserDaoTest" name="testUserDao" time="0.641"/>
-  <testcase classname="com.revature.dao.UserDaoTest" name="testFindById" time="0.511"/>
-  <testcase classname="com.revature.dao.UserDaoTest" name="testFindByEmail" time="0.782"/>
-  <testcase classname="com.revature.dao.UserDaoTest" name="testInsert" time="1.05"/>
-  <testcase classname="com.revature.dao.UserDaoTest" name="testUpdate" time="0.369"/>
-  <testcase classname="com.revature.dao.UserDaoTest" name="testDeleteByEmail" time="0.75"/>
+  <testcase classname="com.revature.dao.UserDaoTest" name="testFindAll" time="0.63"/>
+  <testcase classname="com.revature.dao.UserDaoTest" name="testUserDao" time="0.838"/>
+  <testcase classname="com.revature.dao.UserDaoTest" name="testFindById" time="0.54"/>
+  <testcase classname="com.revature.dao.UserDaoTest" name="testFindByEmail" time="0.533"/>
+  <testcase classname="com.revature.dao.UserDaoTest" name="testInsert" time="0.832"/>
+  <testcase classname="com.revature.dao.UserDaoTest" name="testUpdate" time="0.387"/>
+  <testcase classname="com.revature.dao.UserDaoTest" name="testDeleteByEmail" time="0.529"/>
 </testsuite>
