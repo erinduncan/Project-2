@@ -1,5 +1,5 @@
 import { authenticateUser } from "../remote/api-clients/api"
-// import { history } from "../utility/history"
+import { history } from "../utility/history"
 
 
 export const loginTypes = {
@@ -19,7 +19,7 @@ export const updateCurrentUser = (email:string, password:string) => async (dispa
                 currentUser:response.data
             }
         })
-        // history.push('/postlist');
+        history.push('/home');
     }else {
         dispatch({
             type:loginTypes.UNSUCCESSFUL_LOGIN,
