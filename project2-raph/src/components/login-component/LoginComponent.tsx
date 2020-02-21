@@ -1,28 +1,28 @@
-import React, { SyntheticEvent, useState } from 'react';
+import React, { SyntheticEvent, useState } from "react";
 import "../../css/Main.css";
-import { Form, Label, Col, Input, FormGroup, Button } from 'reactstrap';
-import { Link } from 'react-router-dom';
+import { Form, Label, Col, Input, FormGroup, Button } from "reactstrap";
+import { Link } from "react-router-dom";
+import MainPageComponent from "../main-page-component/MainPageComponent";
 
 interface ILoginProps {
-    updateCurrentUser: (e:string, p:string) => void
-    loginMessage: string
+  updateCurrentUser: (email: string, password: string) => void;
+  loginMessage: string;
 }
 
-export const Login:React.FC<any> = (props:ILoginProps) => {
+export const LoginComponent:React.FC<any> = (props:ILoginProps) => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
-    const submitLogin  = async (event: any) => {
+    const submitLogin  = async (event: SyntheticEvent) => {
         event.preventDefault()
-        props.updateCurrentUser(email, password)           
+        props.updateCurrentUser(email, password)
     }
-    
 
     return (
         <>
         <div className="loginDiv">
         <h2>Login</h2>
-                <Form className="loginForm">
+                <Form className="loginForm" onSubmit={submitLogin}>
                     <FormGroup row>
                         <Label for="email" sm={2}>Email</Label>
                         <Col sm={10}>
@@ -30,10 +30,11 @@ export const Login:React.FC<any> = (props:ILoginProps) => {
                                 type="email"
                                 name="email"
                                 id="email"
+                                value={email}
                                 placeholder="Email"
                                 onChange={val=>setEmail(val.target.value)} />
-                            {/* this is an example of data binding, 
-                            we take data from the state and put it 
+                            {/* this is an example of data binding,
+                            we take data from the state and put it
                             in our tsx */}
                         </Col>
                     </FormGroup>
@@ -44,11 +45,12 @@ export const Login:React.FC<any> = (props:ILoginProps) => {
                                 type="password"
                                 name="password"
                                 id="password"
+                                value={password}
                                 placeholder="Password"
                                 onChange={val=>setPassword(val.target.value)}/>
                         </Col>
                     </FormGroup>
-                    <Button outline id="submitButton" color='secondary' onClick={submitLogin}>Login</Button>
+                    <Button outline id="submitButton" color='secondary' type="submit" onClick={MainPageComponent}>Login</Button>
                 </Form>
                 <p>{props.loginMessage}</p><br></br>
                 <ul className="loginLinks">
@@ -56,5 +58,5 @@ export const Login:React.FC<any> = (props:ILoginProps) => {
                 </div>
             </>
     )
-    
+
 }

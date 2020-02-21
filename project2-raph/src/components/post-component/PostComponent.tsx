@@ -7,6 +7,8 @@ import {
   PaginationLink
 } from "reactstrap";
 import { Redirect } from "react-router";
+import { IPost } from "../../model/IPost";
+import IUser from "../../model/IUser";
 
 interface IPostState {
   limit: number;
@@ -14,31 +16,40 @@ interface IPostState {
 }
 
 interface IPostProps {
-  user: any;
-  allPost: any[];
-  getAllPost: (l: number, o: number) => void;
+  user: IUser;
+  allPosts: IPost[];
+  getAllPosts: (limit: number, offset: number) => void;
 }
 
 export class PostComponent extends React.Component<IPostProps, IPostState> {
   constructor(props: any) {
     super(props);
     this.state = {
-      limit: 18,
+      limit: 5,
       offset: 0
     };
   }
 
   async componentDidMount() {
     if (this.props.user) {
-      if (this.props.allPost.length === 0) {
-        this.props.getAllPost(18, 0);
+      if (this.props.allPosts.length === 0) {
+        this.props.getAllPosts(5, 0);
       }
     }
   }
 
   pageTurnForward = () => {
     let newOffset = this.state.offset + this.state.limit;
-    this.props.getAllPost(this.state.limit, newOffset);
+    this.props.getAllPosts(this.state.limit, newOffset);
+    this.setState({
+      ...this.state,
+      offset: newOffset
+    });
+  };
+
+  pageTurnFirst = () => {
+    let newOffset = 0;
+    this.props.getAllPosts(this.state.limit, newOffset);
     this.setState({
       ...this.state,
       offset: newOffset
@@ -48,7 +59,7 @@ export class PostComponent extends React.Component<IPostProps, IPostState> {
   pageTurnBackwards = () => {
     if (this.state.offset > 0) {
       let newOffset = this.state.offset - this.state.limit;
-      this.props.getAllPost(this.state.limit, newOffset);
+      this.props.getAllPosts(this.state.limit, newOffset);
       this.setState({
         ...this.state,
         offset: newOffset
@@ -57,41 +68,82 @@ export class PostComponent extends React.Component<IPostProps, IPostState> {
   };
 
   render() {
-    const displayList: PostDisplayComponent[] = this.props.allPost.map<any>(
-      (post: any) => {
-        return (
-          <PostDisplayComponent
-            id={post.id}
-            title={post.name}
-            body={post.body}
-            image={post.image}
-            // like={post.like}
-            user={this.props.user}
-          />
-        );
-      }
-    );
+    // const displayList: PostDisplayComponent[] = this.props.allPosts.map<any>(
+    //   (post: any) => {
+    //     return (
+    //       <PostDisplayComponent
+    //         postId={post.postId}
+    //         title={post.name}
+    //         body={post.body}
+    //         image={post.image}
+    //         user={this.props.user}
+    //       />
+    //     );
+    //   }
+    // );
 
     if (this.props.user) {
       return (
-        <>
-          <h3>Welcome Trainer {this.props.user && this.props.user.name}</h3>
-          <CardColumns>{displayList}</CardColumns>
-          <Pagination aria-label="Page navigation example">
-            <PaginationItem
-              disabled={!this.state.offset}
-              onClick={this.pageTurnBackwards}
-            >
-              <PaginationLink previous />
-            </PaginationItem>
-            <PaginationItem onClick={this.pageTurnForward}>
-              <PaginationLink next />
-            </PaginationItem>
-          </Pagination>
-        </>
+        <div>
+            <CardColumns>
+              {this.props.allPosts[0] && (
+                <PostDisplayComponent
+                  post={this.props.allPosts[0]}
+                  currentUser={this.props.user}
+                  parent="hp"
+                />
+              )}
+              {this.props.allPosts[1] && (
+                <PostDisplayComponent
+                  post={this.props.allPosts[1]}
+                  currentUser={this.props.user}
+                  parent="hp"
+                />
+              )}
+              {this.props.allPosts[2] && (
+                <PostDisplayComponent
+                  post={this.props.allPosts[2]}
+                  currentUser={this.props.user}
+                  parent="hp"
+                />
+              )}
+              {this.props.allPosts[3] && (
+                <PostDisplayComponent
+                  post={this.props.allPosts[3]}
+                  currentUser={this.props.user}
+                  parent="hp"
+                />
+              )}
+              {this.props.allPosts[4] && (
+                <PostDisplayComponent
+                  post={this.props.allPosts[4]}
+                  currentUser={this.props.user}
+                  parent="hp"
+                />
+              )}
+            </CardColumns>
+            <Pagination aria-label="Page navigation example">
+              <PaginationItem disabled>
+                <PaginationLink first onClick={this.pageTurnFirst} />
+              </PaginationItem>
+              <PaginationItem
+                disabled={!this.state.offset}
+                onClick={this.pageTurnBackwards}
+              >
+                <PaginationLink previous />
+              </PaginationItem>
+              <PaginationItem onClick={this.pageTurnForward}>
+                <PaginationLink next />
+              </PaginationItem>
+              <PaginationItem>
+                <PaginationLink last />
+              </PaginationItem>
+            </Pagination>
+          </div>
       );
     } else {
       return <Redirect to="/login" />;
     }
   }
 }
+

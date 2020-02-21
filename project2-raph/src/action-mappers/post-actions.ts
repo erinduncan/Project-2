@@ -1,4 +1,5 @@
 import { getMultiplePost, getPostByUrl } from "../remote/api-clients/get-post"
+import IUser from "../model/IUser"
 
 export const postTypes = {
     SUCCESSFUL_GET_PAGE_POST: 'POST_SUCCSSFUL_GET_PAGE_POST',
@@ -8,7 +9,7 @@ export const postTypes = {
 }
 
 
-export const getAllPost = (limit: number, offset: number) => async (dispatch: any) => {
+export const getAllPost = (limit: number, offset: number, currentUser: IUser) => async (dispatch: any) => {
     try {
         let postLinks: any = await getMultiplePost(limit, offset)
         let posts = await Promise.all(postLinks.results.map((objects: any) => {

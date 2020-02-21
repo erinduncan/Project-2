@@ -1,4 +1,4 @@
-import React, { useState, SyntheticEvent } from "react";
+import React, { useState } from "react";
 import {
   Form,
   FormGroup,
@@ -25,9 +25,9 @@ export const CreateUserComponent: React.FC<any> = (props:any) => {
   const [lastName, setLastName] = useState("");
   const [handle, setHandle] = useState("");
 
-  const submitUser = async (event: SyntheticEvent) => {
-    event.preventDefault();
-  };
+  // const submitUser = async (event: SyntheticEvent) => {
+  //   event.preventDefault();
+  // };
 
   return (
     <React.Fragment>

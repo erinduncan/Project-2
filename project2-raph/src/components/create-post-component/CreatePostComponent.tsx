@@ -12,13 +12,12 @@ import {
 import ICreatePost from "../../model/ICreatePost";
 import { publishPost } from "../../remote/api-clients/api";
 import { Link } from "react-router-dom";
-import { getQueriesForElement } from "@testing-library/react";
 
 export const CreatePostComponent: React.FC<any> = (props: ICreatePost) => {
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");
   const [image, setImage] = useState();
-  const [submitted, setSubmitted] = useState();
+  // const [submitted, setSubmitted] = useState();
 
   const submitPost = async (event: SyntheticEvent) => {
     event.preventDefault();

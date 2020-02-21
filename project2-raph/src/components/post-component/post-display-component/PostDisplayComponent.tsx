@@ -1,48 +1,74 @@
 import React from "react";
-import {
-  Card,
-  CardBody,
-  CardTitle,
-  CardSubtitle,
-  CardText,
-  Input
-} from "reactstrap";
+import { Card, CardBody, CardTitle, CardText, Button, Row } from "reactstrap";
 import IUser from "../../../model/IUser";
+import { IPost } from "../../../model/IPost";
+import { ILike } from "../../../model/ILike";
+import { hitLike } from "../../../remote/api-clients/api";
 
 interface IPostDisplayProps {
-  id: number;
-  title: string;
-  body: string;
-  image: any;
-  // like: () => boolean; Needs to be changed to something.
-  user: IUser;
-  // delete: (id: string) => any
-  // getPostComments: (ownerUserId: string, postId: string) => any
+  post: IPost;
+  currentUser: IUser;
+  parent: string;
 }
 
-export class PostDisplayComponent extends React.PureComponent<
-  IPostDisplayProps
+interface IPostDisplayState {
+  comment: string;
+}
+
+export class PostDisplayComponent extends React.Component<
+  IPostDisplayProps,
+  IPostDisplayState
 > {
+  constructor(props: any) {
+    super(props);
+    this.state = {
+      comment: ""
+    };
+  }
+
+  updateComment = (event: any) => {
+    this.setState({
+      ...this.state,
+      comment: event.target.value
+    });
+  };
+
+  cardTextBuilder() {
+    return `${this.props.post.title}\n\r
+            ${this.props.post.image}\n\r
+            ${this.props.post.body}\n\r
+            Submitted on: ${new Date(this.props.post.submitted)} by ${
+      this.props.post.postUser.handle
+    }`;
+  }
+
   like() {
-    let radio: any = document.getElementById("like");
-    return radio === onchange ? true : false;
+    let like: ILike = {
+      likeUser: this.props.currentUser,
+      likePost: this.props.post
+    };
+    hitLike(like);
   }
 
   render() {
     console.log(this.props);
 
     return (
-      <Card>
-        <CardBody>
-          <CardTitle>{this.props.title}</CardTitle>
-          {/* handle should be unique */}
-          <CardSubtitle>{this.props.user.handle}</CardSubtitle>
-          <CardText>{this.props.body}</CardText>
-          <Input id="like" type="radio" aria-label="Like?">
-            Like
-          </Input>
-        </CardBody>
-      </Card>
+      <>
+        <Row>
+          <Card>
+            <CardBody>
+              <CardTitle>{this.props.post.title}</CardTitle>
+              <CardText>{this.cardTextBuilder}</CardText>
+            </CardBody>
+          </Card>
+        </Row>
+        <Row>
+          <Button color="secondary" onClick={() => this.like}>
+            Love
+          </Button>
+        </Row>
+      </>
     );
   }
 }

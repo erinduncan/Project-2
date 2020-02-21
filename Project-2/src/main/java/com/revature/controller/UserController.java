@@ -50,9 +50,9 @@ public class UserController {
 		return new ResponseEntity<>(us.getByEmail(email), HttpStatus.ACCEPTED);
 	}
 	@RequestMapping(method = RequestMethod.POST, value = "/login.app", produces = "application/json")
-	public ResponseEntity<User> login(@RequestBody User reqbod) {
-		String email = reqbod.getEmail();
-		String password = reqbod.getPassword();
+	public ResponseEntity<User> login(@RequestBody User req) {
+		String email = req.getEmail();
+		String password = req.getPassword();
 		User u = us.getByEmail(email);
 		if (u != null) {
 			if (us.validateUser(email, password, u)) {

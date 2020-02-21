@@ -1,11 +1,10 @@
 import React from "react";
 import "../../css/Main.css";
 import "bootstrap/dist/css/bootstrap.css";
-import { NavLink, Link } from "react-router-dom";
-import CoolCat from "../../assets/tedward.jpeg";
+import { NavLink } from "react-router-dom";
 import CoolDog from "../../assets/CoolDog.png";
 import { UserDisplayComponent } from "../user-component/UserDisplayComponent";
-import { PostDisplayComponent } from "../post-component/post-display-component/PostDisplayComponent";
+import { PostComponent } from "../post-component/PostComponent";
 
 export const MainPageComponent: React.FC<any> = (props: any) => {
   return (
@@ -43,30 +42,7 @@ export const MainPageComponent: React.FC<any> = (props: any) => {
       </header>
 
       <div className="postContainer">
-        {/* <br />
-        <h1>This is a sample post!</h1>
-        <hr />
-        <img src={CoolCat} alt="Best Ted" />
-        <hr className="new" />
-        <p>
-          This is my best friend Ted whom I love, and this div exists for the
-          sole purpose of being a placeholder!
-        </p>
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-
-        <p>
-          Here are some great break tags to show that the CSS actually works and
-          this bitch can scroll.
-        </p> */}
-        {PostDisplayComponent}
+        {PostComponent}
       </div>
 
       <div className="leftContainer">

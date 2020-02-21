@@ -92,16 +92,7 @@ public class UserDao {
 	}
 
 	public User findByEmail(String email) {
-		try {
-			@SuppressWarnings("deprecation")
-			Criteria criteria = sesf.getCurrentSession().createCriteria(User.class);
-			criteria.add(Restrictions.like("email", email));
-			return (User) criteria.list().get(0);
-		} catch (HibernateException e) {
-			Log.log.error(e);
-			System.out.println("ERROR! Could not findbyemail "+email);
-		}
-		return null;
+		return sesf.getCurrentSession().createQuery("from User where email = '" + email + "'", User.class).list().get(0);
 	}
 	
 	public User delete(User p) {

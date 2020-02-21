@@ -1,61 +1,30 @@
 import axiosConfig from "./axiosConfig";
-import axios from "axios";
 import IUser from "../../model/IUser";
-import { history } from "../../utility/history";
-import { IPost } from "../../model/IPost";
 import ICreatePost from "../../model/ICreatePost";
+import { ILike } from "../../model/ILike";
 
-export const apiLogin = async (
-  username: string,
-  password: string
-): Promise<object> => {
-  let credentials = {
-    username,
-    password
+export const authenticateUser = async (email:string, password:string) => {
+  let credentials:IUser = {
+      email: email,
+      password: password
   };
-  try {
-    const response = await axiosConfig.post("", {
-      ...credentials
-    });
-    if (response.status === 200) {
-      const body = await response.data;
-      console.log(body);
-      history.push("/login");
-      return {
-        body,
-        loginMessage: "Successful login"
-      };
-    } else if (response.status === 401) {
-      return {
-        loginMessage: "Incorrect username or Password",
-        body: null
-      };
-    } else {
-      return {
-        loginMessage: "Something Went Wrong",
-        body: null
-      };
-    }
-  } catch (e) {
-    console.log(e);
-    return {
-      loginMessage: "Something Went Wrong"
-    };
-  }
-};
+  let response = await axiosConfig.post('login.app', credentials)
+  console.log(response);
+  return response;
+}
 
-// export const authenticateUser = (body: IUser) => {
-//     return axiosConfig.post('auth.app', body);
-// }
-
-export const getList = () => {
-  return axiosConfig.get("list.app");
-};
+export const getList = (offset: number, limit: number) => {
+  return axiosConfig.get("list.app?o=" + offset + "&l=" + limit);
+}
 
 export const addUser = (body: IUser) => {
   return axiosConfig.post("/newuser.app", body);
 };
 
 export const publishPost = (body: ICreatePost) => {
-  return axiosConfig.post("/newpost", body);
+  return axiosConfig.post("/newpost.app", body);
 };
+
+export const hitLike = (body: ILike) => {
+  return axiosConfig.post('newlike.app', body);
+}

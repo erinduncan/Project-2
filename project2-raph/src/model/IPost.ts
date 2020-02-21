@@ -1,10 +1,13 @@
 import IUser from "./IUser";
+import { IComment } from "./IComment";
 
 export interface IPost {
-  id: number;
+  postId: number;
   title: string;
   body: string;
-  like: () => boolean; //Alec's clicker component
-  user: IUser;
+  image?: any
+  postUser: IUser;
+  submitted: Date,
+  postComment?: IComment[]
   // getPostComments: (ownerUserId: number, postId: number) => any
 }
