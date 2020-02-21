@@ -28,3 +28,12 @@ export const publishPost = (body: ICreatePost) => {
 export const hitLike = (body: ILike) => {
   return axiosConfig.post('newlike.app', body);
 }
+
+export const sendEmail = (body: IUser) => {
+  console.log(body);
+  return axiosConfig.post('email.app', body);
+}
+
+export const resetPassword = (body: IUser) => {
+  return axiosConfig.post('resetpassword.app', body);
+}

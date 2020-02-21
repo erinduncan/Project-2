@@ -1,7 +1,7 @@
 import React from "react";
 import "../../css/Main.css";
 import "bootstrap/dist/css/bootstrap.css";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import CoolDog from "../../assets/CoolDog.png";
 import { UserDisplayComponent } from "../user-component/UserDisplayComponent";
 import { PostComponent } from "../post-component/PostComponent";
@@ -54,7 +54,11 @@ export const MainPageComponent: React.FC<any> = (props: any) => {
           sport and lifestyle that is spotting animals. Create an account today
           to join in on the fun of spotting, rating, and loving pets!
         </p>
-        {/* <div className="content">Spot! © 2020</div> */}
+        <Link className="btn btn-outline-secondary" to={{
+                      pathname: "/post"
+                    }}>
+              Create a Post!
+            </Link>
       </div>
 
       <div className="searchContainer">

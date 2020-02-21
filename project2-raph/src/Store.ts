@@ -31,6 +31,7 @@ const composeEnhancers = a.REDUX_DEVTOOLS_EXTENSION_COMPOSE || compose;
 const enhancer = composeEnhancers(
   applyMiddleware(reduxThunk, logger)
 );
+
 const persistedState = loadFromLocalStorage();
 
 export const store: Store<any> = createStore(state, persistedState, enhancer);

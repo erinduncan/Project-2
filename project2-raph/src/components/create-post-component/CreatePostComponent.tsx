@@ -17,7 +17,6 @@ export const CreatePostComponent: React.FC<any> = (props: ICreatePost) => {
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");
   const [image, setImage] = useState();
-  // const [submitted, setSubmitted] = useState();
 
   const submitPost = async (event: SyntheticEvent) => {
     event.preventDefault();
@@ -25,11 +24,11 @@ export const CreatePostComponent: React.FC<any> = (props: ICreatePost) => {
 
   return (
     <>
-    /**
+    {/* /**
     * This long and unpleasant mainContainer section here is the header portion
     * and should remain intact as is, only changing link destinations if needed.
     * I know I can and should make this a component but I am a simple girl.
-     */
+     */ }
       <div className="mainContainer">
         <div className="headerBg">
           <div className="headerImage">
@@ -94,7 +93,7 @@ export const CreatePostComponent: React.FC<any> = (props: ICreatePost) => {
               </Col>
             </FormGroup>
 
-            <FormGroup row enctype="multipart/form-data">
+            <FormGroup row encType="multipart/form-data">
               <Label for="image" sm={2}>
                 Image
               </Label>
