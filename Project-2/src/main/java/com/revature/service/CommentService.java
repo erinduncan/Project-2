@@ -18,8 +18,8 @@ public class CommentService {
 		this.cd = cd;
 	}
 
-	public List<Comment> getByAll() {
-		return cd.findAll();
+	public List<Comment> getByAll(Comment c) {
+		return cd.findAll(c);
 	}
 
 	public Comment getById(int id) {

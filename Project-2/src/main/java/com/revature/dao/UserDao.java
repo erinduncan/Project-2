@@ -1,5 +1,8 @@
 package com.revature.dao;
 
+import java.math.BigInteger;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.List;
 
 import org.hibernate.Criteria;
@@ -12,7 +15,6 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.revature.driver.Log;
-import com.revature.model.Comment;
 import com.revature.model.User;
 
 @Repository
@@ -114,5 +116,39 @@ public class UserDao {
 		}
 		return null;
 	}
+	
+	
+	public boolean checkPassword(String email, String password, User u)
+    {
+        String toHash = email + password + "salt";
+        String hashText = "";
+        try
+        {
+            MessageDigest md = MessageDigest.getInstance("md5");
+
+            // digest() method is called to calculate message digest 
+            //  of an input digest() return array of byte 
+            byte[] messageDigest = md.digest(toHash.getBytes()); 
+
+            // Convert byte array into signum representation 
+            BigInteger no = new BigInteger(1, messageDigest); 
+
+            // Convert message digest into hex value 
+            hashText = no.toString(16); 
+            while (hashText.length() < 32) { 
+                hashText = "0" + hashText; 
+            }
+        } catch (NoSuchAlgorithmException e)
+        {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+
+        if (u.getPassword().equals(hashText))
+        {
+            return true;
+        }
+        return false;
+    }
 
 }

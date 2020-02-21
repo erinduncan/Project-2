@@ -23,19 +23,19 @@ public class CommentController {
 	private CommentService cs;
 	
 	@RequestMapping(method = RequestMethod.GET, value = "/commentlist.app", produces = "application/json")
-	public ResponseEntity<List<Comment>> getAllCommentAsList(@RequestBody Comment p) {
-		return new ResponseEntity<>(cs.getAll(p), HttpStatus.ACCEPTED);
+	public ResponseEntity<List<Comment>> getAllCommentAsList(@RequestBody Comment c) {
+		return new ResponseEntity<>(cs.getByAll(c), HttpStatus.ACCEPTED);
 	}
 	
 	@RequestMapping(method = RequestMethod.PUT, value = "/updatecomment.app", produces = "application/json")
-	public ResponseEntity<Comment> updateComment(@RequestBody Comment p) {
-		return new ResponseEntity<>(cs.update(p), HttpStatus.ACCEPTED);
-	}
-	
-	@RequestMapping(method = RequestMethod.POST, value = "/newcomment.app", produces = "application/json")
-	public ResponseEntity<Comment> insertNewComment(@RequestBody Comment p) {
-		return new ResponseEntity<>(cs.insert(p), HttpStatus.ACCEPTED);
-	}
+    public ResponseEntity<Comment> updateComment(@RequestBody Comment c) {
+        return new ResponseEntity<>(cs.updateComment(c), HttpStatus.ACCEPTED);
+    }
+
+    @RequestMapping(method = RequestMethod.POST, value = "/newcomment.app", produces = "application/json")
+    public ResponseEntity<Comment> insertNewComment(@RequestBody Comment c) {
+        return new ResponseEntity<>(cs.addComment(c), HttpStatus.ACCEPTED);
+    }
 
 
 }
