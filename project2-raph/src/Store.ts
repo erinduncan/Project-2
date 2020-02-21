@@ -11,6 +11,7 @@ const saveToLocalStorage = (state: any) => {
     console.log(e);
   }
 };
+
 const loadFromLocalStorage = () => {
   try {
     const serializedState = localStorage.getItem("state");
