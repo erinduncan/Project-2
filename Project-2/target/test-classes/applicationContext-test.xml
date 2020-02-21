@@ -38,7 +38,7 @@
 	 				<prop key="hibernate.show_sql">true</prop>
 	 				<prop key="hibernate.format_sql">true</prop>
 	 				<prop key="hibernate.hbm2ddl.auto">update</prop>
-	 				<prop key="hibernate.default_schema">testSchema</prop>
+	 				<prop key="hibernate.default_schema">onlyForTesting</prop>
 	 			</props>
 	 		</property>
 	 		</bean>

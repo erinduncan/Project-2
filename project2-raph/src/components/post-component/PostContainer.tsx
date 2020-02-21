@@ -1,3 +1,4 @@
+  
 import { connect } from "react-redux";
 import { PostComponent } from "./PostComponent";
 import { IState } from "../../reducers";

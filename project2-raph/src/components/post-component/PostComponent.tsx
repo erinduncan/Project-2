@@ -1,137 +1,149 @@
-// import React from 'react';
-// import { Card, CardHeader } from 'reactstrap';
-
-// interface IPostState{
-//     text: string
-//     openCopyLink: boolean
-//     openPostWrite: boolean 
-//     openCommentGroup?: () => void
-// }
-
-// interface IPostProps{    
-//   post: any
-//   fullName: string
-//   likeCount: number
-//   currentUserlike: boolean
-//   isPostOwner: boolean
-//   like: () => any
-//   unlike: () => any
-//   delete: (id: string) => any
-//   setTitle: (title: string) => any
-//   getPostComments: (ownerUserId: string, postId: string) => any
-//   commentList: any
-// }
-
-// export class PostComponent extends React.Component<IPostState,IPostProps>{
-//     // constructor(props:any){
-//     //     super(props)
-
-//     //     }
-//     // }
-
-//     render(){
-//         const displayList: PostDisplayComponent[] = this.props.
-//     }
-// }
-import React from 'react';
-import { PostDisplayComponent } from './post-display-component/PostDisplayComponent';
-import { CardColumns, Pagination, PaginationItem, PaginationLink } from 'reactstrap';
-import { Redirect } from 'react-router';
+import React from "react";
+import { PostDisplayComponent } from "./post-display-component/PostDisplayComponent";
+import {
+  CardColumns,
+  Pagination,
+  PaginationItem,
+  PaginationLink
+} from "reactstrap";
+import { Redirect } from "react-router";
+import { IPost } from "../../model/IPost";
+import IUser from "../../model/IUser";
 
 interface IPostState {
-    limit: number
-    offset: number
+  limit: number;
+  offset: number;
 }
 
 interface IPostProps {
-    user: any
-    allPost: any[],
-    getAllPost: (l: number, o: number) => void
+  user: IUser;
+  allPosts: IPost[];
+  getAllPosts: (limit: number, offset: number) => void;
 }
 
 export class PostComponent extends React.Component<IPostProps, IPostState> {
-    constructor(props: any) {
-        super(props)
-        this.state = {
-            limit: 18,
-            offset: 0
-        }
+  constructor(props: any) {
+    super(props);
+    this.state = {
+      limit: 5,
+      offset: 0
+    };
+  }
+
+  async componentDidMount() {
+    if (this.props.user) {
+      if (this.props.allPosts.length === 0) {
+        this.props.getAllPosts(5, 0);
+      }
     }
+  }
 
+  pageTurnForward = () => {
+    let newOffset = this.state.offset + this.state.limit;
+    this.props.getAllPosts(this.state.limit, newOffset);
+    this.setState({
+      ...this.state,
+      offset: newOffset
+    });
+  };
 
-    async componentDidMount() {
-        if (this.props.user) {
-            if (this.props.allPost.length === 0) {
-                this.props.getAllPost(18, 0)
-            }
-        }
+  pageTurnFirst = () => {
+    let newOffset = 0;
+    this.props.getAllPosts(this.state.limit, newOffset);
+    this.setState({
+      ...this.state,
+      offset: newOffset
+    });
+  };
+
+  pageTurnBackwards = () => {
+    if (this.state.offset > 0) {
+      let newOffset = this.state.offset - this.state.limit;
+      this.props.getAllPosts(this.state.limit, newOffset);
+      this.setState({
+        ...this.state,
+        offset: newOffset
+      });
     }
+  };
 
-    pageTurnForward = () => {
-        let newOffset = this.state.offset + this.state.limit
-        this.props.getAllPost(this.state.limit, newOffset)
-        this.setState({
-            ...this.state,
-            offset: newOffset
-        })
+  render() {
+    // const displayList: PostDisplayComponent[] = this.props.allPosts.map<any>(
+    //   (post: any) => {
+    //     return (
+    //       <PostDisplayComponent
+    //         postId={post.postId}
+    //         title={post.name}
+    //         body={post.body}
+    //         image={post.image}
+    //         user={this.props.user}
+    //       />
+    //     );
+    //   }
+    // );
+
+    if (this.props.user) {
+      return (
+        <div>
+            <CardColumns>
+              {this.props.allPosts[0] && (
+                <PostDisplayComponent
+                  post={this.props.allPosts[0]}
+                  currentUser={this.props.user}
+                  parent="hp"
+                />
+              )}
+              {this.props.allPosts[1] && (
+                <PostDisplayComponent
+                  post={this.props.allPosts[1]}
+                  currentUser={this.props.user}
+                  parent="hp"
+                />
+              )}
+              {this.props.allPosts[2] && (
+                <PostDisplayComponent
+                  post={this.props.allPosts[2]}
+                  currentUser={this.props.user}
+                  parent="hp"
+                />
+              )}
+              {this.props.allPosts[3] && (
+                <PostDisplayComponent
+                  post={this.props.allPosts[3]}
+                  currentUser={this.props.user}
+                  parent="hp"
+                />
+              )}
+              {this.props.allPosts[4] && (
+                <PostDisplayComponent
+                  post={this.props.allPosts[4]}
+                  currentUser={this.props.user}
+                  parent="hp"
+                />
+              )}
+            </CardColumns>
+            <Pagination aria-label="Page navigation example">
+              <PaginationItem disabled>
+                <PaginationLink first onClick={this.pageTurnFirst} />
+              </PaginationItem>
+              <PaginationItem
+                disabled={!this.state.offset}
+                onClick={this.pageTurnBackwards}
+              >
+                <PaginationLink previous />
+              </PaginationItem>
+              <PaginationItem onClick={this.pageTurnForward}>
+                <PaginationLink next />
+              </PaginationItem>
+              <PaginationItem>
+                <PaginationLink last />
+              </PaginationItem>
+            </Pagination>
+          </div>
+      );
+    } else {
+      return <Redirect to="/login" />;
     }
-
-    pageTurnBackwards = () => {
-        if (this.state.offset > 0) {
-
-
-            let newOffset = this.state.offset - this.state.limit
-            this.props.getAllPost(this.state.limit, newOffset)
-            this.setState({
-                ...this.state,
-                offset: newOffset
-            })
-        }
-    }
-
-    render() {
-
-        const displayList: PostDisplayComponent[] = this.props.allPost.map<any>((Post: any) => {
-            return <PostDisplayComponent id={Post.id}
-                name={Post.name}
-                height={Post.height}
-                weight={Post.weight}
-                types={[Post.types[0].type.name, Post.types[1] && Post.types[1].type.name]}
-                key={Post.id}//don't use the position in the list
-            />
-        })
-
-        if (this.props.user) {
-            return (
-                <>
-                    <h3>Welcome Trainer {this.props.user && this.props.user.name}</h3>
-                    <CardColumns>
-                        {displayList}
-                    </CardColumns>
-                    <Pagination aria-label="Page navigation example">
-                        <PaginationItem disabled>
-                            <PaginationLink first />
-                        </PaginationItem>
-                        <PaginationItem disabled={!this.state.offset} onClick={this.pageTurnBackwards}>
-                            <PaginationLink previous />
-                        </PaginationItem>
-                        <PaginationItem onClick={this.pageTurnForward}>
-                            <PaginationLink next />
-                        </PaginationItem>
-                        <PaginationItem>
-                            <PaginationLink last />
-                        </PaginationItem>
-                    </Pagination>
-                </>
-
-            )
-        } else {
-            return (
-                <Redirect to='/login' />
-            )
-        }
-
-
-    }
-
+  }
 }
+

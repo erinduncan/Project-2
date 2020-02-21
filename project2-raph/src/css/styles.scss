@@ -1,0 +1,74 @@
+body {
+    min-height: fit-content;
+    min-width: 100%;
+    background-image: url("../assets/background.png");
+    background-repeat: repeat;
+  }
+  
+  #submitButton {
+    margin-top: 15px;
+  }
+  
+  .loginForm {
+    background-color: white;
+    padding: 40px;
+    margin-top: 20px;
+  }
+  
+  .registerForm {
+    background-color: white;
+    padding: 40px;
+    margin-top: 40px;
+  }
+  
+  .headerImage {
+      width: 100%;
+      height: auto;
+      background: url("../assets/spot.png");
+      background-size: 300px;
+      background-repeat: no-repeat;
+    }
+  
+  .mainButtons li {
+    display: inline-block;
+    margin: 20px;
+    margin-left: 50px;
+    margin-top: 100px;
+  }
+  
+  .mainButtons {
+    background-color: white;
+    list-style: none;
+    background-size: cover;
+  }
+  
+  .linkElements {
+    margin-left: 65%;
+  }
+  
+  .mainLink {
+    color: black;
+  }
+  
+  footer {
+
+     align-items: center;
+  }
+  
+  
+  section {
+    /* padding: 40px 120px; */
+    position: fixed;
+    bottom: 0px;
+    margin-left: 0;
+    right: 0px;
+    width: 50%;
+  }
+  section#about .content {
+    margin-left: 0px;
+    align-self: center;
+  }
+  section p {
+      font-size: small;
+  }
+  

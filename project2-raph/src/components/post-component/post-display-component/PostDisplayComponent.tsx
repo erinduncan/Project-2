@@ -1,32 +1,74 @@
-import React from 'react';
-import {  Card, CardBody, CardTitle, CardSubtitle, CardText } from 'reactstrap';
+import React from "react";
+import { Card, CardBody, CardTitle, CardText, Button, Row } from "reactstrap";
+import IUser from "../../../model/IUser";
+import { IPost } from "../../../model/IPost";
+import { ILike } from "../../../model/ILike";
+import { hitLike } from "../../../remote/api-clients/api";
 
 interface IPostDisplayProps {
-    id: number
-    height: number
-    weight: number
-    name: string
-    types: string[]
+  post: IPost;
+  currentUser: IUser;
+  parent: string;
 }
 
-export class PostDisplayComponent extends React.PureComponent<IPostDisplayProps>{
+interface IPostDisplayState {
+  comment: string;
+}
 
-    cardTextBuilder(){
-        return `This Post: ${this.props.name} has an amusing weight of ${this.props.weight}
-        it is also ${this.props.height} tall and has the type/s of ${this.props.types[0]}` + (this.props.types[1] ?  ' and ' + this.props.types[1] : '' )
-    }
+export class PostDisplayComponent extends React.Component<
+  IPostDisplayProps,
+  IPostDisplayState
+> {
+  constructor(props: any) {
+    super(props);
+    this.state = {
+      comment: ""
+    };
+  }
 
-    render() {
-        console.log(this.props);
+  updateComment = (event: any) => {
+    this.setState({
+      ...this.state,
+      comment: event.target.value
+    });
+  };
 
-        return (
-            <Card>
-                <CardBody>
-                    <CardTitle>{this.props.id}</CardTitle>
-                    <CardSubtitle>{this.props.name}</CardSubtitle>
-                    <CardText>{this.cardTextBuilder()}</CardText>
-                </CardBody>
-            </Card>
-        )
-    }
+  cardTextBuilder() {
+    return `${this.props.post.title}\n\r
+            ${this.props.post.image}\n\r
+            ${this.props.post.body}\n\r
+            Submitted on: ${new Date(this.props.post.submitted)} by ${
+      this.props.post.postUser.handle
+    }`;
+  }
+
+  like() {
+    let like: ILike = {
+      likeUser: this.props.currentUser,
+      likePost: this.props.post
+    };
+    hitLike(like);
+  }
+
+  render() {
+    console.log(this.props);
+
+    return (
+      <>
+        <Row>
+          <Card>
+            <CardBody>
+              <CardTitle>{this.props.post.title}</CardTitle>
+              <CardText>{this.cardTextBuilder}</CardText>
+            </CardBody>
+          </Card>
+        </Row>
+        <Row>
+          <Button color="secondary" onClick={() => this.like}>
+            Love
+          </Button>
+        </Row>
+      </>
+    );
+  }
 }

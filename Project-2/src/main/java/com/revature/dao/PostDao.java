@@ -10,8 +10,8 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.revature.driver.Log;
-import com.revature.models.Post;
-import com.revature.models.User;
+import com.revature.model.Post;
+import com.revature.model.User;
 
 @Repository
 @Transactional
@@ -28,12 +28,19 @@ public class PostDao {
 	}
 
 	public List<Post> findAll() {
-		List<Post> list = sesf.getCurrentSession().createQuery("from Post", Post.class).list();
-		Log.log.info("All posts found and returned.");
-		return list;
+		try {
+			List<Post> list = sesf.getCurrentSession().createQuery("from Post", Post.class).list();
+			Log.log.info("All posts found and returned.");
+			return list;
+		} catch (HibernateException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
 	}
 
 	public Post findById(int postId) {
+		
 		try {
 			Post post = sesf.getCurrentSession().get(Post.class, postId);
 			Log.log.info("Post found by ID number.");
@@ -51,6 +58,7 @@ public class PostDao {
 			sesf.getCurrentSession().update(t);
 			return t;
 		} catch (HibernateException e) {
+			e.printStackTrace();
 			Log.log.error(e);
 			System.out.println("ERROR! Could not update \n"+t.toString());
 		}
@@ -70,21 +78,27 @@ public class PostDao {
 	}
 
 
-	public Post deleteById(int id) {
+	public Post delete(Post p) {
 		try {
-			Post p = sesf.getCurrentSession().get(Post.class, id);
 			sesf.getCurrentSession().delete(p);
 			return p;
 		} catch (HibernateException e) {
 			Log.log.error(e);
-			System.out.println("ERROR! Could not Deleteid not found "+id);
+			System.out.println("ERROR! Could not Delete, id: "+p.getPostId()+" not found.");
 		}
 		return null;
 	}
 
 
 	public List<Post> findByUserId(String userid) {
-		// TODO Auto-generated method stub
+		try {
+			List<Post> list = sesf.getCurrentSession().createQuery("from Post where email="+userid, Post.class).list();
+			Log.log.info("All posts found and returned.");
+			return list;
+		} catch (HibernateException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		return null;
 	}
 

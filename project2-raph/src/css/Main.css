@@ -1,0 +1,175 @@
+/* Root HTML CSS */
+body {
+  min-height: fit-content;
+  min-width: 100%;
+  background-image: url("../assets/background.png");
+  background-size: 50%;
+  background-repeat: repeat;
+  font-family: "Quicksand", sans-serif;
+}
+
+* {
+  font-family: "Quicksand", sans-serif;
+}
+
+img {
+  width: 50%;
+  height: auto;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+hr {
+  border: 2px solid grey;
+  border-radius: 5px;
+}
+
+/* Login and Register components */
+#submitButton {
+  margin-top: 15px;
+}
+
+.loginLinks {
+  list-style: none;
+}
+
+.loginLinks li {
+  display: inline-block;
+  margin-right: 20px;
+  padding: 20px;
+}
+
+.registerDiv {
+  background-color: cornsilk;
+  padding: 40px;
+  margin-top: 20px;
+  border-radius: 20px;
+  background: url("../assets/paw-print-clip-art-transparent-background-19.png");
+  background-size: 70px;
+  background-repeat: repeat;
+  border-radius: 0px 0px 20px 20px;
+}
+
+.loginDiv {
+  background-color: cornsilk;
+  padding: 40px;
+  margin-top: 20px;
+  border-radius: 20px;
+  background: url("../assets/paw-print-clip-art-transparent-background-19.png");
+  background-size: 70px;
+  background-repeat: repeat;
+  border-radius: 0px 0px 20px 20px;
+}
+
+/* Various containers */
+.postContainer {
+  background-color: white;
+  position: absolute;
+  width: 50%;
+  top: 25%;
+  padding: 40px;
+  bottom: 0;
+  height: max-content;
+  border-radius: 20px 20px 20px 20px;
+}
+
+.leftContainer {
+  background-color: white;
+  position: absolute;
+  width: 20%;
+  height: max-content;
+  top: 25%;
+  right: 12.5%;
+  padding: 20px;
+  border-radius: 20px 20px 20px 20px;
+}
+
+.searchContainer {
+  background-color: white;
+  position: absolute;
+  bottom: 5%;
+  right: 12.5%;
+  padding: 20px;
+  border-radius: 20px 20px 20px 20px;
+  width: 20%;
+}
+
+.displayComponent {
+  background-color: white;
+  position: absolute;
+  bottom: 20%;
+  right: 12.5%;
+  padding: 20px;
+  border-radius: 20px 20px 20px 20px;
+  width: 20%;
+}
+
+.content {
+  font-size: xx-small;
+}
+
+/* Header images, buttons, and styling */
+/* PLEASE DO NOT TOUCH THIS IT IS FRAGILE! */
+.mainContainer {
+  background-color: cornsilk;
+  list-style: none;
+  border-radius: 0px 0px 20px 20px;
+  border: white dotted 10px;
+}
+
+.headerImage {
+  width: 100%;
+  height: 20%;
+  background: url("../assets/spot.png");
+  background-size: 21%;
+  background-repeat: no-repeat;
+  border-radius: 0px 0px 20px 20px;
+}
+
+.headerBg {
+  width: 100%;
+  height: 20%;
+  background: url("../assets/paw-print-clip-art-transparent-background-19.png");
+  background-size: 70px;
+  background-repeat: repeat;
+  border-radius: 0px 0px 20px 20px;
+  border: white dotted 10px;
+}
+
+.mainContainer li {
+  display: inline-block;
+  margin-left: 10%;
+  margin-top: 10%;
+  padding-bottom: 10%;
+}
+
+.btn.btn-outline-dark {
+  color: cornsilk;
+}
+
+.linkElements {
+  margin-left: 65%;
+}
+
+/* Sections, not currently in use */
+section {
+  position: fixed;
+  bottom: 0px;
+  right: 0px;
+  width: 50%;
+  color: cornsilk;
+}
+
+section#about .content {
+  margin-left: 220px;
+}
+
+section p {
+  font-size: small;
+}
+
+/* Animation Shit */
+@keyframes etc {
+}

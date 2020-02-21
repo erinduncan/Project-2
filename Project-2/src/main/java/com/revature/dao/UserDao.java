@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
+import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,13 +12,13 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.revature.driver.Log;
-import com.revature.models.User;
+import com.revature.model.Comment;
+import com.revature.model.User;
 
 @Repository
 @Transactional
 public class UserDao {
 
-	@Autowired
 	private SessionFactory sesf;
 	
 	@Autowired
@@ -27,7 +28,6 @@ public class UserDao {
 	}
 	
 
-//	@Override
 	public List<User> findAll() {
 		List<User> list;
 		try {
@@ -42,11 +42,11 @@ public class UserDao {
 		return null;
 	}
 
-//	@Override
 	public User findById(int id) {
 		User user;
 		try {
-			user = sesf.getCurrentSession().get(User.class, id);
+			Session sess = sesf.getCurrentSession();
+			user = sess.get(User.class, id);
 			Log.log.info("User found by ID number.");
 			return user;
 		} catch (HibernateException e) {
@@ -56,7 +56,6 @@ public class UserDao {
 		return null;
 	}
 
-//	@Override
 	public User update(User t) {
 		try {
 			sesf.getCurrentSession().update(t);
@@ -68,20 +67,18 @@ public class UserDao {
 		return null;
 	}
 
-//	@Override
 	public User insert(User t) {
-		try {
-			sesf.openSession().save(t);
-			Log.log.info("New user created.");
+//		try {
+			sesf.getCurrentSession().save(t);
+//			Log.log.info("New user created.");
 			return t;
-		} catch (HibernateException e) {
-			Log.log.error(e);
-			System.out.println("ERROR! Could not save \n"+t.toString());
-		}
-		return null;
+//		} catch (HibernateException e) {
+//			Log.log.error(e);
+//			System.out.println("ERROR! Could not save \n"+t.toString());
+//		}
+//		return null;
 	}
 
-//	@Override
 	public User deleteByEmail(String email) {
 		try {
 			User t = findByEmail(email);
@@ -94,16 +91,17 @@ public class UserDao {
 		return null;
 	}
 
-//	@Override
 	public User findByEmail(String email) {
+		return sesf.getCurrentSession().createQuery("from User where email = '" + email + "'", User.class).list().get(0);
+	}
+	
+	public User delete(User p) {
 		try {
-			@SuppressWarnings("deprecation")
-			Criteria criteria = sesf.getCurrentSession().createCriteria(User.class);
-			criteria.add(Restrictions.like("email", email));
-			return (User) criteria.list().get(0);
+			sesf.getCurrentSession().delete(p);
+			return p;
 		} catch (HibernateException e) {
 			Log.log.error(e);
-			System.out.println("ERROR! Could not findbyemail "+email);
+			System.out.println("ERROR! Could not Delete, id: "+p.getUserId()+" not found.");
 		}
 		return null;
 	}

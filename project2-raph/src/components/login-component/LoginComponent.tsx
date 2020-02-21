@@ -1,70 +1,41 @@
-import React, { SyntheticEvent } from 'react';
-import { Form, Label, Col, Input, FormGroup, Button } from 'reactstrap';
-import { Link } from 'react-router-dom';
-
-interface ILoginState {
-    username: string
-    password: string
-    
-}
+import React, { SyntheticEvent, useState } from "react";
+import "../../css/Main.css";
+import { Form, Label, Col, Input, FormGroup, Button } from "reactstrap";
+import { Link } from "react-router-dom";
+import MainPageComponent from "../main-page-component/MainPageComponent";
 
 interface ILoginProps {
-    updateCurrentUser: (u:string, p:string) => void
-    loginMessage: string
+  updateCurrentUser: (email: string, password: string) => void;
+  loginMessage: string;
 }
 
+export const LoginComponent:React.FC<any> = (props:ILoginProps) => {
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
 
-export class LoginComponent extends React.Component<ILoginProps, ILoginState>{
-    constructor(props: any) {
-        super(props)
-        this.state = {
-            username: '',
-            password: '',
-        }
-        //by putting event binding and data binding together, we achieve something called two way data binding
-        //this is where the user can update state and if state is updated the user sees the change
-    }
-    
-    //this is an example of event binding
-    //we take an event created by a user, and use it to update data in our state
-    updateUsername = (event: any) => {
-        this.setState({
-            ...this.state,
-            username: event.target.value
-        })
-
-    }
-
-    //this is an example of event binding
-    //we take an event created by a user, and use it to update data in our state
-    updatePassword = (event: any) => {
-        this.setState({
-            ...this.state,
-            password: event.target.value
-        })
-    }
-
-
-    submitLogin = async (event: SyntheticEvent) => {
+    const submitLogin  = async (event: SyntheticEvent) => {
         event.preventDefault()
-        this.props.updateCurrentUser(this.state.username,this.state.password)
+        props.updateCurrentUser(email, password)
     }
 
-    render() {
-        return (
-            <div>
-                <Form onSubmit={this.submitLogin}>
+    return (
+        <>
+        <div className="loginDiv">
+        <h2>Login</h2>
+                <Form className="loginForm" onSubmit={submitLogin}>
                     <FormGroup row>
-                        <Label for="username" sm={2}>Username</Label>
+                        <Label for="email" sm={2}>Email</Label>
                         <Col sm={10}>
                             <Input required
-                                type="text"
-                                name="username"
-                                id="username"
-                                placeholder="put username here"
-                                value={this.state.username}
-                                onChange={this.updateUsername} />
-                            {/* this is an example of data binding, we take data from the state and put it in our tsx */}
+                                type="email"
+                                name="email"
+                                id="email"
+                                value={email}
+                                placeholder="Email"
+                                onChange={val=>setEmail(val.target.value)} />
+                            {/* this is an example of data binding,
+                            we take data from the state and put it
+                            in our tsx */}
                         </Col>
                     </FormGroup>
                     <FormGroup row>
@@ -74,16 +45,18 @@ export class LoginComponent extends React.Component<ILoginProps, ILoginState>{
                                 type="password"
                                 name="password"
                                 id="password"
-                                placeholder="put password here"
-                                value={this.state.password}
-                                onChange={this.updatePassword} />
+                                value={password}
+                                placeholder="Password"
+                                onChange={val=>setPassword(val.target.value)}/>
                         </Col>
                     </FormGroup>
-                    <Button color="danger">Login</Button>
+                    <Button outline id="submitButton" color='secondary' type="submit" onClick={MainPageComponent}>Login</Button>
                 </Form>
-                <p>{this.props.loginMessage}</p>
-                <Link to='/pokemon'>No NavBar yet</Link>
-            </div>
-        )
-    }
+                <p>{props.loginMessage}</p><br></br>
+                <ul className="loginLinks">
+              <li><Link to='/register'>No Account?</Link></li><li><Link to='/email'>Forgot Password</Link></li></ul>
+                </div>
+            </>
+    )
+
 }
