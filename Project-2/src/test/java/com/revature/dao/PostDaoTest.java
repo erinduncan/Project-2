@@ -58,7 +58,7 @@ public class PostDaoTest {
 				+ " I'm a person who wishes to live a very quiet life. I take care not to trouble myself with any enemies, "
 				+ "like winning and losing, that would cause me to lose sleep at night. That is how I deal with society, and I "
 				+ "know that is what brings me happiness. Although, if I were to fight I wouldn't lose to anyone."
-				, false);
+				);
 		post.setUser(ud.findById(1));
 		Post retP = pd.insert(post);
 		assertTrue(retP != null);
@@ -68,7 +68,6 @@ public class PostDaoTest {
 	public void testUpdate() {
 		int id = 1;
 		Post p = pd.findById(id);
-		p.setLiked(true);
 		Post retp = pd.update(p);
 		System.out.println(retp);
 		assertTrue(retp != null);

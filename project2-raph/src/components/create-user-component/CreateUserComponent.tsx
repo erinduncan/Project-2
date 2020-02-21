@@ -12,7 +12,13 @@ import {
 import { addUser } from "../../remote/api-clients/api";
 
 
+
 export const CreateUserComponent: React.FC<any> = (props:any) => {
+  
+  /**
+     * React Hooks; great to use with functional components
+     * @author Maresh E
+     */
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [firstName, setFirstName] = useState("");

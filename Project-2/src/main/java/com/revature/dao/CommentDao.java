@@ -13,6 +13,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.revature.driver.Log;
 import com.revature.model.Comment;
+import com.revature.model.Like;
 import com.revature.model.Post;
 
 @Repository
@@ -30,11 +31,10 @@ public class CommentDao {
 	
 
 //	@Override
-	public List<Comment> findAll(Comment p) {
+	public List<Comment> findAll() {
 		List<Comment> list;
 		try {
-			list = sesf.getCurrentSession().createQuery("from Comment where post_postid=" 
-													+p.getPost().getPostId(), Comment.class).list();
+			list = sesf.getCurrentSession().createQuery("from Comment", Comment.class).list();
 			Log.log.info("All Comments found and returned.");
 			return list;
 		} catch (Exception e) {

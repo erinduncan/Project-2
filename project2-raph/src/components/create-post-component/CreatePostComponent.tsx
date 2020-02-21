@@ -63,7 +63,7 @@ export const CreatePostComponent: React.FC<any> = (props: ICreatePost) => {
             </Col>
           </FormGroup>
 
-          <FormGroup row > {/* enctype="multipart/form-data" */}
+          <FormGroup row enctype="multipart/form-data">
             <Label for="image" sm={2}>
               Image
             </Label>

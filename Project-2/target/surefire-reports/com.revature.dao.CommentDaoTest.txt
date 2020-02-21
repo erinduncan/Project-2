@@ -1,11 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: com.revature.dao.CommentDaoTest
 -------------------------------------------------------------------------------
-<<<<<<< HEAD
-Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 14.489 sec
-=======
-Tests run: 5, Failures: 2, Errors: 2, Skipped: 0, Time elapsed: 11.362 sec <<< FAILURE!
-testFindById(com.revature.dao.CommentDaoTest)  Time elapsed: 0.545 sec  <<< FAILURE!
+Tests run: 5, Failures: 2, Errors: 2, Skipped: 0, Time elapsed: 10.008 sec <<< FAILURE!
+testFindById(com.revature.dao.CommentDaoTest)  Time elapsed: 0.475 sec  <<< FAILURE!
 java.lang.AssertionError
 	at org.junit.Assert.fail(Assert.java:87)
 	at org.junit.Assert.assertTrue(Assert.java:42)
@@ -50,7 +47,7 @@ java.lang.AssertionError
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
 
-testDeleteById(com.revature.dao.CommentDaoTest)  Time elapsed: 0.494 sec  <<< FAILURE!
+testDeleteById(com.revature.dao.CommentDaoTest)  Time elapsed: 0.333 sec  <<< FAILURE!
 java.lang.AssertionError
 	at org.junit.Assert.fail(Assert.java:87)
 	at org.junit.Assert.assertTrue(Assert.java:42)
@@ -95,7 +92,7 @@ java.lang.AssertionError
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
 
-testInsert(com.revature.dao.CommentDaoTest)  Time elapsed: 0.485 sec  <<< ERROR!
+testInsert(com.revature.dao.CommentDaoTest)  Time elapsed: 0.351 sec  <<< ERROR!
 java.lang.NullPointerException
 	at com.revature.dao.CommentDaoTest.testInsert(CommentDaoTest.java:66)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
@@ -137,7 +134,7 @@ java.lang.NullPointerException
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
 
-testUpdate(com.revature.dao.CommentDaoTest)  Time elapsed: 0.451 sec  <<< ERROR!
+testUpdate(com.revature.dao.CommentDaoTest)  Time elapsed: 0.347 sec  <<< ERROR!
 java.lang.NullPointerException
 	at com.revature.dao.CommentDaoTest.testUpdate(CommentDaoTest.java:55)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
@@ -179,4 +176,3 @@ java.lang.NullPointerException
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
 
->>>>>>> e9ce2b1942e8282cc194b26decd630b60867b584

@@ -9,12 +9,12 @@ interface ILoginProps {
 }
 
 export const Login:React.FC<any> = (props:ILoginProps) => {
-    const [username, setUsername] = useState('');
+    const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
     const submitLogin  = async (event: any) => {
         event.preventDefault()
-        props.updateCurrentUser(username, password)           
+        props.updateCurrentUser(email, password)           
     }
     
 
@@ -24,15 +24,14 @@ export const Login:React.FC<any> = (props:ILoginProps) => {
         <h2>Login</h2>
                 <Form className="loginForm">
                     <FormGroup row>
-                        <Label for="username" sm={2}>Username</Label>
+                        <Label for="email" sm={2}>Email</Label>
                         <Col sm={10}>
                             <Input required
-                                type="text"
-                                name="username"
-                                id="username"
-                                placeholder="Username"
-                                value={username}
-                                onChange={val=>setUsername(val.target.value)} />
+                                type="email"
+                                name="email"
+                                id="email"
+                                placeholder="Email"
+                                onChange={val=>setEmail(val.target.value)} />
                             {/* this is an example of data binding, 
                             we take data from the state and put it 
                             in our tsx */}
@@ -46,7 +45,6 @@ export const Login:React.FC<any> = (props:ILoginProps) => {
                                 name="password"
                                 id="password"
                                 placeholder="Password"
-                                value={password}
                                 onChange={val=>setPassword(val.target.value)}/>
                         </Col>
                     </FormGroup>

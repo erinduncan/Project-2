@@ -1,5 +1,5 @@
 import IUser from "../model/IUser"
-import { apiCreateUser } from "../remote/api-clients/api"
+import { addUser } from "../remote/api-clients/api"
 
 
 export const createTypes = {
@@ -9,7 +9,7 @@ export const createTypes = {
 
 
 export const createUser = (newUser:IUser) => async (dispatch:any) => {
-    let response:any = await apiCreateUser(newUser);
+    let response:any = await addUser(newUser);
     if(response.data){
         dispatch({//this object is called an action
             type:createTypes.SUCCESSFUL_CREATE,
