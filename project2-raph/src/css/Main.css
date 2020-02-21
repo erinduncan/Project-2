@@ -106,6 +106,16 @@ hr {
   width: 20%;
 }
 
+.emailComponent {
+  background-color: white;
+  position: absolute;
+  right: 25%;
+  top: 30%;
+  padding: 20px;
+  border-radius: 20px 20px 20px 20px;
+  width: 50%;
+}
+
 .content {
   font-size: xx-small;
 }

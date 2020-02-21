@@ -8,8 +8,8 @@ import {
   Button,
   Container
 } from "reactstrap";
-// import IUser from '../../model/IUser';
 import { addUser } from "../../remote/api-clients/api";
+import { Link } from "react-router-dom";
 
 
 
@@ -121,8 +121,12 @@ export const CreateUserComponent: React.FC<any> = (props:any) => {
               Submit
             </Button>
           </Form>
+          <br/>
+          <Link to='/home'>Home</Link>
         </Container>
       </div>
     </React.Fragment>
   );
 };
+
+export default CreateUserComponent;

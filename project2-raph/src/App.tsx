@@ -10,6 +10,7 @@ import CreatePostComponent from "./components/create-post-component/CreatePostCo
 import CreateUserComponent from "./components/create-user-component/CreateUserContainer";
 import { MainPageComponent } from "./components/main-page-component/MainPageComponent";
 import { history } from "./utility/history";
+import { EmailComponent } from "./components/email-component/EmailComponent"
 
 const App: React.FC = () => {
   return (
@@ -21,6 +22,7 @@ const App: React.FC = () => {
             <Route path="/post" component={CreatePostComponent} />
             <Route path="/login" component={LoginComponent} />
             <Route path="/register" component={CreateUserComponent} />
+            <Route path="/email" component={EmailComponent}/>
             <Route path="/" component={MainPageComponent} />
           </Switch>
         </Router>
