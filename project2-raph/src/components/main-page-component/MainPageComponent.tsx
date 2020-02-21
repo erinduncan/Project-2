@@ -1,9 +1,11 @@
 import React from "react";
 import "../../css/Main.css";
 import "bootstrap/dist/css/bootstrap.css";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import CoolCat from "../../assets/tedward.jpeg";
 import CoolDog from "../../assets/CoolDog.png";
+import { UserDisplayComponent } from "../user-component/UserDisplayComponent";
+import { PostDisplayComponent } from "../post-component/post-display-component/PostDisplayComponent";
 
 export const MainPageComponent: React.FC<any> = (props: any) => {
   return (
@@ -12,10 +14,7 @@ export const MainPageComponent: React.FC<any> = (props: any) => {
         <div className="headerBg">
           <div className="headerImage">
             <nav>
-              
               <ul className="linkElements">
-                
-                
                 <li>
                   <NavLink
                     className="btn btn-outline-secondary"
@@ -44,7 +43,7 @@ export const MainPageComponent: React.FC<any> = (props: any) => {
       </header>
 
       <div className="postContainer">
-        <br />
+        {/* <br />
         <h1>This is a sample post!</h1>
         <hr />
         <img src={CoolCat} alt="Best Ted" />
@@ -66,7 +65,8 @@ export const MainPageComponent: React.FC<any> = (props: any) => {
         <p>
           Here are some great break tags to show that the CSS actually works and
           this bitch can scroll.
-        </p>
+        </p> */}
+        {PostDisplayComponent}
       </div>
 
       <div className="leftContainer">
@@ -78,11 +78,14 @@ export const MainPageComponent: React.FC<any> = (props: any) => {
           sport and lifestyle that is spotting animals. Create an account today
           to join in on the fun of spotting, rating, and loving pets!
         </p>
+        {/* <div className="content">Spot! © 2020</div> */}
       </div>
 
       <div className="searchContainer">
-        <input className="searchBar" type="text" placeholder="Search.." />
+        <input className="searchBar" type="text" placeholder="Search..." />
       </div>
+
+      <div className="displayComponent">{UserDisplayComponent}</div>
 
       <footer>
         <section id="about">

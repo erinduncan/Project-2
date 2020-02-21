@@ -1,18 +1,5 @@
-import React from 'react'
+import { connect } from "react-redux";
+import { IState } from "../../reducers";
+import { EmailComponent } from "./EmailComponent";
 
-export interface IEmailState {
-    email: string
-    visible: boolean
-}
-
-export class EmailComponent extends React.Component<any, IEmailState> {
-    constructor(props: any) {
-        super(props);
-        this.state = {
-            email:'',
-            visible: false
-        }
-    }
-
-    
-}
+export default EmailComponent;

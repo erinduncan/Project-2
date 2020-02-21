@@ -1,5 +1,5 @@
 import React, { SyntheticEvent, useState } from 'react';
-import '../../css/Main.css';
+import "../../css/Main.css";
 import { Form, Label, Col, Input, FormGroup, Button } from 'reactstrap';
 import { Link } from 'react-router-dom';
 
