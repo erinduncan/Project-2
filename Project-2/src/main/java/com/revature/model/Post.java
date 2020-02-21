@@ -40,10 +40,6 @@ public class Post {
 	@Column(name = "image")
 	private Blob image;
 	
-	
-	@Column
-	private Boolean liked;
-	
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(nullable = false)
 	private User user;
@@ -58,37 +54,34 @@ public class Post {
 	
 	
 
-	public Post(int postId, String title, Blob image, String body, Date submitted, Boolean liked ) {
+	public Post(int postId, String title, Blob image, String body, Date submitted) {
 		super();
 		this.postId = postId;
 		this.title = title;
 		this.image = image;
 		this.body = body;
 		this.submitted = submitted;
-		this.liked = liked;
 	}
 
-	public Post(String title, String body, Boolean liked) {
+	public Post(String title, String body) {
 		super();
 		this.title = title;
 		this.body = body;
-		this.liked = liked;
 	}
 	
-	public Post(int postId, String title, Blob image, String body, Boolean liked ) {
+	public Post(int postId, String title, Blob image, String body) {
 		super();
 		this.postId = postId;
 		this.title = title;
 		this.image = image;
 		this.body = body;
-		this.liked = liked;
 	}
 
 
 	@Override
 	public String toString() {
 		return "Post [postId=" + postId + ", title=" + title + ", body=" + body + ", submitted=" + submitted
-				+ ", liked=" + liked + ", user=" + user + "]";
+				+ ", user=" + user + "]";
 	}
 	
 	public Blob getImage() {
@@ -132,14 +125,6 @@ public class Post {
 		this.submitted = submitted;
 	}
 
-	public Boolean getLiked() {
-		return liked;
-	}
-
-	public void setLiked(Boolean liked) {
-		this.liked = liked;
-	}
-
 	public User getUser() {
 		return user;
 	}
@@ -157,8 +142,5 @@ public class Post {
 		comments.remove(comm);
 		comm.setPost(null);
 	}
-	
-	
-	
 
 }

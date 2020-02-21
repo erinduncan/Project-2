@@ -5,11 +5,11 @@ body {
   background-image: url("../assets/background.png");
   background-size: 50%;
   background-repeat: repeat;
-  font-family: 'Quicksand', sans-serif;
+  font-family: "Quicksand", sans-serif;
 }
 
 * {
-  font-family: 'Quicksand', sans-serif;
+  font-family: "Quicksand", sans-serif;
 }
 
 img {
@@ -17,8 +17,8 @@ img {
   height: auto;
 }
 
-html{
-  overflow-x:hidden;
+html {
+  overflow-x: hidden;
 }
 
 hr {
@@ -26,15 +26,12 @@ hr {
   border-radius: 5px;
 }
 
-
-
-
 /* Login and Register components */
 #submitButton {
   margin-top: 15px;
 }
 
-.loginLinks { 
+.loginLinks {
   list-style: none;
 }
 
@@ -49,7 +46,7 @@ hr {
   padding: 40px;
   margin-top: 20px;
   border-radius: 20px;
-  background: url('../assets/paw-print-clip-art-transparent-background-19.png');
+  background: url("../assets/paw-print-clip-art-transparent-background-19.png");
   background-size: 70px;
   background-repeat: repeat;
   border-radius: 0px 0px 20px 20px;
@@ -60,14 +57,11 @@ hr {
   padding: 40px;
   margin-top: 20px;
   border-radius: 20px;
-  background: url('../assets/paw-print-clip-art-transparent-background-19.png');
+  background: url("../assets/paw-print-clip-art-transparent-background-19.png");
   background-size: 70px;
   background-repeat: repeat;
   border-radius: 0px 0px 20px 20px;
 }
-
-
-
 
 /* Various containers */
 .postContainer {
@@ -78,7 +72,7 @@ hr {
   padding: 40px;
   bottom: 0;
   height: max-content;
-  border-radius: 20px 20px 0px 0px;
+  border-radius: 20px 20px 20px 20px;
 }
 
 .leftContainer {
@@ -95,15 +89,26 @@ hr {
 .searchContainer {
   background-color: white;
   position: absolute;
-  bottom: 10%;
+  bottom: 5%;
   right: 12.5%;
   padding: 20px;
   border-radius: 20px 20px 20px 20px;
   width: 20%;
 }
 
+.displayComponent {
+  background-color: white;
+  position: absolute;
+  bottom: 20%;
+  right: 12.5%;
+  padding: 20px;
+  border-radius: 20px 20px 20px 20px;
+  width: 20%;
+}
 
-
+.content {
+  font-size: xx-small;
+}
 
 /* Header images, buttons, and styling */
 /* PLEASE DO NOT TOUCH THIS IT IS FRAGILE! */
@@ -116,7 +121,7 @@ hr {
 
 .headerImage {
   width: 100%;
-  height: auto;
+  height: 20%;
   background: url("../assets/spot.png");
   background-size: 21%;
   background-repeat: no-repeat;
@@ -125,8 +130,8 @@ hr {
 
 .headerBg {
   width: 100%;
-  height: auto;
-  background: url('../assets/paw-print-clip-art-transparent-background-19.png');
+  height: 20%;
+  background: url("../assets/paw-print-clip-art-transparent-background-19.png");
   background-size: 70px;
   background-repeat: repeat;
   border-radius: 0px 0px 20px 20px;
@@ -142,17 +147,11 @@ hr {
 
 .btn.btn-outline-dark {
   color: cornsilk;
-  
 }
 
 .linkElements {
   margin-left: 65%;
 }
-
-
-
-
-
 
 /* Sections, not currently in use */
 section {
@@ -171,10 +170,6 @@ section p {
   font-size: small;
 }
 
-
-
-
 /* Animation Shit */
 @keyframes etc {
-
 }

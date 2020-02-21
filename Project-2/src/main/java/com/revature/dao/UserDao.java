@@ -31,7 +31,7 @@ public class UserDao {
 	public List<User> findAll() {
 		List<User> list;
 		try {
-			list = sesf.getCurrentSession().createQuery("from user", User.class).list();
+			list = sesf.getCurrentSession().createQuery("from User", User.class).list();
 			Log.log.info("All users found and returned.");
 			return list;
 		} catch (Exception e) {

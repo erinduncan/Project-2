@@ -8507,3 +8507,31 @@ Caused by: org.postgresql.util.PSQLException: ERROR: relation "testschema.post" 
 2020-02-20 13:29:38 INFO  Version:46 - HHH000412: Hibernate Core {5.4.10.Final}
 2020-02-20 13:29:38 INFO  Version:49 - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
 2020-02-20 13:29:39 INFO  Dialect:172 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2020-02-20 15:18:53 INFO  Version:46 - HHH000412: Hibernate Core {5.4.10.Final}
+2020-02-20 15:18:53 INFO  Version:49 - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-02-20 15:18:54 INFO  Dialect:172 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2020-02-20 15:19:00 INFO  Version:21 - HV000001: Hibernate Validator 6.0.17.Final
+2020-02-20 15:19:01 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-02-20 15:19:01 ERROR Log:57 - org.hibernate.UnknownEntityTypeException: Unable to locate persister: com.revature.model.Comment
+2020-02-20 15:19:02 ERROR Log:99 - org.hibernate.UnknownEntityTypeException: Unable to locate persister: com.revature.model.Comment
+2020-02-20 15:19:02 ERROR Log:57 - org.hibernate.UnknownEntityTypeException: Unable to locate persister: com.revature.model.Comment
+2020-02-20 15:19:04 ERROR Log:53 - org.hibernate.UnknownEntityTypeException: Unable to locate persister: com.revature.model.User
+2020-02-20 15:19:05 ERROR Log:39 - java.lang.IllegalArgumentException: org.hibernate.hql.internal.ast.QuerySyntaxException: user is not mapped [from user]
+2020-02-20 15:19:05 ERROR Log:53 - org.hibernate.UnknownEntityTypeException: Unable to locate persister: com.revature.model.User
+2020-02-20 15:19:05 WARN  deprecation:1774 - HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2020-02-20 15:19:06 ERROR Log:64 - org.hibernate.MappingException: Unknown entity: com.revature.model.User
+2020-02-20 15:19:06 WARN  deprecation:1774 - HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2020-02-20 15:19:43 INFO  Version:46 - HHH000412: Hibernate Core {5.4.10.Final}
+2020-02-20 15:19:43 INFO  Version:49 - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-02-20 15:19:44 INFO  Dialect:172 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2020-02-20 15:19:50 INFO  Version:21 - HV000001: Hibernate Validator 6.0.17.Final
+2020-02-20 15:19:50 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-02-20 15:19:51 ERROR Log:57 - org.hibernate.UnknownEntityTypeException: Unable to locate persister: com.revature.model.Comment
+2020-02-20 15:19:51 ERROR Log:99 - org.hibernate.UnknownEntityTypeException: Unable to locate persister: com.revature.model.Comment
+2020-02-20 15:19:52 ERROR Log:57 - org.hibernate.UnknownEntityTypeException: Unable to locate persister: com.revature.model.Comment
+2020-02-20 15:19:52 ERROR Log:39 - java.lang.IllegalArgumentException: org.hibernate.hql.internal.ast.QuerySyntaxException: user is not mapped [from user]
+2020-02-20 15:19:53 ERROR Log:53 - org.hibernate.UnknownEntityTypeException: Unable to locate persister: com.revature.model.User
+2020-02-20 15:19:53 WARN  deprecation:1774 - HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2020-02-20 15:19:54 ERROR Log:64 - org.hibernate.MappingException: Unknown entity: com.revature.model.User
+2020-02-20 15:19:54 WARN  deprecation:1774 - HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2020-02-20 15:19:55 ERROR Log:53 - org.hibernate.UnknownEntityTypeException: Unable to locate persister: com.revature.model.User
