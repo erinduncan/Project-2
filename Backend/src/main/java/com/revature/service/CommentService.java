@@ -1,7 +1,5 @@
 package com.revature.service;
 
-import java.util.List;
-
 import com.revature.dao.CommentDao;
 import com.revature.model.Comment;
 
@@ -14,29 +12,30 @@ public class CommentService {
     private CommentDao cd;
 
 	@Autowired
-	public void setDao(CommentDao cd) {
-		this.cd = cd;
-	}
+	public CommentService(CommentDao cd) {
+        super();
+        this.cd = cd;
+    }
 
-	public List<Comment> getByAll() {
-		return cd.findAll();
-	}
+	// public List<Comment> getByAll() {
+	// 	return cd.findAll();
+	// }
 
-	public Comment getById(int id) {
-		return cd.findById(id);
-	}
+	// public Comment getById(int id) {
+	// 	return cd.findById(id);
+	// }
 
 	public Comment addComment(Comment u) {
-		return cd.insert(u);
+		return cd.save(u);
 
 	}
 
 	public Comment updateComment(Comment u) {
-		return cd.update(u);
+		return cd.save(u);
 	}
 
 
-	public Comment deleteComment(int id) {
-		return cd.deleteById(id);
-	}
+	// public Comment deleteComment(int id) {
+	// 	return cd.delete(id);
+	// }
 }

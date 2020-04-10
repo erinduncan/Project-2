@@ -1,13 +1,11 @@
 package com.revature.controller;
 
-import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -27,14 +25,14 @@ public class LikeController {
 	}
 	
 	@RequestMapping(method = RequestMethod.GET, value = "/likelist.app", produces = "application/json")
-	public ResponseEntity<List<Like>> readAllLikes(){
+	public ResponseEntity<Iterable<Like>> readAllLikes(){
 		return new ResponseEntity<>(ls.readAll(), HttpStatus.ACCEPTED);
 	}
 	
-	@RequestMapping(method = RequestMethod.GET, value = "/like{id}.app", produces = "application/json")
-	public ResponseEntity<Like> findLikeById(@PathVariable("id") int id){
-		return new ResponseEntity<>(ls.findById(id), HttpStatus.ACCEPTED);
-	}
+	// @RequestMapping(method = RequestMethod.GET, value = "/like{id}.app", produces = "application/json")
+	// public ResponseEntity<Like> findLikeById(@PathVariable("id") int id){
+	// 	return new ResponseEntity<>(ls.findById(id), HttpStatus.ACCEPTED);
+	// }
 	
 	@RequestMapping(method = RequestMethod.POST, value = "/updatelike.app", produces = "application/json")
 	public ResponseEntity<Like> updateLike(@RequestBody Like l){

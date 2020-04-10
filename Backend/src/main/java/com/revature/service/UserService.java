@@ -3,7 +3,6 @@ package com.revature.service;
 import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
-import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -22,25 +21,25 @@ public class UserService {
 		this.ud = ud;
 	}
 	
-	public List<User> getByAll(){
+	public Iterable<User> getByAll(){
 		return ud.findAll();
 	}
 	
-	public User getByEmail(String email) {
-		return ud.findByEmail(email);
-	}
+	// public User getByEmail(String email) {
+	// 	return ud.findByEmail(email);
+	// }
 	
-	public User getById(int id) {
-		return ud.findById(id);
-	}
+	// public User getById(int id) {
+	// 	return ud.findById(id);
+	// }
 	
 	public User insertUser(User u) {
-		return ud.insert(u);
+		return ud.save(u);
 		
 	}
 	
 	public User updateUser(User u) {
-		return ud.update(u);
+		return ud.save(u);
 	}
 	
 	public boolean validateUser(String email, String password, User u) {
@@ -67,12 +66,12 @@ public class UserService {
         return false;
     }
 	
-	public User deleteUserByEmail(String email) {
-		return ud.deleteByEmail(email);
-	}
+	// public User deleteUserByEmail(String email) {
+	// 	return ud.deleteByEmail(email);
+	// }
 
-	public User delete(User user) {
-		return ud.delete(user);
+	public void delete(User user) {
+		ud.delete(user);
 	}
 	
 

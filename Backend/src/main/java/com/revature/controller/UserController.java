@@ -1,12 +1,10 @@
 package com.revature.controller;
-import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -25,13 +23,13 @@ public class UserController {
 		this.us = us;
 	}
 	@RequestMapping(method = RequestMethod.GET, value = "/userlist.app", produces = "application/json")
-	public ResponseEntity<List<User>> getAllUsersAsList() {
+	public ResponseEntity<Iterable<User>> getAllUsersAsList() {
 		return new ResponseEntity<>(us.getByAll(), HttpStatus.ACCEPTED);
 	}
-	@RequestMapping(method = RequestMethod.GET, value = "/user{id}.app", produces = "application/json")
-	public ResponseEntity<User> findUserById(@PathVariable("id") int id) {
-		return new ResponseEntity<>(us.getById(id), HttpStatus.ACCEPTED);
-	}
+	// @RequestMapping(method = RequestMethod.GET, value = "/user{id}.app", produces = "application/json")
+	// public ResponseEntity<User> findUserById(@PathVariable("id") int id) {
+	// 	return new ResponseEntity<>(us.getById(id), HttpStatus.ACCEPTED);
+	// }
 	@RequestMapping(method = RequestMethod.PUT, value = "/updateuser.app", produces = "application/json")
 	public ResponseEntity<User> updateUser(@RequestBody User user) {
 		return new ResponseEntity<>(us.updateUser(user), HttpStatus.ACCEPTED);
@@ -45,23 +43,23 @@ public class UserController {
 		us.delete(user);
 		return new ResponseEntity<>(HttpStatus.ACCEPTED);
 	}
-	@RequestMapping(method = RequestMethod.GET, value = "/{email}.app", produces = "application/json")
-	public ResponseEntity<User> findUserByEmail(@PathVariable("email") String email) {
-		return new ResponseEntity<>(us.getByEmail(email), HttpStatus.ACCEPTED);
-	}
-	@RequestMapping(method = RequestMethod.POST, value = "/login.app", produces = "application/json")
-	public ResponseEntity<User> login(@RequestBody User req) {
-		String email = req.getEmail();
-		String password = req.getPassword();
-		User u = us.getByEmail(email);
-		if (u != null) {
-			if (us.validateUser(email, password, u)) {
-				return new ResponseEntity<>(u, HttpStatus.ACCEPTED);
-			} else {
-				return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
-			}
-		} else {
-			return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
-		}
-	}
+	// @RequestMapping(method = RequestMethod.GET, value = "/{email}.app", produces = "application/json")
+	// public ResponseEntity<User> findUserByEmail(@PathVariable("email") String email) {
+	// 	return new ResponseEntity<>(us.getByEmail(email), HttpStatus.ACCEPTED);
+	// }
+	// @RequestMapping(method = RequestMethod.POST, value = "/login.app", produces = "application/json")
+	// public ResponseEntity<User> login(@RequestBody User req) {
+	// 	String email = req.getEmail();
+	// 	String password = req.getPassword();
+	// 	User u = us.getByEmail(email);
+	// 	if (u != null) {
+	// 		if (us.validateUser(email, password, u)) {
+	// 			return new ResponseEntity<>(u, HttpStatus.ACCEPTED);
+	// 		} else {
+	// 			return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
+	// 		}
+	// 	} else {
+	// 		return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
+	// 	}
+	// }
 }
