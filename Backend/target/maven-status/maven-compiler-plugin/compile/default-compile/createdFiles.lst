@@ -6,8 +6,14 @@ com\revature\driver\Log.class
 com\revature\dao\CommentDao.class
 com\revature\service\UserService.class
 com\revature\dao\UserDao.class
+com\revature\dao\LikeDao.class
 com\revature\model\Comment.class
 com\revature\model\User.class
+com\revature\service\LikeService.class
+com\revature\model\Email.class
 com\revature\service\CommentService.class
 com\revature\service\PostService.class
+com\revature\model\Like.class
+main\java\com\revature\BackEndApplication.class
+com\revature\controller\LikeController.class
 com\revature\controller\UserController.class
