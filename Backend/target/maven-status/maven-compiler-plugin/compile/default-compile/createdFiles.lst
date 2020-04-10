@@ -1,3 +1,4 @@
+com\revature\BackEndApplication.class
 com\revature\controller\CommentController.class
 com\revature\dao\PostDao.class
 com\revature\model\Post.class
@@ -14,6 +15,5 @@ com\revature\model\Email.class
 com\revature\service\CommentService.class
 com\revature\service\PostService.class
 com\revature\model\Like.class
-main\java\com\revature\BackEndApplication.class
 com\revature\controller\LikeController.class
 com\revature\controller\UserController.class
