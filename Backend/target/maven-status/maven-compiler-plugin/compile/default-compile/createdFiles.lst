@@ -3,7 +3,6 @@ com\revature\controller\CommentController.class
 com\revature\dao\PostDao.class
 com\revature\model\Post.class
 com\revature\controller\PostController.class
-com\revature\driver\Log.class
 com\revature\dao\CommentDao.class
 com\revature\service\UserService.class
 com\revature\dao\UserDao.class
